@@ -9,7 +9,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --prompt_column input \
     --response_column output \
     --overwrite_cache \
-    --model_name_or_path "../.offline/THUDM/chatglm2-6b" \
+    --model_name_or_path "/root/autodl-tmp/.offline/THUDM/chatglm2-6b" \
     --output_dir $CHECKPOINT_DIR \
     --ptuning_checkpoint $CHECKPOINT_DIR \
     --predict_with_generate \

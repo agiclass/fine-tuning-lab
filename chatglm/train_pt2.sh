@@ -13,7 +13,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --prompt_column input \
     --response_column output \
     --overwrite_cache \
-    --model_name_or_path "../.offline/THUDM/chatglm-6b" \
+    --model_name_or_path "/root/autodl-tmp/.offline/THUDM/chatglm-6b" \
     --output_dir "output/chatglm-6b-pt/$timestamp" \
     --max_source_length 1024 \
     --max_target_length 64 \

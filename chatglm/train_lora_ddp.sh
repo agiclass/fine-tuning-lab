@@ -13,7 +13,7 @@ torchrun --nproc_per_node=8 --master_port=29501  main_lora.py \
     --prompt_column input \
     --response_column output \
     --overwrite_cache \
-    --model_name_or_path "../.offline/THUDM/chatglm-6b" \
+    --model_name_or_path "/root/autodl-tmp/.offline/THUDM/chatglm-6b" \
     --output_dir "output/chatglm-6b-lora-ddp/$timestamp" \
     --max_source_length 1024 \
     --max_target_length 64 \
