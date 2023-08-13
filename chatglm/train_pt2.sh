@@ -29,4 +29,3 @@ CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --learning_rate $LR \
     --pre_seq_len $PRE_SEQ_LEN \
     --quantization_bit 4
-

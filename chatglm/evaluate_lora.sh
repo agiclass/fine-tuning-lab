@@ -12,8 +12,9 @@ CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --model_name_or_path "../.offline/THUDM/chatglm-6b" \
     --output_dir $CHECKPOINT_DIR \
     --lora_checkpoint $CHECKPOINT_DIR \
+    --predict_with_generate \
     --max_source_length 1024 \
     --max_target_length 64 \
-    --per_device_eval_batch_size 4 \
+    --per_device_eval_batch_size 1 \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 

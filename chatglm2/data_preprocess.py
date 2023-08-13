@@ -45,8 +45,8 @@ class Preprocessor:
         inputs, targets = [], []
         for i in range(len(examples[self.prompt_column])):
             if examples[self.prompt_column][i] and examples[self.response_column][i]:
-                query = examples[self.prompt_column][i]
-                prompt = self.tokenizer.build_prompt(query)
+                prompt = examples[self.prompt_column][i]
+                #prompt = self.tokenizer.build_prompt(query)
                 inputs.append(prompt)
                 targets.append(examples[self.response_column][i])
 
@@ -91,8 +91,8 @@ class Preprocessor:
         }
         for i in range(len(examples[self.prompt_column])):
             if examples[self.prompt_column][i] and examples[self.response_column][i]:
-                query, answer = examples[self.prompt_column][i], examples[self.response_column][i]
-                prompt = self.tokenizer.build_prompt(query)
+                prompt, answer = examples[self.prompt_column][i], examples[self.response_column][i]
+                #prompt = self.tokenizer.build_prompt(query)
                 a_ids = self.tokenizer.encode(
                     text=prompt, 
                     add_special_tokens=True, 

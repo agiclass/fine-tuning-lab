@@ -25,6 +25,7 @@ from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from data_preprocess import Preprocessor, load_raw_datasets, print_dataset_example
 from evaluator import Evaluator, save_predictions
 from peft import get_peft_model, LoraConfig, TaskType
+from peft import PeftModel
 
 logger = logging.getLogger(__name__)
 
@@ -95,7 +96,9 @@ def main():
             ), 
             strict=False
         ) 
-    
+        #logger.warning(f"load checkpoint from: {peft_args.lora_checkpoint}")
+        #model = PeftModel.from_pretrained(model,peft_args.lora_checkpoint)
+        #model = model.merge_and_unload()
 
     if training_args.local_rank != -1:
         torch.distributed.barrier()
