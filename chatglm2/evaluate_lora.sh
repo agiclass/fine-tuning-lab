@@ -14,6 +14,6 @@ CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --lora_checkpoint $CHECKPOINT_DIR \
     --max_source_length 1024 \
     --max_target_length 64 \
-    --per_device_eval_batch_size 4 \
+    --per_device_eval_batch_size 8 \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 

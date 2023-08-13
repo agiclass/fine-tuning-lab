@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from rouge_chinese import Rouge
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
