@@ -1,9 +1,9 @@
 #!/bin/bash
 LR=2e-3
 LORA_RANK=8
-timestamp=$(date +%Y%m%d_%H%M%S)
+#timestamp=$(date +%Y%m%d_%H%M%S)
 
-CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
+LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --do_train \
     --do_eval \
     --do_predict \
@@ -14,7 +14,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --response_column output \
     --overwrite_cache \
     --model_name_or_path "/root/autodl-tmp/chatglm2-6b" \
-    --output_dir "output/chatglm2-6b-lora/$timestamp" \
+    --output_dir "output/chatglm2-6b-lora" \
     --max_source_length 1024 \
     --max_target_length 64 \
     --per_device_train_batch_size 2 \

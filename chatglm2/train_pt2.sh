@@ -1,13 +1,12 @@
 #!/bin/bash
 PRE_SEQ_LEN=128
 LR=2e-2
-timestamp=$(date +%Y%m%d_%H%M%S)
+#timestamp=$(date +%Y%m%d_%H%M%S)
 
-CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
+LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --do_train \
     --do_eval \
     --do_predict \
-    --local_rank -1 \
     --train_file ../data/LawChat.lite/train.jsonl \
     --validation_file ../data/LawChat.lite/dev.jsonl \
     --test_file ../data/LawChat.lite/test.jsonl \
@@ -15,7 +14,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --response_column output \
     --overwrite_cache \
     --model_name_or_path "/root/autodl-tmp/chatglm2-6b" \
-    --output_dir "output/chatglm2-6b-pt/$timestamp" \
+    --output_dir "output/chatglm2-6b-pt" \
     --max_source_length 1024 \
     --max_target_length 64 \
     --per_device_train_batch_size 1 \
