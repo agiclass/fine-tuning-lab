@@ -182,7 +182,7 @@ def main():
                 os.path.join(peft_args.lora_checkpoint, "pytorch_model.bin")
             ), 
             strict=False
-        ) 
+        )
 
     if model_args.quantization_bit is not None:
         print(f"Quantized to {model_args.quantization_bit} bit")
