@@ -50,10 +50,7 @@ def generate(model, tokenizer, query: str, context: str,
     gen_kwargs = {"max_length": max_length, "num_beams": 1, "do_sample": do_sample, "top_p": top_p,
                     "temperature": temperature, "logits_processor": logits_processor, **kwargs}
     
-    prompt = build_prompt(context,query,model.device)
-
-    inputs = tokenizer([prompt], return_tensors="pt")
-    inputs = inputs.to(model.device)
+    inputs = build_prompt(context,query,model.device)
     outputs = model.generate(**inputs, **gen_kwargs)
     outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):]
     response = tokenizer.decode(outputs)
@@ -98,13 +95,15 @@ def parse_text(text):
     return text
 
 
-def predict(input, chatbot, max_length, top_p, temperature, history):
-    chatbot.append((parse_text(input), ""))
-    for response, history in model.stream_chat(tokenizer, input, history, max_length=max_length, top_p=top_p,
-                                               temperature=temperature):
-        chatbot[-1] = (parse_text(input), parse_text(response))       
+def predict(context, input, max_length, top_p, temperature):
+    
+    response = generate(
+            model, tokenizer, input, context, 
+            max_length=max_length, top_p=top_p,
+            temperature=temperature
+    )
 
-        yield chatbot, history
+    return response
 
 
 def reset_user_input():
@@ -116,7 +115,7 @@ def reset_state():
 
 
 with gr.Blocks() as demo:
-    gr.HTML("""<h1 align="center">ChatGLM2-6B</h1>""")
+    gr.HTML("""<h1 align="center">ChatGLM-6B</h1>""")
     
     context = gr.Textbox(show_label=False, placeholder="判决书...", lines=10).style(
                     container=False)
@@ -155,9 +154,9 @@ def main():
     config = AutoConfig.from_pretrained(
         model_args.model_name_or_path, trust_remote_code=True)
 
-    if model_args.pre_seq_len is not None:
-        config.pre_seq_len = model_args.pre_seq_len
-        config.prefix_projection = model_args.prefix_projection
+    if peft_args.pre_seq_len is not None:
+        config.pre_seq_len = peft_args.pre_seq_len
+        config.prefix_projection = peft_args.prefix_projection
 
     model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, trust_remote_code=True)
 
@@ -184,15 +183,19 @@ def main():
             ), 
             strict=False
         )
+        #model = PeftModel.from_pretrained(model,peft_args.lora_checkpoint)
+        #model = model.merge_and_unload()
 
     if model_args.quantization_bit is not None:
         print(f"Quantized to {model_args.quantization_bit} bit")
         model = model.quantize(model_args.quantization_bit)
-
-    if model_args.pre_seq_len is not None:
+    
+    model = model.cuda()
+    model = model.half()
+    
+    if peft_args.pre_seq_len is not None:
         # P-tuning v2
-        model = model.half().cuda()
-        model.transformer.prefix_encoder.float().cuda()
+        model.transformer.prefix_encoder.float()
     
     model = model.eval()
     demo.queue().launch(server_name="0.0.0.0", server_port=6006, share=False, inbrowser=True)

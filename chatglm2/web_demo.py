@@ -155,9 +155,9 @@ def main():
     config = AutoConfig.from_pretrained(
         model_args.model_name_or_path, trust_remote_code=True)
 
-    if model_args.pre_seq_len is not None:
-        config.pre_seq_len = model_args.pre_seq_len
-        config.prefix_projection = model_args.prefix_projection
+    if peft_args.pre_seq_len is not None:
+        config.pre_seq_len = peft_args.pre_seq_len
+        config.prefix_projection = peft_args.prefix_projection
 
     model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, trust_remote_code=True)
 
@@ -184,11 +184,16 @@ def main():
             ), 
             strict=False
         )
+        #model = PeftModel.from_pretrained(model,peft_args.lora_checkpoint)
+        #model = model.merge_and_unload()
 
     if model_args.quantization_bit is not None:
         print(f"Quantized to {model_args.quantization_bit} bit")
         model = model.quantize(model_args.quantization_bit)
+    
     model = model.cuda()
+    model = model.half()
+    
     if peft_args.pre_seq_len is not None:
         # P-tuning v2
         model.transformer.prefix_encoder.float()
