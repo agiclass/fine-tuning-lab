@@ -155,8 +155,9 @@ def main():
     config = AutoConfig.from_pretrained(
         model_args.model_name_or_path, trust_remote_code=True)
 
-    config.pre_seq_len = model_args.pre_seq_len
-    config.prefix_projection = model_args.prefix_projection
+    if model_args.pre_seq_len is not None:
+        config.pre_seq_len = model_args.pre_seq_len
+        config.prefix_projection = model_args.prefix_projection
 
     model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, trust_remote_code=True)
 
