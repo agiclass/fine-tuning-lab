@@ -7,6 +7,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --do_train \
     --do_eval \
     --do_predict \
+    --local_rank -1 \
     --train_file ../data/LawChat.lite/train.jsonl \
     --validation_file ../data/LawChat.lite/dev.jsonl \
     --test_file ../data/LawChat.lite/test.jsonl \

@@ -159,9 +159,9 @@ def main():
         model.transformer.prefix_encoder.float()
     
     model = model.eval()
-    demo.queue().launch(server_name="0.0.0.0", share=False, inbrowser=True)
+    ## demo.queue().launch(server_name="0.0.0.0", share=False, inbrowser=True)
 
-
+    demo.queue().launch(server_name="0.0.0.0", server_port=6006, share=False, inbrowser=True)
 
 if __name__ == "__main__":
     main()
