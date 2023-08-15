@@ -50,7 +50,7 @@ def main():
         handlers=[logging.StreamHandler(sys.stdout)],
     )
 
-
+    training_args.local_rank = -1
     log_level = training_args.get_process_log_level()
     logger.setLevel(log_level)
     transformers.utils.logging.set_verbosity(log_level)
