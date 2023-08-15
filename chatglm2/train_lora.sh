@@ -13,7 +13,7 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --prompt_column input \
     --response_column output \
     --overwrite_cache \
-    --model_name_or_path "/root/autodl-tmp/chatglm2-6b" \
+    --model_name_or_path "/root/chatglm2-6b" \
     --output_dir "output/chatglm2-6b-lora" \
     --max_source_length 1024 \
     --max_target_length 64 \

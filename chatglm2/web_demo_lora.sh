@@ -1,4 +1,4 @@
-MODEL_PATH="/root/autodl-tmp/chatglm2-6b"
+MODEL_PATH="/root/chatglm2-6b"
 CHECKPOINT_DIR="PATH/TO/LORA/CHECKPOINT"
 
 CUDA_VISIBLE_DEVICES=0 python3 web_demo.py \
