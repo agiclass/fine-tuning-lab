@@ -69,17 +69,9 @@ def main():
     transformers.utils.logging.enable_default_handler()
     transformers.utils.logging.enable_explicit_format()
 
-    logger.warning(
-        f"Process rank: {training_args.local_rank}, device: {training_args.device}, n_gpu: {training_args.n_gpu} "
-        + f"distributed training: {bool(training_args.local_rank != -1)}, 16-bits training: {training_args.fp16}"
-    )
     
     logger.warning(f"Training/evaluation parameters {training_args}")
 
-    if training_args.local_rank != -1:
-    #    torch.distributed.init_process_group(backend='nccl', init_method="env://", rank=training_args.local_rank, world_size=int(os.environ.get('WORLD_SIZE')))
-    #    torch.cuda.set_device(training_args.local_rank)
-        time.sleep(training_args.local_rank*30)
 
     # 设置随机种子（以保证实验可复现）
     set_seed(training_args.seed)

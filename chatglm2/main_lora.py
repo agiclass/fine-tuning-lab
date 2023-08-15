@@ -50,22 +50,15 @@ def main():
         handlers=[logging.StreamHandler(sys.stdout)],
     )
 
-    training_args.local_rank = -1
     log_level = training_args.get_process_log_level()
     logger.setLevel(log_level)
     transformers.utils.logging.set_verbosity(log_level)
     transformers.utils.logging.enable_default_handler()
     transformers.utils.logging.enable_explicit_format()
 
-    logger.warning(
-        f"Process rank: {training_args.local_rank}, device: {training_args.device}, n_gpu: {training_args.n_gpu} "
-        + f"distributed training: {bool(training_args.local_rank != -1)}, 16-bits training: {training_args.fp16}"
-    )
     
     logger.warning(f"Training/evaluation parameters {training_args}")
 
-    if training_args.local_rank != -1:
-        time.sleep(training_args.local_rank*30)
 
     # 设置随机种子（以保证实验可复现）
     set_seed(training_args.seed)
@@ -100,8 +93,6 @@ def main():
         #model = PeftModel.from_pretrained(model,peft_args.lora_checkpoint)
         #model = model.merge_and_unload()
 
-    if training_args.local_rank != -1:
-        torch.distributed.barrier()
 
     # 加载数据集
     raw_datasets = load_raw_datasets(data_args,model_args.cache_dir)
@@ -187,10 +178,6 @@ def main():
     training_args.generation_num_beams = 1
 
 
-    if training_args.local_rank != -1:
-        training_args.ddp_find_unused_parameters=False
-    
-
     trainer = Seq2SeqTrainer(
         model=model,
         args=training_args,
@@ -234,8 +221,7 @@ def main():
         trainer.log_metrics("predict", metrics)
         trainer.save_metrics("predict", metrics)
 
-        if trainer.is_world_process_zero():
-            save_predictions(predict_results,tokenizer,training_args.output_dir)
+        save_predictions(predict_results,tokenizer,training_args.output_dir)
 
 
     return results

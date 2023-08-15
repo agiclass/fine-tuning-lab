@@ -70,16 +70,9 @@ def main():
     transformers.utils.logging.set_verbosity(log_level)
     transformers.utils.logging.enable_default_handler()
     transformers.utils.logging.enable_explicit_format()
-
-    logger.warning(
-        f"Process rank: {training_args.local_rank}, device: {training_args.device}, n_gpu: {training_args.n_gpu} "
-        + f"distributed training: {bool(training_args.local_rank != -1)}, 16-bits training: {training_args.fp16}"
-    )
     
     logger.warning(f"Training/evaluation parameters {training_args}")
 
-    if training_args.local_rank != -1: #多卡训练才需要
-        time.sleep(training_args.local_rank*30)
 
     # 设置随机种子（以保证实验可复现）
     set_seed(training_args.seed)
@@ -123,8 +116,6 @@ def main():
         tokenizer=tokenizer
     )
 
-    if training_args.local_rank != -1: #多卡训练才需要
-        torch.distributed.barrier()
 
     if training_args.do_train:
         column_names = raw_datasets["train"].column_names
@@ -202,10 +193,6 @@ def main():
     training_args.generation_max_length = data_args.max_source_length + data_args.max_target_length + 2
     training_args.generation_num_beams = 1
 
-    
-    if training_args.local_rank != -1: #多卡训练才需要
-        training_args.ddp_find_unused_parameters=False
-    
 
     #trainer = Seq2SeqTrainer( #可以试试这个方法，是否收敛很慢
     trainer = LoRASeq2SeqTrainer(
@@ -257,8 +244,7 @@ def main():
         trainer.log_metrics("predict", metrics)
         trainer.save_metrics("predict", metrics)
 
-        if trainer.is_world_process_zero():
-            save_predictions(predict_results,tokenizer,training_args.output_dir)
+        save_predictions(predict_results,tokenizer,training_args.output_dir)
 
     return results
 
