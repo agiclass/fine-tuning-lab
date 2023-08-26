@@ -23,7 +23,7 @@ def convert_jsonl(input_filename, output_filename):
                 "content": data["output"]
             }
 
-            item["message"] = [system_message, user_message, assistant_message]
+            item["messages"] = [system_message, user_message, assistant_message]
 
             # 将三个消息写入输出文件
             outfile.write(json.dumps(item, ensure_ascii=False) + '\n')
