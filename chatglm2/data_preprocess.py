@@ -46,8 +46,8 @@ class Preprocessor:
                     obj = turn["arguments"]
                 else:
                     obj = turn["records"]
-
-                prompt += turn["role"] + ":\n" + json.dumps(obj,indent=4,ensure_ascii=False) + "\n"
+                filtered_obj = {k: v for k, v in obj.items() if v is not None}                
+                prompt += turn["role"] + ":\n" + json.dumps(filtered_obj,indent=4,ensure_ascii=False) + "\n"
         return prompt
 
     def _build_response(self,response):
