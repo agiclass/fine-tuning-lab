@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想带孩子去酒店住宿。请帮我找一家评分是4.5分以上，最低价格是300-400元的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京连杰酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区管庄路15号鑫兆佳园15号楼",
+                "subway": "常营地铁站F口",
+                "phone": "010-65430188",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务免费",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 339.0,
+                "rating": 4.6,
+                "hotel_id": 363
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京连杰酒店。"
+    },
+    {
+        "role": "user",
+        "content": "谢谢你的推荐，我决定入住北京连杰酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+        "role": "user",
+        "content": "好的，这些酒店中哪家能提供会议室和商务中心呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "会议室",
+                "商务中心"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "价格是1243元，属于豪华型酒店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，晚上我想找一个能提供24小时供应热水和叫客服务的酒店，要价位在400-500元之间的能帮我推荐一下吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "24小时供应热水",
+                "叫客服务"
+            ],
+            "price_range_lower": 400,
+            "price_range_upper": 500
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "麗枫酒店(北京亚运村鸟巢店)",
+                "type": "高档型",
+                "address": "北京朝阳区安慧东里36号4号楼",
+                "subway": "惠新西街北口地铁站A口",
+                "phone": "010-84468889",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 449.0,
+                "rating": 4.5,
+                "hotel_id": 175
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "好的，给您推荐麗枫酒店(北京亚运村鸟巢店)。"
+    },
+    {
+        "role": "user",
+        "content": "太好了！我决定住在麗枫酒店(北京亚运村鸟巢店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

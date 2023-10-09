@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一个价格是300-400元，评分是4分以上的酒店住宿，有什么好的地方为我推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京仁和轩酒店",
+                "type": "舒适型",
+                "address": "北京海淀区小西天志强北园1号院",
+                "subway": "积水潭地铁站A口",
+                "phone": "010-62217878",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "酒吧",
+                    "行李寄存"
+                ],
+                "price": 344.0,
+                "rating": 4.4,
+                "hotel_id": 164
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京仁和轩酒店非常不错，推荐给你吧。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是344元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定选择北京仁和轩酒店入住。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

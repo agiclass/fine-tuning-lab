@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "你好，可以为我安排一个评分是4.5分以上，价格是600-700元的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京中乐六星酒店",
+                "type": "豪华型",
+                "address": "北京丰台区方庄芳群园三区4号",
+                "subway": "蒲黄榆地铁站G口",
+                "phone": "010-57955555",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 671.0,
+                "rating": 4.7,
+                "hotel_id": 271
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京中乐六星酒店是个非常不错的地方，你感觉如何？"
+    },
+    {
+        "role": "user",
+        "content": "喂，我觉得北京中乐六星酒店不错，我想住那里。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

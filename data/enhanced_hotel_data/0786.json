@@ -1,0 +1,37 @@
+[
+    {
+        "role": "user",
+        "content": "你好，你知道哪家酒店的最低价格是200-300元吗？给我介绍一下呗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "易佰连锁旅店(北京站店)",
+                "type": "经济型",
+                "address": "北京东城区火车站售票厅二楼",
+                "subway": "北京站地铁站",
+                "phone": "010-65131668",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "24小时热水",
+                    "无烟房"
+                ],
+                "price": 275.0,
+                "rating": 4.1,
+                "hotel_id": 317
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我查了一下，你可以去易佰连锁旅店(北京站店)住。"
+    }
+]

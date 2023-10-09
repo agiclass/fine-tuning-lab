@@ -1,0 +1,80 @@
+[
+    {
+        "role": "user",
+        "content": "我还得找个经济型的酒店住一晚，能帮我查查么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天连锁酒店(北京首都机场店)",
+                "type": "经济型",
+                "address": "北京顺义区天竺镇府前二街1号院10号楼",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-64587122",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 180.0,
+                "rating": 4.3,
+                "hotel_id": 23
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "去7天连锁酒店(北京首都机场店)吧，经济型的。"
+    },
+    {
+        "role": "user",
+        "content": "有无烟房么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "经济型",
+            "facilities": [
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "4.3分。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是180元每晚。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就去7天连锁酒店(北京首都机场店)住一晚了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

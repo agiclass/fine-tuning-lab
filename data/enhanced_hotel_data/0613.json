@@ -1,0 +1,43 @@
+[
+    {
+        "role": "user",
+        "content": "帮我再找一个舒适型的酒店，价格200-300元左右的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京四季天成酒店",
+                "type": "舒适型",
+                "address": "北京西城区福长街45号(北京天桥剧场西侧)",
+                "subway": "珠市口地铁站D口",
+                "phone": "010-62266969",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "暖气",
+                    "残疾人设施",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 282.0,
+                "rating": 4.3,
+                "hotel_id": 86
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京四季天成酒店。"
+    }
+]

@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想去酒店住宿。请帮我找一家最低价格是300-400元的有商务中心的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "商务中心"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京寿州大饭店",
+                "type": "舒适型",
+                "address": "北京海淀区北蜂窝8号",
+                "subway": "达官营地铁站B口",
+                "phone": "010-52612222",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "桑拿",
+                    "棋牌室",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 328.0,
+                "rating": 4.2,
+                "hotel_id": 88
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京寿州大饭店，您看可以吗？"
+    }
+]

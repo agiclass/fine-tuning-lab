@@ -1,0 +1,26 @@
+[
+    {
+        "role": "user",
+        "content": "好的，吃完饭我想找一家评分5分的高档型酒店住宿，要求有暖气设施和吹风机服务，请给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "吹风机",
+                "暖气设施"
+            ],
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，评分没有符合您要求的。"
+    }
+]

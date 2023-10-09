@@ -1,0 +1,126 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我找一个评分4.5分以上的经济型酒店好吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "中安之家连锁(北京中安宾馆)",
+                "type": "经济型",
+                "address": "北京东城区北京站东街大羊毛胡同盔甲厂6号",
+                "subway": "北京站地铁站C口",
+                "phone": "010-65221122",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 294.0,
+                "rating": 4.5,
+                "hotel_id": 61
+            },
+            {
+                "name": "雅悦酒店(北京西直门店)",
+                "type": "经济型",
+                "address": "北京西城区西直门内大街126号",
+                "subway": "新街口地铁站D口",
+                "phone": "010-66180070",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 441.0,
+                "rating": 4.5,
+                "hotel_id": 144
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐中安之家连锁(北京中安宾馆)和雅悦酒店(北京西直门店)，您看满意吗？"
+    },
+    {
+        "role": "user",
+        "content": "还行，不算高，酒店设施提供吹风机吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型",
+            "facilities": [
+                "吹风机"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，酒店设施不提供吹风机。"
+    },
+    {
+        "role": "user",
+        "content": "这样啊，那酒店设施提供接机服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型",
+            "facilities": [
+                "接机服务"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "不好意思，酒店设施也不提供接机服务。"
+    },
+    {
+        "role": "user",
+        "content": "这两家酒店都有没有提供早餐服务呢？"
+    },
+    {
+        "role": "assistant",
+        "content": "中安之家连锁(北京中安宾馆)和雅悦酒店(北京西直门店)都提供早餐服务。"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个价位在300-400元之间的经济型酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "汉庭酒店(北京南站南店)",
+                "type": "经济型",
+                "address": "北京丰台区马家堡西里38号",
+                "subway": "马家堡地铁站",
+                "phone": "010-65003030",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 364.0,
+                "rating": 4.3,
+                "hotel_id": 1111
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐汉庭酒店(北京南站南店)。"
+    }
+]

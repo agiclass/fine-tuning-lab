@@ -1,0 +1,63 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我想找个有无烟房，评分在4.5分以上的酒店，能给我推荐一下吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无烟房"
+            ],
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "时光漫步怀旧主题酒店(北京雍和宫店)",
+                "type": "舒适型",
+                "address": "北京东城区安定门内大街方家胡同46号创意园",
+                "subway": "北新桥地铁站A口",
+                "phone": "010-64032288",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "无烟房",
+                    "酒吧",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 1063.0,
+                "rating": 4.8,
+                "hotel_id": 27
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "去时光漫步怀旧主题酒店(北京雍和宫店)吧。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.8分。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就选择时光漫步怀旧主题酒店(北京雍和宫店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "role": "user",
+        "content": "好的，溜达完以后我指定得找个地方住下，你能帮我找个价格是500-600元，评分是4.5分以上的经济型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "没问题啊，如家商旅酒店(北京牡丹园地铁站店)就是唯一满足你要求的酒店呢。"
+    }
+]

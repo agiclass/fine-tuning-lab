@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "嗯，我记下了，安排完景点，我得找一个评分是5分，提供中式餐厅，价格是200-300元的酒店休息，有什么好的地方可去吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "中式餐厅"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "和家宾馆连锁(北京后海店)(原德胜门店)",
+                "type": "经济型",
+                "address": "北京西城区鼓楼西大街小八道湾胡同6号",
+                "subway": "鼓楼大街地铁站E口",
+                "phone": "010-64039931",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 233.0,
+                "rating": 4.7,
+                "hotel_id": 471
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉没有查到符合条件的酒店，和家宾馆连锁(北京后海店)(原德胜门店)评分是4.7分，其他条件符合，这是最接近你要求的酒店了，要考虑吗？"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店多少钱一晚啊？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店的价格是233元每晚。"
+    }
+]

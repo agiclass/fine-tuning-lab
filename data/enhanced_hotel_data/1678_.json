@@ -1,0 +1,122 @@
+[
+    {
+        "role": "user",
+        "content": "你好，你能帮我找一家评分是4.5分以上的有租车服务的酒店吗？最好是价格是300-400元的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "租车"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京连杰酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区管庄路15号鑫兆佳园15号楼",
+                "subway": "常营地铁站F口",
+                "phone": "010-65430188",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务免费",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 339.0,
+                "rating": 4.6,
+                "hotel_id": 363
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "这样的酒店很好找啊，我推荐你去北京连杰酒店住。"
+    },
+    {
+        "role": "user",
+        "content": "他家可以提供租用汽车服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "租用汽车"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京世纪金源香山商旅酒店",
+                "type": "豪华型",
+                "address": "北京海淀区北正黄旗59号",
+                "subway": "香山地铁站",
+                "phone": "010-59898888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "室内游泳池",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 392.0,
+                "rating": 4.6,
+                "hotel_id": 133
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "他家还真没有，我刚才没看到这个要求，我重新找一下吧，完全符合你的要求的酒店是北京世纪金源香山商旅酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京世纪金源香山商旅酒店的价格是392元/晚。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定住在北京世纪金源香山商旅酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

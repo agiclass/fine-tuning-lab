@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "你好，你知道哪家酒店的最低价格是100-200元吗？介绍给我呗，我想去住。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天连锁酒店(北京首都机场二店)",
+                "type": "经济型",
+                "address": "北京顺义区天竺镇天柱东路4号润通大厦A座",
+                "subway": "国展地铁站C口",
+                "phone": "010-84456088",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 173.0,
+                "rating": 4.2,
+                "hotel_id": 108
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "好的，你可以到7天连锁酒店(北京首都机场二店)住。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住7天连锁酒店(北京首都机场二店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

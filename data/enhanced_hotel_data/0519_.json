@@ -1,0 +1,46 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我下周打算出去玩，你知道哪家酒店是评分在4分以上的经济型酒店吗？可以帮我介绍一下吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "海友酒店(北京前门店)",
+                "type": "经济型",
+                "address": "北京西城区大栅栏街25号",
+                "subway": "前门地铁站C口",
+                "phone": "010-63011696",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存"
+                ],
+                "price": 222.0,
+                "rating": 4.3,
+                "hotel_id": 245
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我建议你去海友酒店(北京前门店)，这里就很适合你。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就决定入住海友酒店(北京前门店)了！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

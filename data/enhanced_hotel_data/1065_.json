@@ -1,0 +1,68 @@
+[
+    {
+        "role": "user",
+        "content": "您好， 我想找一家经济型的、评分是4.5分以上酒店住下，求推荐。并把电话提供给我。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京奥体中心店)",
+                "type": "经济型",
+                "address": "北京朝阳区安定门外安苑里1号院",
+                "subway": "安贞门地铁站A口",
+                "phone": "010-64917666",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 351.0,
+                "rating": 4.5,
+                "hotel_id": 44
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐锦江之星(北京奥体中心店)，电话010-64917666。"
+    },
+    {
+        "role": "user",
+        "content": "好，酒店是否有室内游水池和酒吧呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型",
+            "facilities": [
+                "室内游水池",
+                "酒吧"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "报歉，这两项服务酒店暂时没有提供呢。"
+    }
+]

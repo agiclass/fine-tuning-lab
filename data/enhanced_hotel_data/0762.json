@@ -1,0 +1,45 @@
+[
+    {
+        "role": "user",
+        "content": "哦了，吃完饭我打算找个评分是4.5分以上，价格是400-500元的酒店住宿，有什么好的地方给我推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京金泰四合院长园宾馆",
+                "type": "舒适型",
+                "address": "北京西城区砖塔胡同25号",
+                "subway": "西四地铁站D口",
+                "phone": "010-66117396",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 435.0,
+                "rating": 4.7,
+                "hotel_id": 166
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那我给你推荐北京金泰四合院长园宾馆，这是一个非常不错的住所。"
+    }
+]

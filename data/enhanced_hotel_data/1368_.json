@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "好的，收到，我想吃完饭选择一个提供宽带上网，价格在200-300元的酒店休息，去哪里好呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "宽带上网"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "城市客栈(北京欢乐谷店)",
+                "type": "经济型",
+                "address": "北京朝阳区东四环小武基北路维吉奥商业街",
+                "subway": "欢乐谷景区地铁站B口",
+                "phone": "010-67376688",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 266.0,
+                "rating": 4.5,
+                "hotel_id": 242
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "城市客栈(北京欢乐谷店)口碑一直都很不错，你考虑一下不？"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就定城市客栈(北京欢乐谷店)吧！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

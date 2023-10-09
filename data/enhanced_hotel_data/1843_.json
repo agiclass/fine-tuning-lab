@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "好的，饭后时间也差不多了，我打算找一个评分是5分，最低价格是300-400元的酒店住宿，有什么好的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家快捷酒店(北京健翔桥店)",
+                "type": "经济型",
+                "address": "北京海淀区龙翔路甲1号",
+                "subway": "健德门地铁站A口",
+                "phone": "010-52960198",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "免费市内电话",
+                    "24小时热水",
+                    "残疾人设施",
+                    "商务中心",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 362.0,
+                "rating": 4.8,
+                "hotel_id": 492
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "不好意思呢，没有查到符合条件的酒店，给你推荐一个评分4.8分的如家快捷酒店(北京健翔桥店)，你看可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "好的，看起来这家如家快捷酒店(北京健翔桥店)不错，我愿意入住。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

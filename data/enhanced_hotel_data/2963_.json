@@ -1,0 +1,88 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我找个高档型的酒店，我希望所有客房都有wifi和24小时供应热水，我要和妈妈去住宿。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "24小时供应热水",
+                "所有客房都有wifi"
+            ],
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "和颐酒店北京财满街店",
+                "type": "高档型",
+                "address": "北京朝阳区朝阳路高井176号",
+                "subway": "高碑店地铁站A口",
+                "phone": "010-85758877",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 417.0,
+                "rating": 4.3,
+                "hotel_id": 996
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "好的，只为您找到一家叫和颐酒店北京财满街店。"
+    },
+    {
+        "role": "user",
+        "content": "那这家酒店的最低价格是400-500元吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "24小时热水",
+                "所有房间提供wifi"
+            ],
+            "type": "高档型",
+            "price_range_lower": 400,
+            "price_range_upper": 500
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的呢，价格是417元。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是417元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我就入住这家酒店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,65 @@
+[
+    {
+        "role": "user",
+        "content": "我想找个最低价格10-200元评分4.5分以上的酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "user",
+        "content": "我想找个最低价格100-200元评分4.5分以上的酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "金广快捷酒店(北京首都机场新国展店)",
+                "type": "经济型",
+                "address": "北京顺义区天柱东路10号",
+                "subway": "国展地铁站C口",
+                "phone": "010-88511588",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 135.0,
+                "rating": 4.6,
+                "hotel_id": 57
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去金广快捷酒店(北京首都机场新国展店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住金广快捷酒店(北京首都机场新国展店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

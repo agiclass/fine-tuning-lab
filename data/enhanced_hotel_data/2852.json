@@ -1,0 +1,78 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一家提供行李寄存而且有会议室的酒店，推荐一下。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "会议室",
+                "行李寄存"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京市政协会议中心",
+                "type": "高档型",
+                "address": "北京东城区建国门内大街13号",
+                "subway": "东单地铁站1号线B口",
+                "phone": "010-65276611",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "室内游泳池",
+                    "会议室",
+                    "健身房",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "桑拿",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 798.0,
+                "rating": 4.7,
+                "hotel_id": 25
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京市政协会议中心。"
+    },
+    {
+        "role": "user",
+        "content": "好，他家评分有5分吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "会议室",
+                "行李寄存"
+            ],
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "没有哦，他家评分4.7分，没有找到评分5分，而且还提供行李寄存和会议室的酒店呢。"
+    }
+]

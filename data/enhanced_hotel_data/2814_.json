@@ -1,0 +1,109 @@
+[
+    {
+        "role": "user",
+        "content": "我初到此地，想找个经济型的、评分是4分以上的、价格是200-300元的酒店入住，推荐个呗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "布丁酒店(北京团结湖店)",
+                "type": "经济型",
+                "address": "北京朝阳区团结湖北五条2号楼-1",
+                "subway": "团结湖地铁站C口",
+                "phone": "010-85989810",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 216.0,
+                "rating": 4.1,
+                "hotel_id": 98
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "布丁酒店(北京团结湖店)评分4.1分，价格216元。"
+    },
+    {
+        "role": "user",
+        "content": "有没有带温泉的高档酒店？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.0,
+            "facilities": [
+                "温泉"
+            ],
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京金龙建国温泉酒店",
+                "type": "高档型",
+                "address": "北京东城区建国门南大街5号",
+                "subway": "建国门地铁站C口",
+                "phone": "010-65286688",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "室内游泳池",
+                    "会议室",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "桑拿",
+                    "温泉",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 576.0,
+                "rating": 4.5,
+                "hotel_id": 74
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京金龙建国温泉酒店符合要求。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我想入住这个酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+        "role": "user",
+        "content": "好的，谢谢。请帮我找一家经济型、评分在4.5分以上的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "金广快捷酒店(北京首都机场新国展店)",
+                "type": "经济型",
+                "address": "北京顺义区天柱东路10号",
+                "subway": "国展地铁站C口",
+                "phone": "010-88511588",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 135.0,
+                "rating": 4.6,
+                "hotel_id": 57
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐金广快捷酒店(北京首都机场新国展店)，该酒店为经济型酒店，评分4.6分。"
+    },
+    {
+        "role": "user",
+        "content": "该酒店是否全天供应热水？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型",
+            "facilities": [
+                "全天供应热水"
+            ]
+        }
+    },
+    {
+        "role": "user",
+        "content": "酒店内所有区域都有无线网络吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型",
+            "facilities": [
+                "酒店内所有区域都有无线网络"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "该酒店只为公共区域和部分房间提供wifi。"
+    }
+]

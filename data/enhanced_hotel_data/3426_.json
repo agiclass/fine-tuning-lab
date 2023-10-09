@@ -1,0 +1,81 @@
+[
+    {
+        "role": "user",
+        "content": "给我推荐家评分在4.5分以上的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京京仪大酒店",
+                "type": "高档型",
+                "address": "北京海淀区大钟寺东路9号",
+                "subway": "知春路地铁站B口",
+                "phone": "010-62165588",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "酒吧",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 685.0,
+                "rating": 4.7,
+                "hotel_id": 3
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京京仪大酒店。"
+    },
+    {
+        "role": "user",
+        "content": "酒店是否提供24小时热水和无障碍设施？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "24小时提供热水",
+                "无障碍设施"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "酒店提供24小时热水和残疾人设施。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.7。"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我记下了，那你在给我们看看哪家酒店评分在4.5分以上，最低消费为400-500元的经济型酒店 ，好吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "莫泰268(北京王府井步行街店)",
+                "type": "经济型",
+                "address": "北京东城区金鱼胡同19号",
+                "subway": "灯市口地铁站A口",
+                "phone": "010-51671666",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 446.0,
+                "rating": 4.6,
+                "hotel_id": 972
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "好的，我帮你查了一下，莫泰268(北京王府井步行街店)是个不错的选择。"
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "那在这些酒店中哪个是经济型的，最低价格是200-300元，并且评分是4.5分以上。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "99旅馆连锁(北京物资学院店)",
+                "type": "经济型",
+                "address": "北京通州区物资学院路南口C1",
+                "subway": "物资学院路地铁站D口",
+                "phone": "010-57430607",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 124.0,
+                "rating": 4.0,
+                "hotel_id": 418
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去99旅馆连锁(北京物资学院店)，但是它家的价格是124元，评分是4分。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住99旅馆连锁(北京物资学院店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

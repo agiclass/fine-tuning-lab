@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一个能提供叫醒服务的舒适型酒店，帮我推荐下呗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "叫醒服务"
+            ],
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京洪城铭豪商务酒店",
+                "type": "舒适型",
+                "address": "北京西城区华远街15号置地星座D座",
+                "subway": "西单地铁站F1口",
+                "phone": "010-58379999",
+                "facilities": [
+                    "\n                                ",
+                    "\n                            ",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": -1.0,
+                "rating": 4.0,
+                "hotel_id": 231
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京洪城铭豪商务酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店评分怎么样？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.0。"
+    }
+]

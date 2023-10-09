@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个价格在100-200元之间的酒店，最好能提供西餐厅的，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "西餐厅"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "欣燕都连锁酒店(北京天坛东门店)",
+                "type": "经济型",
+                "address": "北京东城区体育馆西路25号",
+                "subway": "天坛东门地铁站B口",
+                "phone": "010-67172232",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 189.0,
+                "rating": 3.8,
+                "hotel_id": 777
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐欣燕都连锁酒店(北京天坛东门店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住这个酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

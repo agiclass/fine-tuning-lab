@@ -1,0 +1,47 @@
+[
+    {
+        "role": "user",
+        "content": "好饿，我想找一个评分在4.5分以上的经济型酒店，帮我推荐一下。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "天天如家自助服务式公寓(北京健翔桥店)",
+                "type": "经济型",
+                "address": "北京朝阳区祁家豁子8号健翔国际公寓",
+                "subway": "健德门地铁站A口",
+                "phone": "010-62311886",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存"
+                ],
+                "price": 309.0,
+                "rating": 4.6,
+                "hotel_id": 472
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐天天如家自助服务式公寓(北京健翔桥店)。"
+    },
+    {
+        "role": "user",
+        "content": "谢谢您的推荐，我决定入住天天如家自助服务式公寓(北京健翔桥店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

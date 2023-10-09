@@ -1,0 +1,62 @@
+[
+    {
+        "role": "user",
+        "content": "嗯嗯，还不错，帮我找个晚上的住处吧，要高档型的酒店，价格在300-400元之间的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京行者居酒店",
+                "type": "高档型",
+                "address": "北京丰台区苇子坑125号",
+                "subway": "宋家庄地铁站D口",
+                "phone": "010-87169611",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 386.0,
+                "rating": 4.5,
+                "hotel_id": 816
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京行者居酒店，他家挺不错的。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京行者居酒店的每晚房价是386元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就入住北京行者居酒店了，谢谢推荐！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

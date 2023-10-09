@@ -1,0 +1,84 @@
+[
+    {
+        "role": "user",
+        "content": "晚上我想要找地方住，我希望酒店的最低价格是200-300元的，最好能提供行李存放和室内游泳场，有什么推荐么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "室内游泳场",
+                "行李存放"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京华尔顿酒店(原鸿坤国际大酒店)",
+                "type": "高档型",
+                "address": "北京丰台区广安路1号",
+                "subway": "湾子地铁站A口",
+                "phone": "010-63319988",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "残疾人设施",
+                    "室内游泳池",
+                    "健身房",
+                    "无烟房",
+                    "商务中心",
+                    "桑拿",
+                    "棋牌室",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 330.0,
+                "rating": 4.2,
+                "hotel_id": 35
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "按您的要求我没有找到合适的，不过我找到了价格比较接近的：北京华尔顿酒店(原鸿坤国际大酒店)"
+    },
+    {
+        "role": "user",
+        "content": "那这家酒店的价格是多少啊？是什么类型的呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "室内游泳池",
+                "行李寄存"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "这家价格是330元，是高档型的酒店。"
+    },
+    {
+        "role": "user",
+        "content": "我想要入住这家酒店，可以帮我预订吗？"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

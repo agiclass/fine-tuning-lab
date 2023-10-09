@@ -1,0 +1,12 @@
+[
+    {
+        "role": "user",
+        "content": "啊，我忘了告诉你，我要的是豪华型酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "豪华型"
+        }
+    }
+]

@@ -1,0 +1,67 @@
+[
+    {
+        "role": "user",
+        "content": "多谢亲，我已经记下了。另外我还预计着吃完饭找个最低价格是600-700元的酒店住下，当然能提供棋牌室就更好了，希望您给我个建议。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "棋牌室"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京西单饭店",
+                "type": "舒适型",
+                "address": "北京西城区西单大木仓北一巷1号",
+                "subway": "灵境胡同地铁站D口",
+                "phone": "010-66023566",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "棋牌室",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 652.0,
+                "rating": 4.3,
+                "hotel_id": 30
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "没问题，您这次可以选择北京西单饭店，希望您入住愉快。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.3。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就选择北京西单饭店入住了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

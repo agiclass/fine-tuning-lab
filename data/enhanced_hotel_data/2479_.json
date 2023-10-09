@@ -1,0 +1,74 @@
+[
+    {
+        "role": "user",
+        "content": "你好，请给我推荐一家评分5分的经济型酒店住宿。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去如家商旅酒店(北京牡丹园地铁站店)。"
+    },
+    {
+        "role": "user",
+        "content": "请问该酒店是否有唤醒服务。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "经济型",
+            "facilities": [
+                "唤醒服务"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "有的，该酒店有叫醒服务。"
+    },
+    {
+        "role": "user",
+        "content": "嗨，我决定入住如家商旅酒店(北京牡丹园地铁站店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

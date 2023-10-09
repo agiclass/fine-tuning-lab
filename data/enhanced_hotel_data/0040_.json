@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "您好，我想找一家评分是5分、经济型的酒店，安排朋友，求推荐。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天优品酒店(北京国贸劲松地铁站店)",
+                "type": "经济型",
+                "address": "北京朝阳区劲松南路5号院",
+                "subway": "劲松地铁站D口",
+                "phone": "010-87722388",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "早餐服务"
+                ],
+                "price": 288.0,
+                "rating": 5.0,
+                "hotel_id": 272
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐7天优品酒店(北京国贸劲松地铁站店)。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是288元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住这家酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

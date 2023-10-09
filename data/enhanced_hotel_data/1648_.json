@@ -1,0 +1,80 @@
+[
+    {
+        "role": "user",
+        "content": "好的，记下了，还得麻烦你帮我找一个最低价格是200-300元，评分是5分的酒店，有什么好的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天优品酒店(北京国贸劲松地铁站店)",
+                "type": "经济型",
+                "address": "北京朝阳区劲松南路5号院",
+                "subway": "劲松地铁站D口",
+                "phone": "010-87722388",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "早餐服务"
+                ],
+                "price": 288.0,
+                "rating": 5.0,
+                "hotel_id": 272
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您查到一家完全符合条件的酒店，7天优品酒店(北京国贸劲松地铁站店)，您看满意吗？"
+    },
+    {
+        "role": "user",
+        "content": "哦，真是太遗憾了，那酒店设施是否提供无烟房呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "facilities": [
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "user",
+        "content": "没关系，那酒店设施是否提供洗衣务呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "facilities": [
+                "洗衣务"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "非常遗憾，酒店设施也不提供洗衣服务呢。"
+    }
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "role": "user",
+        "content": "您好，我想找一家提供wifi的经济型酒店，求推荐。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "酒店各处提供wifi"
+            ],
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰酒店北京市首都机场第二店",
+                "type": "经济型",
+                "address": "北京顺义区天竺镇天竺中街4号",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-52138888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 199.0,
+                "rating": 4.4,
+                "hotel_id": 12
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐格林豪泰酒店北京市首都机场第二店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的电话是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话是010-52138888。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住格林豪泰酒店北京市首都机场第二店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "role": "user",
+        "content": "收到，安排好住处我打算找一个票价是200元以上，评分是4.5分以上的景点游玩，你能给我点建议吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.2,
+            "rating_range_upper": 4.2
+        }
+    }
+]

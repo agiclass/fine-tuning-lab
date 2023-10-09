@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "玩累了，接下来你得帮我找一家可以提供无烟房和酒店覆盖wifi的5分酒店给我住，你帮我查找一下好吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无烟房",
+                "酒店覆盖wifi"
+            ],
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "好的，这个难不住我，我推荐你去如家商旅酒店(北京牡丹园地铁站店)看看。"
+    },
+    {
+        "role": "user",
+        "content": "谢谢你帮我找到合适的酒店，我决定入住如家商旅酒店(北京牡丹园地铁站店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

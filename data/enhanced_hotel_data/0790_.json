@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "好。回来我们想找一个评分是5分、提供接待外宾、提供国际电话机、价格是300-400元的酒店休息，求推荐。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "国际电话机",
+                "接待外宾"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京红驿栈酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区东直门外春秀路太平庄10号(主副楼在一幢建筑里)",
+                "subway": "东直门地铁站E口",
+                "phone": "010-64171066",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 344.0,
+                "rating": 4.7,
+                "hotel_id": 51
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京红驿栈酒店，评分是4.7分，其它都满足您的要求，您看可以吗？"
+    }
+]

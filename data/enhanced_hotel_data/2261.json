@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "最后您在帮我找个高档型酒店住宿，最好酒店的评分是5分，然后价格在100-200元之间"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京丰荣君华酒店",
+                "type": "高档型",
+                "address": "北京顺义区首都机场国门商务区李天路27号",
+                "subway": "T3航站楼地铁站",
+                "phone": "010-81463366",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "叫醒服务"
+                ],
+                "price": -1.0,
+                "rating": 5.0,
+                "hotel_id": 237
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "查询后稍微符合您要求的酒店是北京丰荣君华酒店，但目前它那还没有价格体现。"
+    }
+]

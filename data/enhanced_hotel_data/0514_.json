@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "走了一天好累啊，有没有价格在200-300元的舒适型酒店啊？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京可丽亚宾馆",
+                "type": "舒适型",
+                "address": "北京朝阳区麦子店街枣营北里小区19号院",
+                "subway": "枣营地铁站A口",
+                "phone": "010-51398833",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 268.0,
+                "rating": 4.2,
+                "hotel_id": 129
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京可丽亚宾馆性价比挺高的，而且还有很多基础服务，才268元。"
+    },
+    {
+        "role": "user",
+        "content": "这个北京可丽亚宾馆不错啊，我愿意入住。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

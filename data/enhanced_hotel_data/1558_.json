@@ -1,0 +1,63 @@
+[
+    {
+        "role": "user",
+        "content": "好的。玩完我该找地方入住了，能推荐给我最低价格在400-500元并且评分是5分的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "时光漫步怀旧主题酒店(北京国贸劲松店)",
+                "type": "舒适型",
+                "address": "北京朝阳区农光东里路11号楼",
+                "subway": "劲松地铁站B口",
+                "phone": "010-67390380",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 490.0,
+                "rating": 4.9,
+                "hotel_id": 420
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，完全符合您要求的还真没有。不过建议您去时光漫步怀旧主题酒店(北京国贸劲松店)，评分是4.9，稍微低了点，您看可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.9。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住时光漫步怀旧主题酒店(北京国贸劲松店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

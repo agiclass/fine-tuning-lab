@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "你好，请帮忙找一个评分在4.5分以上，价格400-500元的舒适型酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 4.5,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "麗枫酒店(北京奥运村鸟巢店)",
+                "type": "舒适型",
+                "address": "北京海淀区林萃桥北黑泉路12号兴美大厦北座",
+                "subway": "林萃桥地铁站A口",
+                "phone": "010-82816885",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "会议室",
+                    "无烟房",
+                    "棋牌室",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 492.0,
+                "rating": 4.6,
+                "hotel_id": 290
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去麗枫酒店(北京奥运村鸟巢店)。"
+    },
+    {
+        "role": "user",
+        "content": "我决定入住麗枫酒店(北京奥运村鸟巢店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

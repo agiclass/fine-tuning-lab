@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "收到，溜达完以后，我要找一个价格是300-400元，所有住客房间都提供无线网络的酒店住宿，知道哪里比较适合我吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "所有住客房间都提供无线网络"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天连锁酒店(北京学院路六道口地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区学清路41号裕京大厦4-8层",
+                "subway": "六道口地铁站B口",
+                "phone": "010-82837988",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务"
+                ],
+                "price": 366.0,
+                "rating": 4.1,
+                "hotel_id": 520
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我觉得7天连锁酒店(北京学院路六道口地铁站店)是非常适合你的地方，这里完全符合你的条件。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.1。"
+    }
+]

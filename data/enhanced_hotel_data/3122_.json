@@ -1,0 +1,83 @@
+[
+    {
+        "role": "user",
+        "content": "你好，可以帮我推荐一个最低价格100-200元的经济型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "海友酒店(北京木樨园店)",
+                "type": "经济型",
+                "address": "北京丰台区南木樨园83号",
+                "subway": "大红门地铁站C2口",
+                "phone": "010-67255818",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存"
+                ],
+                "price": 180.0,
+                "rating": 4.6,
+                "hotel_id": 1037
+            },
+            {
+                "name": "百时快捷酒店(北京欢乐谷店)",
+                "type": "经济型",
+                "address": "北京朝阳区金蝉西路甲1号",
+                "subway": "南楼梓庄地铁站B口",
+                "phone": "010-67373336",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 152.0,
+                "rating": 4.1,
+                "hotel_id": 1064
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "当然了，为您推荐海友酒店(北京木樨园店)，和百时快捷酒店(北京欢乐谷店)，你看满意吗？"
+    },
+    {
+        "role": "user",
+        "content": "收到，这家酒店的酒店设施提供无障碍设施吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "经济型",
+            "facilities": [
+                "无障碍设施"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "非常抱歉，酒店的酒店设施不提供残疾人设施。"
+    }
+]

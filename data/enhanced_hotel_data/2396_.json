@@ -1,0 +1,58 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一个评分是5分，最低价格是200-300元的舒适型酒店，你有什么好的建议吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京尚品假日酒店",
+                "type": "舒适型",
+                "address": "北京房山区良乡拱辰南大街91号",
+                "subway": "良乡南关地铁站A2口",
+                "phone": "010-60350828",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "SPA",
+                    "无烟房",
+                    "棋牌室",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 203.0,
+                "rating": 4.6,
+                "hotel_id": 909
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "对不起没有查到符合条件的酒店，给你推荐北京尚品假日酒店吧，评分4.6分，你看行不？"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的电话号码是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话号码是010-60350828。"
+    }
+]

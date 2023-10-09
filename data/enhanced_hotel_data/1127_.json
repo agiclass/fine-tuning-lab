@@ -1,0 +1,92 @@
+[
+    {
+        "role": "user",
+        "content": "你好，请给我推荐一家最低价格在200-300元评分4分以上的酒店住宿。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京首都机场国际酒店",
+                "type": "高档型",
+                "address": "北京朝阳区机场货运路2号综合楼",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-84162288",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 267.0,
+                "rating": 4.1,
+                "hotel_id": 36
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京首都机场国际酒店。"
+    },
+    {
+        "role": "user",
+        "content": "该酒店是否有暖气和宽带上网服务设施？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.0,
+            "facilities": [
+                "宽带上网",
+                "暖气"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，有暖气和宽带上网服务。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.1分。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就选择北京首都机场国际酒店入住了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

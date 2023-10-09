@@ -1,0 +1,48 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个经济型酒店，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "和家宾馆连锁(北京清华店)",
+                "type": "经济型",
+                "address": "北京海淀区成府路华清嘉园22号",
+                "subway": "五道口地铁站B口",
+                "phone": "010-82629195",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "接待外宾",
+                    "叫醒服务"
+                ],
+                "price": 221.0,
+                "rating": 4.3,
+                "hotel_id": 283
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐和家宾馆连锁(北京清华店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住这个酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

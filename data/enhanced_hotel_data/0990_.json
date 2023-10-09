@@ -1,0 +1,152 @@
+[
+    {
+        "role": "user",
+        "content": "好的，这俩家酒店里有没有高档型的，评分是5分的？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京贵都大酒店",
+                "type": "高档型",
+                "address": "北京西城区广安门内大街217号",
+                "subway": "菜市口地铁站D口",
+                "phone": "010-51979888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "商务中心",
+                    "接站服务",
+                    "接机服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 1354.0,
+                "rating": 4.7,
+                "hotel_id": 0
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你看北京贵都大酒店怎么样，他家是高档型的，不过评分差了点，是4.7分。"
+    },
+    {
+        "role": "user",
+        "content": "价格是200-300元吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "高档型",
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "不是哦，他家价格是1354元。"
+    },
+    {
+        "role": "user",
+        "content": "再帮我找一家酒店，最低价格是400-500元的，评分是5分的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "高档型",
+            "price_range_lower": 400,
+            "price_range_upper": 500
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "雅悦酒店(北京西直门店)",
+                "type": "经济型",
+                "address": "北京西城区西直门内大街126号",
+                "subway": "新街口地铁站D口",
+                "phone": "010-66180070",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 441.0,
+                "rating": 4.5,
+                "hotel_id": 144
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "没有找到满足条件的呢，您看雅悦酒店(北京西直门店)可以吗？价格是441元，评分是4.5分。"
+    },
+    {
+        "role": "user",
+        "content": "好吧，他家是经济型吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，他家是经济型的。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就定雅悦酒店(北京西直门店)了，价格便宜，而且评分也不错。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

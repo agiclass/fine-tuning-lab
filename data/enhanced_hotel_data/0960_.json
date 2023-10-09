@@ -1,0 +1,61 @@
+[
+    {
+        "role": "user",
+        "content": "这些酒店都有点贵啊，还是再帮我找一个吧，价格在200-300元，全天供应热水，可以宽带上网的就可以。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "全天供应热水",
+                "宽带上网"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "维也纳3好酒店(北京南站洋桥店)",
+                "type": "舒适型",
+                "address": "北京丰台区马家堡东路71号",
+                "subway": "角门东地铁站A口",
+                "phone": "010-67586489",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "收费停车位"
+                ],
+                "price": 281.0,
+                "rating": 3.5,
+                "hotel_id": 6
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那么推荐您去维也纳3好酒店(北京南站洋桥店)吧。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店有免费的wifi吗？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店公共区域和部分房间提供wifi。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住维也纳3好酒店(北京南站洋桥店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

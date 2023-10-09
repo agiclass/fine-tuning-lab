@@ -1,0 +1,61 @@
+[
+    {
+        "role": "user",
+        "content": "好的，晚上我想找一家评分在4分以上的酒店，提供无线上网服务和便利设施。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无线上网服务",
+                "便利设施"
+            ],
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京四季天成酒店",
+                "type": "舒适型",
+                "address": "北京西城区福长街45号(北京天桥剧场西侧)",
+                "subway": "珠市口地铁站D口",
+                "phone": "010-62266969",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "暖气",
+                    "残疾人设施",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 282.0,
+                "rating": 4.3,
+                "hotel_id": 86
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京四季天成酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是282元每晚。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我希望能住在这家酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

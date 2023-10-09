@@ -1,0 +1,39 @@
+[
+    {
+        "role": "user",
+        "content": "最后再帮我推荐一个评分在4分以上的酒店吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "99旅馆连锁(北京南锣鼓巷店)",
+                "type": "经济型",
+                "address": "北京东城区地安门内大街北月牙胡同11号",
+                "subway": "南锣鼓巷地铁站A口",
+                "phone": "010-64043847",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 151.0,
+                "rating": 4.2,
+                "hotel_id": 100
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐99旅馆连锁(北京南锣鼓巷店)。"
+    }
+]

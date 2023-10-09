@@ -1,0 +1,62 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想去酒店住宿。请帮我找一家评分是5分，有叫醒服务的经济型酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "叫醒服务"
+            ],
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "只为您找到一家是如家商旅酒店(北京牡丹园地铁站店)。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价钱是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的每晚房价是512元。"
+    },
+    {
+        "role": "user",
+        "content": "嗨，我看了一下，这家酒店还不错。我决定入住这里了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

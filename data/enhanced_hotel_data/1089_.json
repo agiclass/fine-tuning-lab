@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "需要，推荐一个最低价格是100-200元的经济型酒店吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "汉庭酒店(北京昌平政府街店)",
+                "type": "经济型",
+                "address": "北京昌平区政府街西路19号",
+                "subway": "昌平地铁站A口",
+                "phone": "010-57909966",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 191.0,
+                "rating": 4.6,
+                "hotel_id": 1127
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐汉庭酒店(北京昌平政府街店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住汉庭酒店(北京昌平政府街店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

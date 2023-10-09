@@ -1,0 +1,52 @@
+[
+    {
+        "role": "user",
+        "content": "最后帮我推荐一个能提供全天热水供应和行李寄存的经济型酒店，最好评分在4分以上。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "全天热水供应",
+                "行李寄存"
+            ],
+            "rating_range_lower": 4.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "布丁精选酒店(北京中关村店)",
+                "type": "经济型",
+                "address": "北京海淀区大柳树路23号(大慧寺路口)",
+                "subway": "魏公村地铁站",
+                "phone": "010-59705500",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 371.0,
+                "rating": 4.4,
+                "hotel_id": 207
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐布丁精选酒店(北京中关村店)。"
+    },
+    {
+        "role": "user",
+        "content": "嘿，我决定入住布丁精选酒店！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

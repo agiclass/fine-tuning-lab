@@ -1,0 +1,75 @@
+[
+    {
+        "role": "user",
+        "content": "您好，我想找一家评分是5分、提供24小时供应热水、最低价格是900-1000元的酒店，请推荐。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "24小时供应热水"
+            ],
+            "price_range_lower": 900,
+            "price_range_upper": 1000,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京歌华开元大酒店",
+                "type": "豪华型",
+                "address": "北京朝阳区北三环鼓楼外大街19号",
+                "subway": "安华桥地铁站D2口",
+                "phone": "010-62028888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "棋牌室",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 938.0,
+                "rating": 4.8,
+                "hotel_id": 121
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京歌华开元大酒店，评分4.8分，价格是938元，可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的电话是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话是010-62028888。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就订北京歌华开元大酒店吧！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

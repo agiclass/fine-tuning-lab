@@ -1,0 +1,41 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我还想预订个酒店，经济型的就可以，价格在200-300元！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "IU酒店(北京加州小镇店)",
+                "type": "经济型",
+                "address": "北京通州区梨园加州小镇100号",
+                "subway": "土桥地铁站C口",
+                "phone": "010-81591078",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 251.0,
+                "rating": 4.6,
+                "hotel_id": 1123
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐IU酒店(北京加州小镇店)"
+    }
+]

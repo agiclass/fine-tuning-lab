@@ -1,0 +1,88 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一家舒适型的，价格在100-200元之间的酒店，麻烦你推荐一下。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京一六九商务酒店",
+                "type": "舒适型",
+                "address": "北京顺义区天竺镇天柱东路8号",
+                "subway": "国展地铁站C口",
+                "phone": "010-64588836",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 154.0,
+                "rating": 4.5,
+                "hotel_id": 59
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你看北京一六九商务酒店怎么样，舒适型的，价格是154元。"
+    },
+    {
+        "role": "user",
+        "content": "这几家酒店里有没有价格在400-500元之间，经济型的酒店？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "海友酒店(北京立水桥店)",
+                "type": "经济型",
+                "address": "北京昌平区立水桥北路龙德广场东门东",
+                "subway": "立水桥地铁站B1口",
+                "phone": "010-56917688",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存"
+                ],
+                "price": 194.0,
+                "rating": 4.5,
+                "hotel_id": 587
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "海友酒店(北京立水桥店)就是经济型的哦，价格只有194元，推荐他家哦。"
+    }
+]

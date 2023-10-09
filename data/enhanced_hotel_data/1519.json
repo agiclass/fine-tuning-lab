@@ -1,0 +1,68 @@
+[
+    {
+        "role": "user",
+        "content": "好的，给我推荐一家最低价格在200-300元的的舒适型酒店住宿吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京畅悦时尚酒店(原乐活酒店)",
+                "type": "舒适型",
+                "address": "北京石景山区苹果园南路东口9号",
+                "subway": "苹果园地铁站C口",
+                "phone": "010-68882332",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 269.0,
+                "rating": 4.5,
+                "hotel_id": 84
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京畅悦时尚酒店(原乐活酒店)入住。"
+    },
+    {
+        "role": "user",
+        "content": "请问该酒店是否有中式餐厅和暖气服务设施？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "舒适型",
+            "facilities": [
+                "中式餐厅",
+                "暖气"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，有暖气和中式餐厅服务。"
+    }
+]

@@ -8,6 +8,70 @@ class Evaluator:
     def __init__(self,tokenizer):
         self.tokenizer = tokenizer
 
+    def _bleu4(self,pred,label):
+        pred = pred.strip()
+        label = label.strip()
+        
+        hypothesis = list(pred)
+        reference = list(label)
+
+        if len(hypothesis) == 0 or len(reference) == 0:
+            return 0
+
+        bleu_score = sentence_bleu([reference], hypothesis, smoothing_function=SmoothingFunction().method3)
+        return bleu_score
+
+    def _parse_json(self,string):
+        start = 0
+        end = len(string)
+        if not string.startswith("{"):
+            start = string.find("{")
+            if start == -1:
+                return None
+        if not string.endswith("}"):
+            end - string.rfind("}")
+            if end == -1 or end <= start:
+                return None
+        string = string[start:end]
+        try:
+            obj = json.loads(string)
+            return obj
+        except:
+            return None
+
+    def _slot_count(self,json_label):
+        count = 0
+        if json_label is not None:
+            for _, v in json_label.items():
+                if isinstance(v,list):
+                    count += len(v)
+                else:
+                    count += 1
+        return count
+
+    def _slot_accuracy(self,pred,label):
+        pred = pred.strip()
+        label = label.strip()
+        pred = self._parse_json(pred)
+        label = self._parse_json(label)
+        correct = 0
+        
+        if pred is not None:
+            for k, v in pred.items():
+                if v is None:
+                    continue
+                if label and k in label:
+                    if not isinstance(v,list):
+                        correct += int(v==label[k])
+                    else:
+                        for t in v:
+                            correct += int(t in label[k])
+        
+        pred_slots = self._slot_count(pred)
+        true_slots = self._slot_count(label)
+
+        return correct, pred_slots, true_slots
+
     def compute_metrics(self, eval_preds):
         preds, labels = eval_preds
         if isinstance(preds, tuple):
@@ -18,40 +82,47 @@ class Evaluator:
         decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
 
         score_dict = {
-            "rouge-1": [],
-            "rouge-2": [],
-            "rouge-l": [],
-            "bleu-4": [],
-            "whole_sentence_acc": []
+            "slot_P": None,
+            "slot_R": None,
+            "slot_F1": None,
+            "bleu-4": None,
         }
+
+        bleu_scores = []
+        true_slot_count = 0
+        pred_slot_count = 0
+        correct_slot_count = 0
+        
         for pred, label in zip(decoded_preds, decoded_labels):
             pred = pred.strip()
             label = label.strip()
-            if pred == label :
-                score_dict["whole_sentence_acc"].append(1)
+
+            # 评估两个回复句子的BLEU SCORE    
+            if pred.startswith("assistant:") and label.startswith("assistant:"):
+                start = len("assistant:")
+                bleu_score = self._bleu4(pred[start:],label[start:])
+                bleu_scores.append(round(bleu_score * 100, 4))
+            # 评估NLU的槽准确率
+            elif pred.startswith("search:") and label.startswith("search:"):
+                start = len("search:")
+                correct, pred_slots, true_slots = self._slot_accuracy(pred[start:],label[start:])
+                true_slot_count += true_slots
+                pred_slot_count += pred_slots
+                correct_slot_count += correct
+            # 本次BLEU SCORE为0
+            elif label.startswith("assistant:"):
+                bleu_scores.append(0)
+            # 尝试计算NLU的槽识别率
             else:
-                score_dict["whole_sentence_acc"].append(0)
-
-            hypothesis = list(pred)
-            reference = list(label)
-
-            if len(hypothesis) == 0 or len(reference) == 0:
-                for k, v in score_dict.items():
-                    if k.startswith('rouge') or k.startswith('bleu'):
-                        score_dict[k].append(0.0)
-                continue
-
-            rouge = Rouge()
-            scores = rouge.get_scores(' '.join(hypothesis) , ' '.join(reference))
-            result = scores[0]
-            
-            for k, v in result.items():
-                score_dict[k].append(round(v["f"] * 100, 4))
-            bleu_score = sentence_bleu([list(label)], list(pred), smoothing_function=SmoothingFunction().method3)
-            score_dict["bleu-4"].append(round(bleu_score * 100, 4))
-
-        for k, v in score_dict.items():
-            score_dict[k] = float(np.mean(v))
+                correct, pred_slots, true_slots = self._slot_accuracy(pred[start:],label[start:])
+                true_slot_count += true_slots
+                pred_slot_count += pred_slots
+                correct_slot_count += correct
+        
+        score_dict["slot_P"] = float(correct_slot_count/pred_slot_count)
+        score_dict["slot_R"] = float(correct_slot_count/true_slot_count)
+        score_dict["slot_F1"] = 2*score_dict["slot_P"]*score_dict["slot_R"]/(score_dict["slot_P"]+score_dict["slot_R"])
+        score_dict["bleu-4"] = float(np.mean(bleu_scores))
         return score_dict
 
 def replace_all(input_str,src,tgt):

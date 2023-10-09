@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个价位在200-300元之间的酒店，最好在酒店所有区域都可享受wifi服务。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "酒店所有区域都可享受wifi服务"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京诚辉商务酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区建国路72号",
+                "subway": "四惠地铁站B口",
+                "phone": "010-65561188",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "棋牌室",
+                    "早餐服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 267.0,
+                "rating": 4.3,
+                "hotel_id": 301
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京诚辉商务酒店。"
+    }
+]

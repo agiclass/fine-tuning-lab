@@ -1,0 +1,46 @@
+[
+    {
+        "role": "user",
+        "content": "您好，我想要找一家最低价格是600-700元的高档型酒店入住，有什么建议么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京南锣鼓巷CitiGO欢阁酒店",
+                "type": "高档型",
+                "address": "北京东城区地安门东大街89号南锣鼓巷地铁E口向西50米",
+                "subway": "南锣鼓巷地铁站A口",
+                "phone": "010-84083801",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "无烟房",
+                    "酒吧",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 664.0,
+                "rating": 4.7,
+                "hotel_id": 192
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京南锣鼓巷CitiGO欢阁酒店符合您的要求，您可以考虑一下。"
+    }
+]

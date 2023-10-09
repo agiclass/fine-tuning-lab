@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "希望帮我推荐个酒店，价格在200-300元之间，能提供国际电话机的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "国际电话机"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京可丽亚宾馆",
+                "type": "舒适型",
+                "address": "北京朝阳区麦子店街枣营北里小区19号院",
+                "subway": "枣营地铁站A口",
+                "phone": "010-51398833",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 268.0,
+                "rating": 4.2,
+                "hotel_id": 129
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京可丽亚宾馆。"
+    },
+    {
+        "role": "user",
+        "content": "嘿，太棒了！谢谢你的推荐，我决定入住北京可丽亚宾馆。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

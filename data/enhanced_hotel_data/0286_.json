@@ -1,0 +1,69 @@
+[
+    {
+        "role": "user",
+        "content": "嗯，接下来您在给我找间酒店住宿，要舒适型酒店，然后评分要在4.5分以上。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "维也纳国际酒店(北京首体店)",
+                "type": "舒适型",
+                "address": "北京海淀区中关村南大街52号",
+                "subway": "国家图书馆地铁站B口",
+                "phone": "010-62197778",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 638.0,
+                "rating": 4.7,
+                "hotel_id": 37
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那我推荐您维也纳国际酒店(北京首体店)，它很符合您的住宿标准。"
+    },
+    {
+        "role": "user",
+        "content": "在酒店设施中有行李寄存与国际电话服务吗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "舒适型",
+            "facilities": [
+                "国际电话服务",
+                "行李寄存"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "地址是北京海淀区中关村南大街52号。"
+    }
+]

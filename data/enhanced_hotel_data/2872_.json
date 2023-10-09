@@ -1,0 +1,40 @@
+[
+    {
+        "role": "user",
+        "content": "你好，可以为我找一个经济型酒店，全天供应热水吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "全天供应热水"
+            ],
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "城市便捷酒店北京前门店",
+                "type": "经济型",
+                "address": "北京西城区前门煤市街小椿树胡同14、16号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63018580",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "24小时热水",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 263.0,
+                "rating": 4.3,
+                "hotel_id": 106
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "城市便捷酒店北京前门店是个不错的选择。"
+    }
+]

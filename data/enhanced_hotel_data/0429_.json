@@ -1,0 +1,63 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我们好久没见了，想聊个通宵，推荐一家价格是100-200元的、接待来访的外国客人的酒店吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "接待来访的外国客人"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京西华京兆饭店(天安门店)",
+                "type": "舒适型",
+                "address": "北京西城区煤市街81号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-52171900",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 180.0,
+                "rating": 4.2,
+                "hotel_id": 274
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京西华京兆饭店(天安门店)。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的地址是什么？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京西华京兆饭店(天安门店)的地址是北京西城区煤市街81号。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就决定入住北京西华京兆饭店(天安门店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,91 @@
+[
+    {
+        "role": "user",
+        "content": "好的，这些酒店中有价格在500-600元之间的经济型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，这些酒店都没有满足您要求，不过为您推荐如家商旅酒店(北京牡丹园地铁站店)，价位是512元。"
+    },
+    {
+        "role": "user",
+        "content": "最好再帮我推荐一个能提供无障碍设施的经济型酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "type": "经济型",
+            "facilities": [
+                "无障碍设施"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "欣燕都连锁酒店(北京前门天街店)",
+                "type": "经济型",
+                "address": "北京西城区珠市口西大街83号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63025603",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "无烟房",
+                    "早餐服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 263.0,
+                "rating": 4.3,
+                "hotel_id": 451
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐欣燕都连锁酒店(北京前门天街店)。"
+    }
+]

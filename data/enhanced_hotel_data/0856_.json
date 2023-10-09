@@ -1,0 +1,60 @@
+[
+    {
+        "role": "user",
+        "content": "游玩结束后我想找一家最低价格600-700元的，有租车和中餐馆服务的酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "中餐馆",
+                "租车"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京西单饭店",
+                "type": "舒适型",
+                "address": "北京西城区西单大木仓北一巷1号",
+                "subway": "灵境胡同地铁站D口",
+                "phone": "010-66023566",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "棋牌室",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 652.0,
+                "rating": 4.3,
+                "hotel_id": 30
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京西单饭店住宿。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.3。"
+    }
+]

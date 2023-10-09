@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "吃完饭后，我想找一个价格在200-300元之间的酒店入住，要能提供开会的房间和行李寄存，评分是5分的，请帮我推荐一下。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "开会的房间",
+                "行李寄存"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "莫泰168(北京十里河居然之家店)",
+                "type": "经济型",
+                "address": "北京朝阳区周家庄134号",
+                "subway": "十里河地铁站B口",
+                "phone": "010-67488989",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务免费",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 210.0,
+                "rating": 4.8,
+                "hotel_id": 653
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，没有完全符合您要求的酒店，不过为您推荐莫泰168(北京十里河居然之家店)，评分是4.8分。"
+    },
+    {
+        "role": "user",
+        "content": "听说莫泰168(北京十里河居然之家店)这个酒店不错，评分高，我想入住这个酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找个评分5分的经济型酒店，因为有朋友要来拜访，朋友身份很高贵，所以想找个1000以上价位的，能给我推荐一下吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 1000.0,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "您好，给您查了一下，经济型酒店里没有1000元以上的，所以给你推荐如家商旅酒店(北京牡丹园地铁站店)吧，价格是512元，其他条件都还在要求的范围内。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店电话是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话是010-82038181。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定就入住这家酒店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

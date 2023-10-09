@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个价格在500-600元之间的酒店，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京君颐润华酒店",
+                "type": "豪华型",
+                "address": "北京丰台区丰管路20号院",
+                "subway": "泥洼地铁站A2口",
+                "phone": "010-53225566",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "棋牌室",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 538.0,
+                "rating": 4.5,
+                "hotel_id": 499
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京君颐润华酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京君颐润华酒店的价格是538元。"
+    }
+]

@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "晚上我和妈妈要找一个酒店休息，帮我推荐一个价位在100-200元之间的酒店吧，评分要4.5分以上的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰(北京欢乐谷店)",
+                "type": "经济型",
+                "address": "北京朝阳区垡头西路18号A座商务楼",
+                "subway": "欢乐谷景区地铁站C口",
+                "phone": "010-87572788",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "收费停车位"
+                ],
+                "price": 193.0,
+                "rating": 4.5,
+                "hotel_id": 711
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐格林豪泰(北京欢乐谷店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我们就入住格林豪泰(北京欢乐谷店)吧！非常感谢你的推荐。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

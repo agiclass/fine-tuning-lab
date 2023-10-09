@@ -1,0 +1,46 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一家价格在100-200元有无烟房服务设施的酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无烟房"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰酒店北京市首都机场第二店",
+                "type": "经济型",
+                "address": "北京顺义区天竺镇天竺中街4号",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-52138888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 199.0,
+                "rating": 4.4,
+                "hotel_id": 12
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去格林豪泰酒店北京市首都机场第二店。"
+    }
+]

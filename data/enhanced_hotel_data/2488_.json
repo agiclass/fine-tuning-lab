@@ -1,0 +1,66 @@
+[
+    {
+        "role": "user",
+        "content": "真不错啊，这么多住的地方，饭后我想找一个价格是400-500元，评分是4.5分以上，提供叫醒服务的酒店，你有什么好的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "叫醒服务"
+            ],
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "京铁大酒店(北京西站南广场店)",
+                "type": "舒适型",
+                "address": "北京丰台区广莲路13号",
+                "subway": "北京西站地铁站B口",
+                "phone": "010-63955511",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 459.0,
+                "rating": 4.6,
+                "hotel_id": 542
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "就推荐你去京铁大酒店(北京西站南广场店)好了，这个酒店很不错的。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.6分。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就决定入住京铁大酒店(北京西站南广场店)了。谢谢你的推荐！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

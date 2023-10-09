@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "真不错，溜达完我要找地方住宿，知道哪里有价格300-400元，评分是4.5分以上的经济型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "莫泰168(北京立水桥地铁站店)",
+                "type": "经济型",
+                "address": "北京朝阳区立水桥北8号7幢(华泰汽车旁)",
+                "subway": "立水桥地铁站B1口",
+                "phone": "010-84846677",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 390.0,
+                "rating": 4.6,
+                "hotel_id": 532
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "莫泰168(北京立水桥地铁站店)是一个非常不错的选择呢。"
+    },
+    {
+        "role": "user",
+        "content": "这个莫泰168酒店听起来不错，我想要入住。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

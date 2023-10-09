@@ -1,0 +1,187 @@
+[
+    {
+        "role": "user",
+        "content": "你好，能帮我推荐一个评分4.5分以上，最低价格600-700元的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "宽带上网"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京京仪大酒店",
+                "type": "高档型",
+                "address": "北京海淀区大钟寺东路9号",
+                "subway": "知春路地铁站B口",
+                "phone": "010-62165588",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "酒吧",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 685.0,
+                "rating": 4.7,
+                "hotel_id": 3
+            },
+            {
+                "name": "北京友谊宾馆",
+                "type": "高档型",
+                "address": "北京海淀区中关村南大街1号敬宾楼、怡宾楼、迎宾楼",
+                "subway": "人民大学地铁站D口",
+                "phone": "010-68498888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "桑拿",
+                    "棋牌室",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 633.0,
+                "rating": 4.5,
+                "hotel_id": 171
+            },
+            {
+                "name": "北京贝尔特酒店",
+                "type": "高档型",
+                "address": "北京东城区崇文门外大街3-18号",
+                "subway": "崇文门地铁站D2口",
+                "phone": "010-67081188",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "酒吧",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 680.0,
+                "rating": 4.5,
+                "hotel_id": 60
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京京仪大酒店，北京贝尔特酒店和北京友谊宾馆，都是老牌酒店。"
+    },
+    {
+        "role": "user",
+        "content": "太牛了，酒店设施提供宽带上网吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "宽带上网"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，酒店不提供宽带上网。"
+    },
+    {
+        "role": "user",
+        "content": "哦这样啊，那酒店设施提供机场接送服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "机场接送服务"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，酒店提供接机服务。"
+    },
+    {
+        "role": "user",
+        "content": "酒店设施提供行李寄存服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "行李寄存"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "当然，酒店设施提供行李寄存服务的。"
+    }
+]

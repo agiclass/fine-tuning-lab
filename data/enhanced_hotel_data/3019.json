@@ -1,0 +1,101 @@
+[
+    {
+        "role": "user",
+        "content": "你好，能帮我推荐一个最低价是200-300元经济型的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "城市便捷酒店北京前门店",
+                "type": "经济型",
+                "address": "北京西城区前门煤市街小椿树胡同14、16号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63018580",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "24小时热水",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 263.0,
+                "rating": 4.3,
+                "hotel_id": 106
+            },
+            {
+                "name": "布丁酒店(北京团结湖店)",
+                "type": "经济型",
+                "address": "北京朝阳区团结湖北五条2号楼-1",
+                "subway": "团结湖地铁站C口",
+                "phone": "010-85989810",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 216.0,
+                "rating": 4.1,
+                "hotel_id": 98
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你可以去布丁酒店(北京团结湖店)，城市便捷酒店北京前门店看看，这都满足您的要求的。"
+    },
+    {
+        "role": "user",
+        "content": "这些酒店都有没有宽带啊？我要找一个有宽带的酒店！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型",
+            "facilities": [
+                "宽带上网"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "布丁酒店(北京团结湖店)",
+                "type": "经济型",
+                "address": "北京朝阳区团结湖北五条2号楼-1",
+                "subway": "团结湖地铁站C口",
+                "phone": "010-85989810",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 216.0,
+                "rating": 4.1,
+                "hotel_id": 98
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "布丁酒店(北京团结湖店)这个酒店有宽带的。"
+    }
+]

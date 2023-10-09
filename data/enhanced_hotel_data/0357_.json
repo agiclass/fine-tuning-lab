@@ -1,0 +1,81 @@
+[
+    {
+        "role": "user",
+        "content": "您好，请帮我推荐一家最低价格是500-600的酒店，并且告诉我这家酒店是什么类型的酒店，谢谢！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京中康国际酒店",
+                "type": "高档型",
+                "address": "北京朝阳区石佛营东里130号",
+                "subway": "十里堡地铁站B口",
+                "phone": "010-85859999",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 590.0,
+                "rating": 4.1,
+                "hotel_id": 28
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为推荐北京中康国际酒店，是一家高档型酒店。"
+    },
+    {
+        "role": "user",
+        "content": "好，这家酒店是否可以接待外宾？有出租车服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "facilities": [
+                "接待外宾",
+                "租车"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "为您查询到这家酒店可以接待外宾，出租车服务没有查询到呢。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的电话号码是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话号码是010-85859999。"
+    }
+]

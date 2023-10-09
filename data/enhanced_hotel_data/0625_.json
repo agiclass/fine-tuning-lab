@@ -1,0 +1,61 @@
+[
+    {
+        "role": "user",
+        "content": "收到，接下来我要找一个评分达到5分的最低价格在600-700元的酒店住，你有什么好的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "桔子水晶酒店(北京总部基地店)",
+                "type": "高档型",
+                "address": "北京丰台区南四环西路188号总部基地17区16号楼",
+                "subway": "丰台科技园地铁站D口",
+                "phone": "010-52229999",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "接站服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 684.0,
+                "rating": 4.9,
+                "hotel_id": 933
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "按你的要求我没有找到合适的酒店，不过我找到了一家桔子水晶酒店(北京总部基地店)，他家更接近你的要求，只是评分是4.9分，没达到你的标准，你看行吗？"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是每晚684元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就入住桔子水晶酒店吧！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

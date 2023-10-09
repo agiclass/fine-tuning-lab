@@ -1,0 +1,108 @@
+[
+    {
+        "role": "user",
+        "content": "谢谢，再帮我找个酒店吧，价格在300-400元，评分4.5分以上的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京奥体中心店)",
+                "type": "经济型",
+                "address": "北京朝阳区安定门外安苑里1号院",
+                "subway": "安贞门地铁站A口",
+                "phone": "010-64917666",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 351.0,
+                "rating": 4.5,
+                "hotel_id": 44
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐锦江之星(北京奥体中心店)哦，价格351元，评分4.5分。"
+    },
+    {
+        "role": "user",
+        "content": "酒店提供无烟房吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京亚奥国际酒店",
+                "type": "高档型",
+                "address": "北京朝阳区北沙滩大屯路甲1号",
+                "subway": "北沙滩地铁站B2口",
+                "phone": "010-64874433",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "棋牌室",
+                    "早餐服务免费",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 397.0,
+                "rating": 4.5,
+                "hotel_id": 15
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "不提供哦，重新给您推荐一个吧，北京亚奥国际酒店，提供无烟房，价格397元，评分4.5，您看怎么样？"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住北京亚奥国际酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

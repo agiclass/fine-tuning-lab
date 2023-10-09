@@ -1,0 +1,46 @@
+[
+    {
+        "role": "user",
+        "content": "好吧。另外，你给我推荐一个提供暖气和无烟房，最低价格是200-300元的酒店，行不？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无烟房",
+                "暖气"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京仁和轩酒店",
+                "type": "舒适型",
+                "address": "北京海淀区小西天志强北园1号院",
+                "subway": "积水潭地铁站A口",
+                "phone": "010-62217878",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "酒吧",
+                    "行李寄存"
+                ],
+                "price": 344.0,
+                "rating": 4.4,
+                "hotel_id": 164
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "去北京仁和轩酒店吧，性价比还行。"
+    }
+]

@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "玩累了，晚上我想找一个价格在200-300元之间的酒店休息，最好能提供全天供应热水。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "全天供应热水"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京观唐假日酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区北苑路甲176号",
+                "subway": "惠新西街北口地铁站A口",
+                "phone": "010-64921818",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 282.0,
+                "rating": 4.2,
+                "hotel_id": 221
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京观唐假日酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.2。"
+    }
+]

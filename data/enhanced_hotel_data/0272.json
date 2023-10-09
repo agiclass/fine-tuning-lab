@@ -1,0 +1,20 @@
+[
+    {
+        "role": "user",
+        "content": "这家酒店是什么类型啊？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是豪华型。"
+    }
+]

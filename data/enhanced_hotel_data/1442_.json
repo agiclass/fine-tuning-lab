@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "玩完后我想找一家价格在200-300元之间的酒店住宿，最好评分在4分以上，有推荐的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京四季天成酒店",
+                "type": "舒适型",
+                "address": "北京西城区福长街45号(北京天桥剧场西侧)",
+                "subway": "珠市口地铁站D口",
+                "phone": "010-62266969",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "暖气",
+                    "残疾人设施",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 282.0,
+                "rating": 4.3,
+                "hotel_id": 86
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐北京四季天成酒店。"
+    },
+    {
+        "role": "user",
+        "content": "太棒了！北京四季天成酒店看起来很不错，我很愿意入住这家酒店！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

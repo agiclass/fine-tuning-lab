@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "你好，你能帮我安排一个评分是4.5分以上，价格是300-400元，提供行李寄存的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "行李寄存"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京连杰酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区管庄路15号鑫兆佳园15号楼",
+                "subway": "常营地铁站F口",
+                "phone": "010-65430188",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务免费",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 339.0,
+                "rating": 4.6,
+                "hotel_id": 363
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "当然了，北京连杰酒店和如家快捷酒店(北京燕莎？"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是339元每晚。"
+    }
+]

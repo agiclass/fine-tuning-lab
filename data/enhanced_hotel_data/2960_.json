@@ -1,0 +1,98 @@
+[
+    {
+        "role": "user",
+        "content": "记着了。接着我打算找个评分是5分的酒店，该去哪呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京丰荣君华酒店",
+                "type": "高档型",
+                "address": "北京顺义区首都机场国门商务区李天路27号",
+                "subway": "T3航站楼地铁站",
+                "phone": "010-81463366",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "叫醒服务"
+                ],
+                "price": -1.0,
+                "rating": 5.0,
+                "hotel_id": 237
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我认为北京丰荣君华酒店不错。"
+    },
+    {
+        "role": "user",
+        "content": "那请问在你提到的这些酒店里，有最低价格是200-300元的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京丽豪酒店(首都机场国展店)",
+                "type": "舒适型",
+                "address": "北京朝阳区货运路海关2号楼",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-64508080",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "酒吧",
+                    "棋牌室",
+                    "收费停车位"
+                ],
+                "price": 270.0,
+                "rating": 3.9,
+                "hotel_id": 13
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "不好意思，还真没有。不过我推荐您去北京丽豪酒店(首都机场国展店)，您看怎么样？"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住北京丽豪酒店(首都机场国展店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

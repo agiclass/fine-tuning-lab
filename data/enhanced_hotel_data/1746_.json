@@ -1,0 +1,52 @@
+[
+    {
+        "role": "user",
+        "content": "好的，吃完饭我想找一个价位在400-500元之间的并且评分在4.5分以上的酒店入住，有推荐的没？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "和颐酒店北京亚运村鸟巢店",
+                "type": "高档型",
+                "address": "北京朝阳区亚运村小营西路11号惠新东桥北",
+                "subway": "惠新西街北口地铁站B口",
+                "phone": "010-64959955",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 463.0,
+                "rating": 4.6,
+                "hotel_id": 430
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐和颐酒店北京亚运村鸟巢店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就选择和颐酒店北京亚运村鸟巢店吧！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

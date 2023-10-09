@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一家评分是4分以上的酒店，价格不要太贵，200-300元的就行！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京首都国际机场店)",
+                "type": "经济型",
+                "address": "北京顺义区天竺镇府前二街1号14楼",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-84166363",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 248.0,
+                "rating": 4.4,
+                "hotel_id": 82
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "锦江之星(北京首都国际机场店)可以，价格是248元！"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "锦江之星(北京首都国际机场店)的价格是248元。"
+    }
+]

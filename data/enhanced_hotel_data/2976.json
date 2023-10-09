@@ -1,0 +1,72 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想要找一家最低价格是900-1000元的舒适型酒店，有什么推荐的么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 900,
+            "price_range_upper": 1000,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京云天酒店",
+                "type": "舒适型",
+                "address": "北京西城区白广路二条甲3号",
+                "subway": "广安门内地铁站C口",
+                "phone": "010-63553377",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "棋牌室",
+                    "早餐服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 908.0,
+                "rating": 4.7,
+                "hotel_id": 459
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐给您的是北京云天酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店提供行李寄存么？我不想去玩还要头疼行李的问题。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 900,
+            "price_range_upper": 1000,
+            "type": "舒适型",
+            "facilities": [
+                "行李寄存"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店在北京西城区白广路二条甲3号。"
+    }
+]

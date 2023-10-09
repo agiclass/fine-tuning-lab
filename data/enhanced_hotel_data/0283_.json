@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "你好，请给我推荐一家最低价格在500-600元的酒店住宿。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "瑞尔威连锁饭店(北京西客站店)",
+                "type": "舒适型",
+                "address": "北京丰台区莲花池东路116-2号",
+                "subway": "北京西站地铁站A口",
+                "phone": "010-63959988",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "会议室",
+                    "无烟房",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 558.0,
+                "rating": 4.3,
+                "hotel_id": 1
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去瑞尔威连锁饭店(北京西客站店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住瑞尔威连锁饭店(北京西客站店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

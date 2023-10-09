@@ -1,0 +1,37 @@
+[
+    {
+        "role": "user",
+        "content": "好的，吃完饭我想找一个评分在4分以上的经济型酒店入住，有推荐的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "易佰连锁旅店(北京站店)",
+                "type": "经济型",
+                "address": "北京东城区火车站售票厅二楼",
+                "subway": "北京站地铁站",
+                "phone": "010-65131668",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "24小时热水",
+                    "无烟房"
+                ],
+                "price": 275.0,
+                "rating": 4.1,
+                "hotel_id": 317
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐易佰连锁旅店(北京站店)。"
+    }
+]

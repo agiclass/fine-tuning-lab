@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "帮我找个评分是5分的酒店，价格是300-400元的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京锡华商务酒店",
+                "type": "高档型",
+                "address": "北京海淀区颐和园路12号",
+                "subway": "北京大学东门地铁站D口",
+                "phone": "010-62646688",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "残疾人设施",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 358.0,
+                "rating": 4.1,
+                "hotel_id": 228
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京锡华商务酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京锡华商务酒店的价格是358元。"
+    }
+]

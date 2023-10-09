@@ -1,0 +1,75 @@
+[
+    {
+        "role": "user",
+        "content": "然后我还要找个酒店住宿，我想要的是经济型酒店，然后评分也要在4.5分以上。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京奥体中心店)",
+                "type": "经济型",
+                "address": "北京朝阳区安定门外安苑里1号院",
+                "subway": "安贞门地铁站A口",
+                "phone": "010-64917666",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 351.0,
+                "rating": 4.5,
+                "hotel_id": 44
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那我推荐您锦江之星(北京奥体中心店)，它正好满足您住宿的标准。"
+    },
+    {
+        "role": "user",
+        "content": "对了，酒店提供会议室吗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型",
+            "facilities": [
+                "会议室"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "有，酒店设施里有会议室。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店有没有免费的Wi-Fi呀？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店是有提供免费Wi-Fi的。"
+    }
+]

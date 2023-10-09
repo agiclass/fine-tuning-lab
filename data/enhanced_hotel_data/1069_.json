@@ -1,0 +1,46 @@
+[
+    {
+        "role": "user",
+        "content": "行，这下我就能找到这家餐馆了，接下来我要回酒店休息了，你帮我找一家评分是4分以上的经济型酒店住好吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "城市便捷酒店北京前门店",
+                "type": "经济型",
+                "address": "北京西城区前门煤市街小椿树胡同14、16号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63018580",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "24小时热水",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 263.0,
+                "rating": 4.3,
+                "hotel_id": 106
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我看城市便捷酒店北京前门店就很合适你住。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店有没有免费的Wi-Fi？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店的所有房间提供Wi-Fi。"
+    }
+]

@@ -1,0 +1,36 @@
+[
+    {
+        "role": "user",
+        "content": "好的，请问这家酒店是豪华型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "豪华型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "不是的，这家酒店是经济型的。"
+    },
+    {
+        "role": "user",
+        "content": "请问这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店的价格是1000元每晚。"
+    },
+    {
+        "role": "user",
+        "content": "嗨，我想入住这家酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

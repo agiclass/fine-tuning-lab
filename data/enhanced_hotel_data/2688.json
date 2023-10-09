@@ -1,0 +1,44 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我还想找一个300到400元之间的经济型酒店，有没有推荐？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "飘HOME连锁酒店(北京王府井店)",
+                "type": "经济型",
+                "address": "北京东城区东安门大街43号",
+                "subway": "灯市口地铁站A口",
+                "phone": "010-57305888",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 303.0,
+                "rating": 4.3,
+                "hotel_id": 152
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐飘HOME连锁酒店(北京王府井店)，价格303，经济型。"
+    }
+]

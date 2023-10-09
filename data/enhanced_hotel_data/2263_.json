@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "好的，这个酒店我先留着备用，你在帮我找一家评分是4.5分以上，价格是500-600元的酒店住呗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京国图宾馆",
+                "type": "舒适型",
+                "address": "北京海淀区中关村南大街33号",
+                "subway": "国家图书馆地铁站A口",
+                "phone": "010-88545012",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "接站服务",
+                    "接机服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 598.0,
+                "rating": 4.6,
+                "hotel_id": 148
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "这样的酒店就很好找了，你可以去北京国图宾馆看看。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我们就去北京国图宾馆住了吧。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

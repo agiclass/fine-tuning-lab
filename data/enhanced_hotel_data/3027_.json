@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "吃完饭我想找一家最低价格在200-300元的酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "维也纳3好酒店(北京南站洋桥店)",
+                "type": "舒适型",
+                "address": "北京丰台区马家堡东路71号",
+                "subway": "角门东地铁站A口",
+                "phone": "010-67586489",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "收费停车位"
+                ],
+                "price": 281.0,
+                "rating": 3.5,
+                "hotel_id": 6
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去维也纳3好酒店(北京南站洋桥店)住宿。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住这家酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "真不错，溜达完，我要找个评分是5分，价格是700-800元的酒店住宿，给推荐一个呗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 700,
+            "price_range_upper": 800,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "桔子水晶酒店(北京前门店)",
+                "type": "高档型",
+                "address": "北京西城区香厂路41号",
+                "subway": "珠市口地铁站D口",
+                "phone": "010-80698388",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 731.0,
+                "rating": 4.9,
+                "hotel_id": 897
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "这个价位区间的酒店没有评分是5分的，给你找到一个4.9分的桔子水晶酒店(北京前门店)，你看可以不？"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.9分。"
+    },
+    {
+        "role": "user",
+        "content": "嗯，我看了一下，这家桔子水晶酒店(北京前门店)的评分是4.9分，看起来不错。我想入住这家酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

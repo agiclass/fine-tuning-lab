@@ -1,0 +1,20 @@
+[
+    {
+        "role": "user",
+        "content": "那这家酒店的评分在4.5分以上吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.4分，您觉得可以吗？"
+    }
+]

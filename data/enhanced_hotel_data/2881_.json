@@ -1,0 +1,111 @@
+[
+    {
+        "role": "user",
+        "content": "有高档型的酒店价格在200-300元之间的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京首都机场国际酒店",
+                "type": "高档型",
+                "address": "北京朝阳区机场货运路2号综合楼",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-84162288",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 267.0,
+                "rating": 4.1,
+                "hotel_id": 36
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐北京首都机场国际酒店。"
+    },
+    {
+        "role": "user",
+        "content": "那有高档型，评分5分，最低价格控制在200-300元的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "高档型",
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京启航国际酒店",
+                "type": "高档型",
+                "address": "北京顺义区天竺镇天柱东路甲6号",
+                "subway": "国展地铁站C口",
+                "phone": "010-51780666",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "棋牌室",
+                    "早餐服务",
+                    "接机服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 219.0,
+                "rating": 4.1,
+                "hotel_id": 446
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，按照您给定的要求找不到酒店，推荐您北京启航国际酒店，它的评分是4.1分。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住北京启航国际酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

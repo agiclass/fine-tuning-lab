@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "亲，你好，能帮我推荐个价位200-300元的酒店住么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "睿士主题酒店(北京南站木樨园店)",
+                "type": "舒适型",
+                "address": "北京丰台区南三环中路68号自然美大厦一至三层",
+                "subway": "景泰站地铁站D口",
+                "phone": "010-67259980",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 203.0,
+                "rating": 4.5,
+                "hotel_id": 259
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "没问题呀，你可以去睿士主题酒店(北京南站木樨园店)。"
+    },
+    {
+        "role": "user",
+        "content": "请问这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.5。"
+    },
+    {
+        "role": "user",
+        "content": "那好的，我想预订睿士主题酒店(北京南站木樨园店)，请帮我确认一下。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

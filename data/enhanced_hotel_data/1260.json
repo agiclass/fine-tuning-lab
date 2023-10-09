@@ -1,0 +1,97 @@
+[
+    {
+        "role": "user",
+        "content": "您好，我想找一家评分是5分、最低价格是400-500元的酒店休息，有什么好地方？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐如家商旅酒店(北京牡丹园地铁站店)，价格是512元，可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "行。听名字我就想去。那就再为我找一家提供桑拿、提供接待外宾、评分是4.5分以上的舒适型酒店吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_upper": 5.0,
+            "facilities": [
+                "接待外宾",
+                "桑拿"
+            ],
+            "rating_range_lower": 4.5,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "有戏电影酒店(北京西直门展览馆路店)",
+                "type": "舒适型",
+                "address": "北京西城区展览馆路14号",
+                "subway": "车公庄西地铁站B口",
+                "phone": "010-68350188",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "桑拿",
+                    "棋牌室",
+                    "接站服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 592.0,
+                "rating": 4.7,
+                "hotel_id": 887
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐有戏电影酒店(北京西直门展览馆路店)。"
+    }
+]

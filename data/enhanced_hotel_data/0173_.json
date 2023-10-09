@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "还不错，饭后我打算找一个评分是5分，提供吹风机和行李寄存的的酒店住宿，给推荐一个呗！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "吹风机",
+                "行李寄存"
+            ],
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "没问题，如家商旅酒店(北京牡丹园地铁站店)是你最好的去处。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是5分。"
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "role": "user",
+        "content": "帮我找一个最低价格200-300元，评分是4.5分以上的酒店吧，谢谢！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京邮电会议中心",
+                "type": "舒适型",
+                "address": "北京海淀区挂甲屯5号",
+                "subway": "西苑地铁站C1口",
+                "phone": "010-62547799",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 248.0,
+                "rating": 4.5,
+                "hotel_id": 165
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐你去北京邮电会议中心。"
+    },
+    {
+        "role": "user",
+        "content": "谢谢，我决定入住北京邮电会议中心。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

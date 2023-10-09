@@ -1,0 +1,58 @@
+[
+    {
+        "role": "user",
+        "content": "好的，最后再帮我找一个价格300-400元的酒店，酒店的评分不能低于4分。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京古韵坊怡景酒店",
+                "type": "舒适型",
+                "address": "北京东城区交道口南大街菊儿胡同33号",
+                "subway": "南锣鼓巷地铁站F口",
+                "phone": "010-64005656",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 383.0,
+                "rating": 4.3,
+                "hotel_id": 50
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京古韵坊怡景酒店是个挺不错的选择。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京古韵坊怡景酒店的价格是383元。"
+    }
+]

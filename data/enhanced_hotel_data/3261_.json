@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "您好，能帮我推荐一家评分4分以上，最低价格300-400元的经济型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京奥体中心店)",
+                "type": "经济型",
+                "address": "北京朝阳区安定门外安苑里1号院",
+                "subway": "安贞门地铁站A口",
+                "phone": "010-64917666",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 351.0,
+                "rating": 4.5,
+                "hotel_id": 44
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去锦江之星(北京奥体中心店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住锦江之星(北京奥体中心店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,113 @@
+[
+    {
+        "role": "user",
+        "content": "帮我找一家最低价格是600-700元的酒店，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京新侨诺富特饭店",
+                "type": "高档型",
+                "address": "北京东城区崇文门西大街1号",
+                "subway": "崇文门地铁站A2口",
+                "phone": "010-65133366",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "温泉",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 657.0,
+                "rating": 4.5,
+                "hotel_id": 21
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京新侨诺富特饭店。"
+    },
+    {
+        "role": "user",
+        "content": "酒店有宽带上网吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "facilities": [
+                "宽带上网"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "电话是010-65133366。"
+    },
+    {
+        "role": "user",
+        "content": "酒店有商务中心吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "facilities": [
+                "商务中心"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "有商务中心。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.5。"
+    },
+    {
+        "role": "user",
+        "content": "我决定入住北京新侨诺富特饭店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "你好，可以帮我找一个价格是200-300元的经济型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "易佰连锁旅店(北京站店)",
+                "type": "经济型",
+                "address": "北京东城区火车站售票厅二楼",
+                "subway": "北京站地铁站",
+                "phone": "010-65131668",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "24小时热水",
+                    "无烟房"
+                ],
+                "price": 275.0,
+                "rating": 4.1,
+                "hotel_id": 317
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "好的，我感觉易佰连锁旅店(北京站店)就很不错，不知道你是否会喜欢。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店有免费的无线网络吗？"
+    },
+    {
+        "role": "assistant",
+        "content": "是的，这家酒店各处都提供免费的无线网络。"
+    },
+    {
+        "role": "user",
+        "content": "嗨，我想入住这家酒店，预定一间房间。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，我帮您预定一间房间。祝您入住愉快！"
+    }
+]

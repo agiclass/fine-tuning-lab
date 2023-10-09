@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "嗯我记下了，我需要选择一个价格是200-300元的酒店休息，提供宽带网络和寄放行李，有什么好的建议吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "宽带网络",
+                "寄放行李"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "宜必思酒店(北京大成路店)",
+                "type": "舒适型",
+                "address": "北京丰台区青塔大成路19号",
+                "subway": "玉泉路地铁站C1口",
+                "phone": "010-68671177",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 209.0,
+                "rating": 4.4,
+                "hotel_id": 261
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我给你的建议是宜必思酒店(北京大成路店)，你去看看吧。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就选择宜必思酒店(北京大成路店)，明天入住。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

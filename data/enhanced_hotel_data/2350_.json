@@ -1,0 +1,60 @@
+[
+    {
+        "role": "user",
+        "content": "晚上我和老公想找一个价格在600-700元之间的酒店，最好能提供24小时供应热水的并且评分在4.5分以上的，帮我推荐下。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "24小时供应热水"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京国宏宾馆",
+                "type": "高档型",
+                "address": "北京西城区木樨地北里甲11号",
+                "subway": "木樨地地铁站D1口",
+                "phone": "010-63908866",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 682.0,
+                "rating": 4.5,
+                "hotel_id": 336
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京国宏宾馆。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我们就入住北京国宏宾馆吧！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,90 @@
+[
+    {
+        "role": "user",
+        "content": "那还不错，我打算游玩之后找一个酒店住宿，能帮我推荐一个最低价格是200-300元的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "99旅馆连锁(北京清华大学店)",
+                "type": "经济型",
+                "address": "北京海淀区成府路85号",
+                "subway": "北京大学东门地铁站C口",
+                "phone": "010-82888382",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 225.0,
+                "rating": 4.0,
+                "hotel_id": 220
+            },
+            {
+                "name": "速8酒店(北京前门大栅栏店)",
+                "type": "经济型",
+                "address": "北京西城区前门大栅栏西街56号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63135895",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "商务中心",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 228.0,
+                "rating": 4.1,
+                "hotel_id": 22
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那我给您推荐速8酒店(北京前门大栅栏店)和99旅馆连锁(北京清华大学店)吧，这些都是价格比较经济的酒店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，酒店设施是否提供酒吧？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "facilities": [
+                "酒吧"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，这家酒店的酒店设施不提供酒吧的。"
+    },
+    {
+        "role": "user",
+        "content": "这两个酒店中哪个离地铁口近一点？"
+    },
+    {
+        "role": "assistant",
+        "content": "99旅馆连锁(北京清华大学店)离北京大学东门地铁站C口更近一些。"
+    }
+]

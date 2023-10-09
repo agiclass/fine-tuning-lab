@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "好的，玩完回来我想要找一家经济型酒店住下，最好最低价格是400-500元的，请帮我找一家。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "IU酒店(北京火车站店)",
+                "type": "经济型",
+                "address": "北京东城区毛家湾胡同13号",
+                "subway": "北京站地铁站C口",
+                "phone": "010-65137677",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "24小时热水",
+                    "早餐服务",
+                    "叫醒服务"
+                ],
+                "price": 432.0,
+                "rating": 4.5,
+                "hotel_id": 697
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那给您推荐IU酒店(北京火车站店)这一家。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就入住IU酒店(北京火车站店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

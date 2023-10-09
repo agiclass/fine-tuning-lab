@@ -1,0 +1,67 @@
+[
+    {
+        "role": "user",
+        "content": "游玩后当晚我要去一个酒店住宿，请问有提供接站服务且最低价格是100-200元的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "接站服务"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京一六九商务酒店",
+                "type": "舒适型",
+                "address": "北京顺义区天竺镇天柱东路8号",
+                "subway": "国展地铁站C口",
+                "phone": "010-64588836",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 154.0,
+                "rating": 4.5,
+                "hotel_id": 59
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "有，给您推荐北京一六九商务酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.5。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住这家酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

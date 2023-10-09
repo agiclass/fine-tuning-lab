@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我要带我父母到酒店住宿，请帮我找一家经济型酒店，价格在100-200元之间。这家酒店能提供寄存行李和国际电话服务。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "国际电话服务",
+                "寄存行李"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天连锁酒店(北京管庄地铁站店)",
+                "type": "经济型",
+                "address": "北京朝阳区建国路6号",
+                "subway": "管庄地铁站A口",
+                "phone": "010-65761033",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 169.0,
+                "rating": 4.1,
+                "hotel_id": 629
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去7天连锁酒店(北京管庄地铁站店)住宿。这家酒店不错。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是169.0元。"
+    }
+]

@@ -1,0 +1,48 @@
+[
+    {
+        "role": "user",
+        "content": "您好，有没有能够提供市内免费通话和接待外宾服务的酒店，评分需要高点最好5分，价格嘛在500-600之间是我能接受的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "市内免费通话",
+                "接待外宾"
+            ],
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐商旅酒店(北京牡丹园地铁站店)，它能够满足您的绝大多数要求，但是没有免费市内电话。"
+    }
+]

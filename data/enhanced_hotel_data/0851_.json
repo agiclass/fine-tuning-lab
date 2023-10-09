@@ -1,0 +1,74 @@
+[
+    {
+        "role": "user",
+        "content": "再帮忙推荐一家舒适型，并且评分在4.5分以上的酒店！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京临空智选假日酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区京顺东街6号院1号楼",
+                "subway": "马泉营地铁站C口",
+                "phone": "010-64349999",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务免费",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 708.0,
+                "rating": 4.6,
+                "hotel_id": 452
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京临空智选假日酒店很不错，评分在4.6分，符合您的要求。"
+    },
+    {
+        "role": "user",
+        "content": "酒店设施中包含西式餐厅和全天供应热水吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "舒适型",
+            "facilities": [
+                "全天供应热水",
+                "西式餐厅"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "地址在北京朝阳区京顺东街6号院1号楼。"
+    }
+]

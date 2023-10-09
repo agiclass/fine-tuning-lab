@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "你好，能帮我找一个价格是400-500元，提供国际电话服务的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "国际电话服务"
+            ],
+            "price_range_lower": 400,
+            "price_range_upper": 500
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京工体A. Hotel酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区工人体育场东门内6号看台",
+                "subway": "东大桥地铁站A口",
+                "phone": "010-65865858",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "残疾人设施",
+                    "SPA",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 472.0,
+                "rating": 4.2,
+                "hotel_id": 96
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "可以，北京工体A. Hotel酒店就是这样的地方。"
+    }
+]

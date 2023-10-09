@@ -1,0 +1,67 @@
+[
+    {
+        "role": "user",
+        "content": "哦，好的，我们还需要订个酒店，你帮我推荐一个500到600元的，评分在4.5分以上，最好酒店提供无烟房和国际通话的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "国际通话",
+                "无烟房"
+            ],
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京骏马国际酒店",
+                "type": "高档型",
+                "address": "北京海淀区中关村东路南1条2号",
+                "subway": "知春里地铁站B口",
+                "phone": "010-82885858",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 518.0,
+                "rating": 4.5,
+                "hotel_id": 33
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京骏马国际酒店吧，价格是518元，评分4.5分，还提供无烟房和国际长途电话哦。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店电话是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话是010-82885858。"
+    },
+    {
+        "role": "user",
+        "content": "嗯，这家酒店看起来不错，我想入住。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

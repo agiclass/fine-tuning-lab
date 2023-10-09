@@ -1,0 +1,70 @@
+[
+    {
+        "role": "user",
+        "content": "哇，这么多好吃的地方呀，酒店的酒店设施提供无烟房吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，酒店的酒店设施提供无烟房。"
+    },
+    {
+        "role": "user",
+        "content": "看的我都流口水了，那么酒店覆盖全面的无线网络吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "酒店覆盖全面的无线网络"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，酒店设施，酒店各处提供wifi。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那酒店设施提供国际通话吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "国际通话"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "没错，酒店设施提供国际长途电话。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店的价格是多少钱一晚？"
+    }
+]

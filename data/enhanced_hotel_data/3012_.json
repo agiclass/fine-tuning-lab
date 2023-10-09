@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "行，我心里有数了，接下来我想去一家评分在4.5分以上，最低价格是200-300元的酒店住，你看哪家酒店适合我呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京美第奇精选酒店",
+                "type": "高档型",
+                "address": "北京顺义区府前一街32号",
+                "subway": "国展地铁站C口",
+                "phone": "010-64583588",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "无烟房",
+                    "棋牌室",
+                    "接机服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 218.0,
+                "rating": 4.6,
+                "hotel_id": 403
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我觉得北京美第奇精选酒店就不错，你可以去看一下。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.6分。"
+    }
+]

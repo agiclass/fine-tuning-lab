@@ -1,0 +1,22 @@
+[
+    {
+        "role": "user",
+        "content": "酒店可以宽带上网吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "宽带上网"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "酒店不可以宽带上网。"
+    }
+]

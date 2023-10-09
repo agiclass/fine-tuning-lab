@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "恩。还想到别的酒店体验下。请帮我找一家评分是4.5分以上的经济型酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "和家宾馆北京四季青店",
+                "type": "经济型",
+                "address": "北京海淀区金庄村2号院",
+                "subway": "车道沟地铁站D口",
+                "phone": "010-82526886",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 282.0,
+                "rating": 4.6,
+                "hotel_id": 898
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那您去和家宾馆北京四季青店体验下吧，服务很好。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "和家宾馆北京四季青店的每晚房价是282元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就打算入住和家宾馆北京四季青店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

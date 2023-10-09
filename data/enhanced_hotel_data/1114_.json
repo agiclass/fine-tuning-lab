@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想带女朋友去一个最低价格在200-300元的有全球电话服务的经济型酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "全球电话"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京广渠门店)",
+                "type": "经济型",
+                "address": "北京东城区东花市北里东区1号东段",
+                "subway": "广渠门内地铁站B口",
+                "phone": "010-51005188",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 237.0,
+                "rating": 4.6,
+                "hotel_id": 226
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去锦江之星(北京广渠门店)住宿。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "锦江之星(北京广渠门店)的价格是237元。"
+    }
+]

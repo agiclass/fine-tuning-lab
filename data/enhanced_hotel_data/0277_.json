@@ -1,0 +1,58 @@
+[
+    {
+        "role": "user",
+        "content": "吃完饭后，我们想找一家价格在200-300元之间、评分达到4.5分以上、提供wifi和无障碍设施的酒店来休息一下。谢谢！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "公共区域和部分房间提供wifi",
+                "无障碍设施"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京广安门店)",
+                "type": "经济型",
+                "address": "北京西城区广安门南街56号",
+                "subway": "广安门内地铁站C口",
+                "phone": "010-83516198",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 262.0,
+                "rating": 4.5,
+                "hotel_id": 392
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐锦江之星(北京广安门店)吧。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就订锦江之星(北京广安门店)吧！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

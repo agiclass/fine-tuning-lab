@@ -1,0 +1,90 @@
+[
+    {
+        "role": "user",
+        "content": "这么多好玩的地方啊，我想先找一个最低价格是500-600元的经济型酒店住宿，有什么好的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家快捷酒店(北京宣武门店)",
+                "type": "经济型",
+                "address": "北京西城区宣武门东大街24号",
+                "subway": "宣武门地铁站G口",
+                "phone": "010-51232266",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务"
+                ],
+                "price": 504.0,
+                "rating": 4.4,
+                "hotel_id": 1112
+            },
+            {
+                "name": "汉庭酒店(北京西直门店)",
+                "type": "经济型",
+                "address": "北京西城区西直门内大街南草厂街11号",
+                "subway": "新街口地铁站A口",
+                "phone": "010-66078585",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 508.0,
+                "rating": 4.4,
+                "hotel_id": 714
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐汉庭酒店(北京西直门店)和如家快捷酒店(北京宣武门店)，都是连锁酒店。"
+    },
+    {
+        "role": "user",
+        "content": "收到，酒店设施提供酒吧吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "type": "经济型",
+            "facilities": [
+                "酒吧"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "对不起，酒店的酒店设施不提供酒吧。"
+    }
+]

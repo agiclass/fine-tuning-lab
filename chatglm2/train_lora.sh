@@ -7,16 +7,16 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --do_train \
     --do_eval \
     --do_predict \
-    --train_file ../data/LawChat.lite/train.jsonl \
-    --validation_file ../data/LawChat.lite/dev.jsonl \
-    --test_file ../data/LawChat.lite/test.jsonl \
+    --train_file ../data/train.jsonl \
+    --validation_file ../data/dev.jsonl \
+    --test_file ../data/test.jsonl \
     --prompt_column input \
     --response_column output \
     --overwrite_cache \
     --model_name_or_path "/root/chatglm2-6b" \
     --output_dir "output/chatglm2-6b-lora" \
-    --max_source_length 1024 \
-    --max_target_length 64 \
+    --max_source_length 2048 \
+    --max_target_length 1024 \
     --per_device_train_batch_size 2 \
     --per_device_eval_batch_size 8 \
     --gradient_accumulation_steps 16 \

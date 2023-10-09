@@ -1,0 +1,60 @@
+[
+    {
+        "role": "user",
+        "content": "好的，游玩结束以后，我要找一个价格是800-900元，评分是4.5分以上，部分房间有无线网络的酒店，有没有合适的推荐啊？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "部分房间有无线网络"
+            ],
+            "price_range_lower": 800,
+            "price_range_upper": 900,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京如意商务酒店",
+                "type": "高档型",
+                "address": "北京海淀区北洼路17号",
+                "subway": "花园桥地铁站A口",
+                "phone": "010-51906666",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 813.0,
+                "rating": 4.5,
+                "hotel_id": 481
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你可以选择去北京如意商务酒店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住北京如意商务酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

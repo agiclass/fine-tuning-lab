@@ -1,0 +1,101 @@
+[
+    {
+        "role": "user",
+        "content": "谢谢，我还想找一家酒店，价格在200-300元的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "维也纳3好酒店(北京南站洋桥店)",
+                "type": "舒适型",
+                "address": "北京丰台区马家堡东路71号",
+                "subway": "角门东地铁站A口",
+                "phone": "010-67586489",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "收费停车位"
+                ],
+                "price": 281.0,
+                "rating": 3.5,
+                "hotel_id": 6
+            },
+            {
+                "name": "速8酒店(北京前门大栅栏店)",
+                "type": "经济型",
+                "address": "北京西城区前门大栅栏西街56号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63135895",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "商务中心",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 228.0,
+                "rating": 4.1,
+                "hotel_id": 22
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "好的，给你推荐维也纳3好酒店(北京南站洋桥店)和速8酒店(北京前门大栅栏店)。"
+    },
+    {
+        "role": "user",
+        "content": "哪个是舒适型的？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "维也纳3好酒店(北京南站洋桥店)",
+                "type": "舒适型",
+                "address": "北京丰台区马家堡东路71号",
+                "subway": "角门东地铁站A口",
+                "phone": "010-67586489",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "收费停车位"
+                ],
+                "price": 281.0,
+                "rating": 3.5,
+                "hotel_id": 6
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "维也纳3好酒店(北京南站洋桥店)就是舒适型的。"
+    }
+]

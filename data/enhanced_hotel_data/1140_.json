@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "收到，太详细了，接下来麻烦你给我安排一家酒店住，价格是200-300元的，就行了。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "速8酒店(北京前门大栅栏店)",
+                "type": "经济型",
+                "address": "北京西城区前门大栅栏西街56号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63135895",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "商务中心",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 228.0,
+                "rating": 4.1,
+                "hotel_id": 22
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那我给你推荐速8酒店(北京前门大栅栏店)好了，你满意吗？"
+    },
+    {
+        "role": "user",
+        "content": "太好了，我愿意入住速8酒店(北京前门大栅栏店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

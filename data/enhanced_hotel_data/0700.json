@@ -1,0 +1,41 @@
+[
+    {
+        "role": "user",
+        "content": "这也太惨了点吧，啥都没有，那你帮我找一个价格是300-400元的经济型酒店吧，好吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "布丁精选酒店(北京中关村店)",
+                "type": "经济型",
+                "address": "北京海淀区大柳树路23号(大慧寺路口)",
+                "subway": "魏公村地铁站",
+                "phone": "010-59705500",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 371.0,
+                "rating": 4.4,
+                "hotel_id": 207
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "行啊，你可以去布丁精选酒店(北京中关村店)，这里可以满足你的条件。"
+    }
+]

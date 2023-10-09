@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我找带中式餐厅的经济型酒店，我希望酒店的最低价格是600-700元的，我要和我外国的同学一起去住宿。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "中式餐厅"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "汉庭酒店(北京牛街店)",
+                "type": "经济型",
+                "address": "北京西城区牛街16号",
+                "subway": "广安门内地铁站B口",
+                "phone": "010-63586111",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 605.0,
+                "rating": 4.3,
+                "hotel_id": 1034
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "只为您找到一家店叫汉庭酒店(北京牛街店)。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店评分怎么样？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.3。"
+    }
+]

@@ -1,0 +1,118 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想去一个最低价格400-500元的经济型酒店住宿，有好点的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "中安之家北京东单宾馆",
+                "type": "经济型",
+                "address": "北京东城区东单北大街120号",
+                "subway": "东单地铁站5号线F口",
+                "phone": "010-65250569",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 446.0,
+                "rating": 4.5,
+                "hotel_id": 244
+            },
+            {
+                "name": "雅悦酒店(北京西直门店)",
+                "type": "经济型",
+                "address": "北京西城区西直门内大街126号",
+                "subway": "新街口地铁站D口",
+                "phone": "010-66180070",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 441.0,
+                "rating": 4.5,
+                "hotel_id": 144
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "雅悦酒店(北京西直门店)和中安之家北京东单宾馆都是不错的选择。"
+    },
+    {
+        "role": "user",
+        "content": "那么这家酒店是否提供健身房吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型",
+            "facilities": [
+                "健身房"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，这家酒店不提供健身房。"
+    },
+    {
+        "role": "user",
+        "content": "太遗憾了，那酒店提供叫醒服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型",
+            "facilities": [
+                "叫醒服务"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，酒店提供叫醒服务。"
+    }
+]

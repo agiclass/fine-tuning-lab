@@ -1,0 +1,60 @@
+[
+    {
+        "role": "user",
+        "content": "知道了。我还想订一个评分是4.5分以上，最低价格是600-700元的经济型酒店，推荐一下。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰(北京学清路店)",
+                "type": "经济型",
+                "address": "北京海淀区逸成东苑9号商服楼",
+                "subway": "六道口地铁站B口",
+                "phone": "010-62910099",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接站服务",
+                    "洗衣服务",
+                    "收费停车位"
+                ],
+                "price": 638.0,
+                "rating": 4.5,
+                "hotel_id": 822
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐格林豪泰(北京学清路店)。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店有什么服务设施？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店提供的服务设施有公共区域和部分房间提供wifi, 宽带上网, 24小时热水, 无烟房, 早餐服务, 接站服务, 洗衣服务, 收费停车位。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住这个酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

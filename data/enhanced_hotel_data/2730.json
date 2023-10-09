@@ -1,0 +1,52 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个价格在600-700元之间的酒店，最好能提供吹风机的，评分在4.5分以上的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "吹风机"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京金码大酒店",
+                "type": "高档型",
+                "address": "北京海淀区学清路甲38号金码大厦",
+                "subway": "六道口地铁站B口",
+                "phone": "010-62328899",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "棋牌室",
+                    "早餐服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 603.0,
+                "rating": 4.5,
+                "hotel_id": 214
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京金码大酒店。"
+    }
+]

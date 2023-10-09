@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "你好，想和对象出门玩，需要订个酒店，帮我找一个价格在200到300元的经济型酒店，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "布丁酒店(北京团结湖店)",
+                "type": "经济型",
+                "address": "北京朝阳区团结湖北五条2号楼-1",
+                "subway": "团结湖地铁站C口",
+                "phone": "010-85989810",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 216.0,
+                "rating": 4.1,
+                "hotel_id": 98
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "布丁酒店(北京团结湖店)就可以哦，价格216元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，就选布丁酒店(北京团结湖店)吧，价格216元。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

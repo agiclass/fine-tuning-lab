@@ -1,0 +1,66 @@
+[
+    {
+        "role": "user",
+        "content": "你好，最近公司要来客人，能帮我订个酒店吗？要500、600元的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京中康国际酒店",
+                "type": "高档型",
+                "address": "北京朝阳区石佛营东里130号",
+                "subway": "十里堡地铁站B口",
+                "phone": "010-85859999",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 590.0,
+                "rating": 4.1,
+                "hotel_id": 28
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "可以选择北京中康国际酒店，价格是590元。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店有没有免费的wifi？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店公共区域和部分房间提供wifi。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就帮我预订这个北京中康国际酒店吧。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

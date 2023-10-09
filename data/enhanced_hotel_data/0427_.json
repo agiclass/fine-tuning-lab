@@ -1,0 +1,83 @@
+[
+    {
+        "role": "user",
+        "content": "吃的地方和玩的地方都找好了，还差一个住的地方，帮我找一家最低价格是300-400元之间的酒店吧，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京香江戴斯酒店",
+                "type": "舒适型",
+                "address": "北京东城区南河沿大街南湾子胡同1号",
+                "subway": "天安门东地铁站B口",
+                "phone": "010-65127788",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 328.0,
+                "rating": 4.2,
+                "hotel_id": 10
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京香江戴斯酒店，他家不错哦，价格是328元。"
+    },
+    {
+        "role": "user",
+        "content": "好的，他家有没有无烟房和吹风机？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "facilities": [
+                "吹风机",
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "4.2分哦，地址是北京东城区南河沿大街南湾子胡同1号。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就选择北京香江戴斯酒店入住啦！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想去酒店住宿。请帮我找一家评分是5分，最低价格是100-200元的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家快捷酒店(北京欢乐谷西直河康化桥店)",
+                "type": "经济型",
+                "address": "北京朝阳区十八里店乡老君堂518号",
+                "subway": "焦化厂地铁站D口",
+                "phone": "010-67490122",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 175.0,
+                "rating": 4.6,
+                "hotel_id": 984
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去如家快捷酒店(北京欢乐谷西直河康化桥店)，但是它的评分是4.6分。"
+    }
+]

@@ -1,0 +1,83 @@
+[
+    {
+        "role": "user",
+        "content": "最后您在帮我找个酒店住宿，我想要高档型，然后价格在200-300元之间。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京首都机场国际酒店",
+                "type": "高档型",
+                "address": "北京朝阳区机场货运路2号综合楼",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-84162288",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 267.0,
+                "rating": 4.1,
+                "hotel_id": 36
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那我推荐您北京首都机场国际酒店，正好符合您的住宿标准。"
+    },
+    {
+        "role": "user",
+        "content": "在酒店设施上有宽带上网吗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "高档型",
+            "facilities": [
+                "宽带上网"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "地址是北京朝阳区机场货运路2号综合楼。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住北京首都机场国际酒店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

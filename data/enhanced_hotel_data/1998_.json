@@ -1,0 +1,44 @@
+[
+    {
+        "role": "user",
+        "content": "嗯嗯，再帮我找一个价格100-200元的酒店吧，但是酒店必须无处不wifi。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无处不wifi"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "胜高连锁酒店(北京丰台东大街店)",
+                "type": "经济型",
+                "address": "北京丰台区东大街29号嘉诚广场B座",
+                "subway": "丰台东大街地铁站A口",
+                "phone": "010-63774651",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "商务中心",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 152.0,
+                "rating": 4.5,
+                "hotel_id": 227
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "胜高连锁酒店(北京丰台东大街店)挺不错的！"
+    }
+]

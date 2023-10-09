@@ -1,0 +1,69 @@
+[
+    {
+        "role": "user",
+        "content": "好的，这回就放心了，这几个酒店里哪个的最低价格是400-500元。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京骏马国际酒店",
+                "type": "高档型",
+                "address": "北京海淀区中关村东路南1条2号",
+                "subway": "知春里地铁站B口",
+                "phone": "010-82885858",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 518.0,
+                "rating": 4.5,
+                "hotel_id": 33
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐你们去北京骏马国际酒店住宿，但是它的价格是518元。"
+    },
+    {
+        "role": "user",
+        "content": "那这个酒店提供洗衣和SPA服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "facilities": [
+                "SPA",
+                "洗衣服务"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "不好意思，这个酒店提供洗衣服务，但是没有SPA服务。"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "role": "user",
+        "content": "好的，吃完饭我要为朋友安排一个价格200-300元的经济型酒店休息，知道哪个酒店好吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "城市便捷酒店北京前门店",
+                "type": "经济型",
+                "address": "北京西城区前门煤市街小椿树胡同14、16号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63018580",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "24小时热水",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 263.0,
+                "rating": 4.3,
+                "hotel_id": 106
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你可以选择名称城市便捷酒店北京前门店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住城市便捷酒店北京前门店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

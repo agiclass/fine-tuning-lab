@@ -1,0 +1,61 @@
+[
+    {
+        "role": "user",
+        "content": "好嘞，晚上吃完饭，得给远道来得亲戚订个酒店，帮我找一个价位200-300元，稍微好一些的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天连锁酒店(北京天坛东门地铁站店)",
+                "type": "经济型",
+                "address": "北京东城区体育馆路10号",
+                "subway": "天坛东门地铁站B口",
+                "phone": "010-67120088",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 296.0,
+                "rating": 4.6,
+                "hotel_id": 111
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "7天连锁酒店(北京天坛东门地铁站店)怎么样，相比来讲他家的评分还高一些。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店有免费的Wi-Fi吗？"
+    },
+    {
+        "role": "assistant",
+        "content": "是的，这家酒店提供免费的Wi-Fi服务。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就选择入住7天连锁酒店(北京天坛东门地铁站店)了。希望能过得顺心一些。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,94 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想去酒店住宿。请帮我找一家评分是4.5分以上，经济型的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京西四店)",
+                "type": "经济型",
+                "address": "北京西城区羊肉胡同19号北门(阜成门内大街甲92号旁)",
+                "subway": "西四地铁站D口",
+                "phone": "010-59510888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "叫醒服务"
+                ],
+                "price": -1.0,
+                "rating": 4.6,
+                "hotel_id": 761
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去锦江之星(北京西四店)。"
+    },
+    {
+        "role": "user",
+        "content": "嗯呢。还有符合条件的其他酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型",
+            "price_range_lower": 600,
+            "price_range_upper": 700
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰(北京学清路店)",
+                "type": "经济型",
+                "address": "北京海淀区逸成东苑9号商服楼",
+                "subway": "六道口地铁站B口",
+                "phone": "010-62910099",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接站服务",
+                    "洗衣服务",
+                    "收费停车位"
+                ],
+                "price": 638.0,
+                "rating": 4.5,
+                "hotel_id": 822
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "符合条件的只有一家是格林豪泰(北京学清路店)。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是多少？"
+    }
+]

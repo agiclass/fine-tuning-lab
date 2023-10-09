@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "好的，有就好，溜达完，我得找个地方住，能帮我推荐一个价格是300-400元，提供在酒店的各个角落都有wifi可以使用和暖气的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "暖气",
+                "在酒店的各个角落都有wifi可以使用"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京仁和轩酒店",
+                "type": "舒适型",
+                "address": "北京海淀区小西天志强北园1号院",
+                "subway": "积水潭地铁站A口",
+                "phone": "010-62217878",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "酒吧",
+                    "行李寄存"
+                ],
+                "price": 344.0,
+                "rating": 4.4,
+                "hotel_id": 164
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京仁和轩酒店非常符合你的要求。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就定这个酒店吧。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

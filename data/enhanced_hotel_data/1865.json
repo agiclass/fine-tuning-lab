@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "这些酒店中哪家是舒适型的？提供商务中心、提供桑拿服务，最低价格是200-300元？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "商务中心",
+                "桑拿"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "上面三家酒店中只有北京天伦王朝酒店这两项服务都提供，但是酒店价格略高，价格是815元，您看可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "北京天伦王朝酒店是什么类型的酒店？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "商务中心",
+                "桑拿"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "酒店类型是豪华型的。"
+    }
+]

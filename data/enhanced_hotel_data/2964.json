@@ -1,0 +1,42 @@
+[
+    {
+        "role": "user",
+        "content": "时间划分比较清晰，吃完饭我需要找个价格是300-400元的酒店住宿，给点建议好吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京瑞斯汀主题酒店",
+                "type": "舒适型",
+                "address": "北京大兴区清源北路兴华园8号楼",
+                "subway": "清源路地铁站B口",
+                "phone": "010-61213888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 336.0,
+                "rating": 4.4,
+                "hotel_id": 356
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你可以考虑一下北京瑞斯汀主题酒店。"
+    }
+]

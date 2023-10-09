@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "好的。游玩结束想去住宿。请帮我找一家最低价格是300-400元的，评分是4分以上的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京月桂树酒店",
+                "type": "舒适型",
+                "address": "北京丰台区马家堡东路106号院1号楼",
+                "subway": "角门东地铁站C口",
+                "phone": "010-87286699",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 336.0,
+                "rating": 4.0,
+                "hotel_id": 421
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京月桂树酒店，您觉得咋样？"
+    },
+    {
+        "role": "user",
+        "content": "嗯，好的，我愿意入住北京月桂树酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

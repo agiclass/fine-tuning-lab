@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "真不错，吃完饭，我想找个价格是300-400元，评分是4.5分以上的酒店住宿，可以帮我安排一个吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京红驿栈酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区东直门外春秀路太平庄10号(主副楼在一幢建筑里)",
+                "subway": "东直门地铁站E口",
+                "phone": "010-64171066",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 344.0,
+                "rating": 4.7,
+                "hotel_id": 51
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐你去北京红驿栈酒店，你喜欢吗？"
+    },
+    {
+        "role": "user",
+        "content": "嗯，这个酒店看起来不错。我决定入住北京红驿栈酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

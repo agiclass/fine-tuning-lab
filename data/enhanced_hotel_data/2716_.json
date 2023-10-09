@@ -1,0 +1,72 @@
+[
+    {
+        "role": "user",
+        "content": "你好，你知道哪家酒店的评分是4.5分以上吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京王府井店)",
+                "type": "经济型",
+                "address": "北京东城区灯市口大街75号",
+                "subway": "灯市口地铁站A口",
+                "phone": "010-85111100",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存"
+                ],
+                "price": -1.0,
+                "rating": 4.5,
+                "hotel_id": 115
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你可以去锦江之星(北京王府井店)住。"
+    },
+    {
+        "role": "user",
+        "content": "他家设施是否包含SPA和酒吧啊？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "SPA",
+                "酒吧"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "他家没有这两项服务。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我就去锦江之星(北京王府井店)住了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

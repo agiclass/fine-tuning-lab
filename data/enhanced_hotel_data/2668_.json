@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "再帮我找一个经济型的酒店，价格在400-500元的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "汉庭酒店(北京温都水城店)",
+                "type": "经济型",
+                "address": "北京昌平区北七家镇王府街21号-2",
+                "subway": "回龙观东大街地铁站B口",
+                "phone": "010-80145688",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "商务中心",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 402.0,
+                "rating": 4.4,
+                "hotel_id": 667
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去汉庭酒店(北京温都水城店)吧。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店的价格是402元每晚。"
+    }
+]

@@ -1,0 +1,75 @@
+[
+    {
+        "role": "user",
+        "content": "好的，后天我的弟弟要来看我，可以推荐一个最低价格是600-700元的经济型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰(北京学清路店)",
+                "type": "经济型",
+                "address": "北京海淀区逸成东苑9号商服楼",
+                "subway": "六道口地铁站B口",
+                "phone": "010-62910099",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接站服务",
+                    "洗衣服务",
+                    "收费停车位"
+                ],
+                "price": 638.0,
+                "rating": 4.5,
+                "hotel_id": 822
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐经济型酒店格林豪泰(北京学清路店)，价格638元。"
+    },
+    {
+        "role": "user",
+        "content": "请问这家酒店有温泉和酒吧吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "type": "经济型",
+            "facilities": [
+                "温泉",
+                "酒吧"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "为您查询到这家酒店没有温泉和酒吧，您看是否还需要查到其它酒店？"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就入住格林豪泰(北京学清路店)了，谢谢推荐！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

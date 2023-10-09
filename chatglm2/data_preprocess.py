@@ -1,4 +1,5 @@
 from datasets import load_dataset
+import json
 
 def print_dataset_example(example,tokenizer):
     print("input_ids",example["input_ids"])
@@ -33,6 +34,27 @@ class Preprocessor:
         self.max_target_length = data_args.max_target_length
         self.tokenizer = tokenizer
         self.ignore_pad_token_for_loss = data_args.ignore_pad_token_for_loss
+
+
+    def _build_prompt(self,context):
+        prompt = ""
+        for turn in context:
+            if turn["role"] in ["user","assistant"]:
+                prompt += turn["role"] + ": " + turn["content"] + "\n"
+            else:
+                if turn["role"] == "search":
+                    obj = turn["arguments"]
+                else:
+                    obj = turn["records"]
+
+                prompt += turn["role"] + ":\n" + json.dumps(obj,indent=4,ensure_ascii=False) + "\n"
+        return prompt
+
+    def _build_response(self,response):
+        if response["role"] == "assistant":
+            return "assistant: " + response["content"]
+        else:
+            return "search:\n" + json.dumps(response["arguments"],indent=4,ensure_ascii=False)
     
     # 处理测试(dev/test)数据
     '''
@@ -45,10 +67,11 @@ class Preprocessor:
         inputs, targets = [], []
         for i in range(len(examples[self.prompt_column])):
             if examples[self.prompt_column][i] and examples[self.response_column][i]:
-                prompt = examples[self.prompt_column][i]
-                #prompt = self.tokenizer.build_prompt(query)
+                context = examples[self.prompt_column][i]
+                prompt = self._build_prompt(context)
+                response = self._build_response( examples[self.response_column][i] )
                 inputs.append(prompt)
-                targets.append(examples[self.response_column][i])
+                targets.append(response)
 
         self.tokenizer.truncation_side = 'left'
 
@@ -91,7 +114,10 @@ class Preprocessor:
         }
         for i in range(len(examples[self.prompt_column])):
             if examples[self.prompt_column][i] and examples[self.response_column][i]:
-                prompt, answer = examples[self.prompt_column][i], examples[self.response_column][i]
+                context, response = examples[self.prompt_column][i], examples[self.response_column][i]
+                prompt = self._build_prompt(context)
+                response = self._build_response(response)
+
                 #prompt = self.tokenizer.build_prompt(query)
                 a_ids = self.tokenizer.encode(
                     text=prompt, 
@@ -100,7 +126,7 @@ class Preprocessor:
                     max_length=self.max_source_length
                 )
                 b_ids = self.tokenizer.encode(
-                    text=answer, 
+                    text=response, 
                     add_special_tokens=False, 
                     truncation=True,
                     max_length=self.max_target_length

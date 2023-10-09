@@ -1,0 +1,134 @@
+[
+    {
+        "role": "user",
+        "content": "在这俩酒店里，有舒适型的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "富驿时尚酒店(北京总部基地店)",
+                "type": "舒适型",
+                "address": "北京丰台区外环西路26号院3号楼",
+                "subway": "丰台科技园地铁站D口",
+                "phone": "010-83816855",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 365.0,
+                "rating": 4.2,
+                "hotel_id": 346
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "富驿时尚酒店(北京总部基地店)是舒适型的酒店。"
+    },
+    {
+        "role": "user",
+        "content": "那好，所有客房都有wifi吗，价格怎么样？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "舒适型",
+            "facilities": [
+                "所有客房都有wifi"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "富驿时尚酒店(北京总部基地店)",
+                "type": "舒适型",
+                "address": "北京丰台区外环西路26号院3号楼",
+                "subway": "丰台科技园地铁站D口",
+                "phone": "010-83816855",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 365.0,
+                "rating": 4.2,
+                "hotel_id": 346
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "富驿时尚酒店(北京总部基地店)酒店各处提供wifi，非常方便，酒店的价格是365元。"
+    },
+    {
+        "role": "user",
+        "content": "恩，还可以，有没有价格再高一些的经济型酒店呢，评分5分的，价格在600-700元的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "所有房间提供wifi"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰(北京清河桥店)",
+                "type": "经济型",
+                "address": "北京海淀区清河三街95号",
+                "subway": "永泰庄地铁站D口",
+                "phone": "010-82710998",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费国内长途电话",
+                    "24小时热水",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务"
+                ],
+                "price": 638.0,
+                "rating": 4.3,
+                "hotel_id": 1088
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "有一家酒店不错格林豪泰(北京清河桥店)，但是评分略低一些，只有4.3分，这个可以吗？"
+    }
+]

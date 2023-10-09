@@ -1,0 +1,40 @@
+[
+    {
+        "role": "user",
+        "content": "好的。吃完饭想去休息。请帮我找一家最低价格是100-200元的经济型的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "百时快捷酒店(北京广安门店)",
+                "type": "经济型",
+                "address": "北京西城区广安门南街56号",
+                "subway": "广安门内地铁站C口",
+                "phone": "010-83518199",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "早餐服务",
+                    "行李寄存"
+                ],
+                "price": 127.0,
+                "rating": 4.3,
+                "hotel_id": 873
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去百时快捷酒店(北京广安门店)，您觉得可以吗？"
+    }
+]

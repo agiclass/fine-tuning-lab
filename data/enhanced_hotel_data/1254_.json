@@ -1,0 +1,196 @@
+[
+    {
+        "role": "user",
+        "content": "你好，能帮我找一个评分在4.5分以上的酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京百富怡大酒店",
+                "type": "豪华型",
+                "address": "北京东城区东直门外大街南二里庄19号",
+                "subway": "东直门地铁站H口",
+                "phone": "010-56518888",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "健身房",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "桑拿",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 805.0,
+                "rating": 4.7,
+                "hotel_id": 29
+            },
+            {
+                "name": "北京首都宾馆",
+                "type": "豪华型",
+                "address": "北京东城区前门东大街3号",
+                "subway": "崇文门地铁站A1口",
+                "phone": "010-58159988",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "室内游泳池",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 1393.0,
+                "rating": 4.6,
+                "hotel_id": 34
+            },
+            {
+                "name": "北京骏马国际酒店",
+                "type": "高档型",
+                "address": "北京海淀区中关村东路南1条2号",
+                "subway": "知春里地铁站B口",
+                "phone": "010-82885858",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 518.0,
+                "rating": 4.5,
+                "hotel_id": 33
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "当然可以，为您推荐北京百富怡大酒店，北京骏马国际酒店和北京首都宾馆，您看满意吗？"
+    },
+    {
+        "role": "user",
+        "content": "嗯，记下了，这家酒店的酒店设施提供早饭供应吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "早饭供应"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，提供早餐服务。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那酒店设施提供无烟房吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "您好，酒店设施也提供无烟房服务的。"
+    },
+    {
+        "role": "user",
+        "content": "真是太好了，我最喜欢游玩了，酒店设施提供无障碍设施吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "facilities": [
+                "无障碍设施"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "不好意思，酒店设施不提供残疾人设施。"
+    },
+    {
+        "role": "user",
+        "content": "哦没关系，那酒店设施提供叫我起床吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "facilities": [
+                " 叫我起床"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，酒店设施提供叫醒服务的。"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我想找一个价格在300-400元之间的舒适型酒店，帮我推荐一下。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京上康城酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区三源里街23号楼",
+                "subway": "亮马桥地铁站A口",
+                "phone": "010-84516611",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "商务中心",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 363.0,
+                "rating": 4.6,
+                "hotel_id": 708
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐北京上康城酒店。"
+    }
+]

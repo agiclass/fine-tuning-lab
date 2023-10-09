@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "最后请帮我找一个评分4分以上的酒店，希望所有客房提供wifi连接，并且提供行李寄存服务的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "所有客房提供wifi连接",
+                "行李寄存"
+            ],
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "城市便捷酒店北京前门店",
+                "type": "经济型",
+                "address": "北京西城区前门煤市街小椿树胡同14、16号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63018580",
+                "facilities": [
+                    "所有房间提供wifi",
+                    "24小时热水",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 263.0,
+                "rating": 4.3,
+                "hotel_id": 106
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去城市便捷酒店北京前门店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住城市便捷酒店北京前门店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

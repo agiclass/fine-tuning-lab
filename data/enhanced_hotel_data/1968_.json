@@ -1,0 +1,52 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个评分在4.5分以上的经济型酒店，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "中安之家北京东单宾馆",
+                "type": "经济型",
+                "address": "北京东城区东单北大街120号",
+                "subway": "东单地铁站5号线F口",
+                "phone": "010-65250569",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 446.0,
+                "rating": 4.5,
+                "hotel_id": 244
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去中安之家北京东单宾馆。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住中安之家北京东单宾馆。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

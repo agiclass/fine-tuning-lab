@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "晚上我和女朋友想找一个酒店入住，帮我推荐一个价格在400-500元之间的高档型酒店吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京红墙酒店",
+                "type": "高档型",
+                "address": "北京东城区沙滩北街31号",
+                "subway": "南锣鼓巷地铁站",
+                "phone": "010-51098888",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 449.0,
+                "rating": 4.2,
+                "hotel_id": 105
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京红墙酒店。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的电话是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话是010-51098888。"
+    }
+]

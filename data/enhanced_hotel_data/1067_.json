@@ -1,0 +1,75 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我想预约个舒适型的酒店，最好评分是5分的，帮推荐一个吧！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "桔子酒店·精选(北京西二旗店)",
+                "type": "舒适型",
+                "address": "北京昌平区回龙观镇金达园小区10号楼",
+                "subway": "龙泽地铁站",
+                "phone": "010-56918000",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 592.0,
+                "rating": 4.9,
+                "hotel_id": 701
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐桔子酒店·精选(北京西二旗店)，但评分是4.9分，可以么？"
+    },
+    {
+        "role": "user",
+        "content": "可以，酒店有健身房么？各处都提供wifi么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "舒适型",
+            "facilities": [
+                "健身房",
+                "酒店各处提供wifi"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "公共区域和部分房间提供wifi, 宽带上网，但是没有健身房。"
+    },
+    {
+        "role": "user",
+        "content": "太好了，谢谢！这个酒店看起来不错，我愿意入住。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "role": "user",
+        "content": "你好我想入住一个最低价格是1000元以上的，且评分是5分的酒店。你能给我推荐一个好的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 1000.0,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "时光漫步怀旧主题酒店(北京雍和宫店)",
+                "type": "舒适型",
+                "address": "北京东城区安定门内大街方家胡同46号创意园",
+                "subway": "北新桥地铁站A口",
+                "phone": "010-64032288",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "无烟房",
+                    "酒吧",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 1063.0,
+                "rating": 4.8,
+                "hotel_id": 27
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "时光漫步怀旧主题酒店(北京雍和宫店)是个不错的选择，它的价格是1063元，但是它的评分是4.8分。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.8分。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我就选择时光漫步怀旧主题酒店(北京雍和宫店)吧，谢谢！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

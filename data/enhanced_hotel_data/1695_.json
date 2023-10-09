@@ -1,0 +1,65 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我找一个带收费停车场，价格在300-400元的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "收费停车场"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "富驿时尚酒店(北京亦庄创意生活广场店)",
+                "type": "舒适型",
+                "address": "北京大兴区北环东路与经网路交叉口东北角",
+                "subway": "万源街地铁站A2口",
+                "phone": "010-67868383",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "早餐服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 316.0,
+                "rating": 4.4,
+                "hotel_id": 433
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去富驿时尚酒店(北京亦庄创意生活广场店)。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店评分高吗？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店的评分是4.4。"
+    },
+    {
+        "role": "user",
+        "content": "我决定入住富驿时尚酒店(北京亦庄创意生活广场店)了，希望我的入住愉快！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

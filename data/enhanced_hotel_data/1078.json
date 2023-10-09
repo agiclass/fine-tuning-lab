@@ -1,0 +1,87 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想带女朋友去一家评分4.5分以上最低价格在400-500元的舒适型酒店住宿，给推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 4.5,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京金泰四合院长园宾馆",
+                "type": "舒适型",
+                "address": "北京西城区砖塔胡同25号",
+                "subway": "西四地铁站D口",
+                "phone": "010-66117396",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 435.0,
+                "rating": 4.7,
+                "hotel_id": 166
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京金泰四合院长园宾馆住宿。"
+    },
+    {
+        "role": "user",
+        "content": "我想找一家最低价格在200-300元的酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "舒适型",
+            "price_range_lower": 200,
+            "price_range_upper": 300
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "维也纳3好酒店(北京南站洋桥店)",
+                "type": "舒适型",
+                "address": "北京丰台区马家堡东路71号",
+                "subway": "角门东地铁站A口",
+                "phone": "010-67586489",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "收费停车位"
+                ],
+                "price": 281.0,
+                "rating": 3.5,
+                "hotel_id": 6
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去维也纳3好酒店(北京南站洋桥店)住宿。"
+    }
+]

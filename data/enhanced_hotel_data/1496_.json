@@ -1,0 +1,107 @@
+[
+    {
+        "role": "user",
+        "content": "没关系，那你帮我推荐一个评分是5分的酒店吧，最好是能提供早餐的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "早餐服务"
+            ],
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家商旅酒店(北京牡丹园地铁站店)",
+                "type": "经济型",
+                "address": "北京海淀区花园东路甲32号",
+                "subway": "牡丹园地铁站B口",
+                "phone": "010-82038181",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 512.0,
+                "rating": 5.0,
+                "hotel_id": 943
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐如家商旅酒店(北京牡丹园地铁站店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，晚上我想找一个价格在600-700元之间的酒店入住，最好能提供国际话费和宽带上网服务，有推荐的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "facilities": [
+                "国际话费",
+                "宽带上网"
+            ],
+            "price_range_lower": 600,
+            "price_range_upper": 700
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京中乐六星酒店",
+                "type": "豪华型",
+                "address": "北京丰台区方庄芳群园三区4号",
+                "subway": "蒲黄榆地铁站G口",
+                "phone": "010-57955555",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "早餐服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 671.0,
+                "rating": 4.7,
+                "hotel_id": 271
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京中乐六星酒店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就入住北京中乐六星酒店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

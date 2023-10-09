@@ -1,0 +1,83 @@
+[
+    {
+        "role": "user",
+        "content": "你好，推荐一个提供暖气和商务中心的舒适型酒店，谢谢。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "商务中心",
+                "暖气"
+            ],
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京西单饭店",
+                "type": "舒适型",
+                "address": "北京西城区西单大木仓北一巷1号",
+                "subway": "灵境胡同地铁站D口",
+                "phone": "010-66023566",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "棋牌室",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 652.0,
+                "rating": 4.3,
+                "hotel_id": 30
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐北京西单饭店。"
+    },
+    {
+        "role": "user",
+        "content": "评分是5分吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "商务中心",
+                "暖气"
+            ],
+            "type": "舒适型",
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "不是呢，评分是4.3，没有找到评分5分的呢。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京西单饭店的价格是652元。"
+    }
+]

@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "吃完饭我要找一个价格在300-400元之间的酒店休息，帮我推荐一下呗。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京奥友宾馆",
+                "type": "舒适型",
+                "address": "北京朝阳区亚运村汇园公寓J座11门",
+                "subway": "奥林匹克公园地铁站D口",
+                "phone": "010-84105566",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "叫醒服务"
+                ],
+                "price": 344.0,
+                "rating": 4.4,
+                "hotel_id": 225
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐北京奥友宾馆。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住北京奥友宾馆。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一个价位在100-200元之间的经济型酒店，最好评分在4.5分以上的，有推荐的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "海友酒店(北京立水桥店)",
+                "type": "经济型",
+                "address": "北京昌平区立水桥北路龙德广场东门东",
+                "subway": "立水桥地铁站B1口",
+                "phone": "010-56917688",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存"
+                ],
+                "price": 194.0,
+                "rating": 4.5,
+                "hotel_id": 587
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐海友酒店(北京立水桥店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住这家酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

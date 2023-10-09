@@ -1,0 +1,15 @@
+[
+    {
+        "role": "user",
+        "content": "好的，酒店里有叫醒服务和行李寄存吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "叫醒服务",
+                "行李寄存"
+            ]
+        }
+    }
+]

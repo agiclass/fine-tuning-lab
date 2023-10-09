@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "有没有价格300-400元的酒店推荐呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京青蓝大厦",
+                "type": "舒适型",
+                "address": "北京东城区东四十条24号",
+                "subway": "东四十条地铁站D口",
+                "phone": "010-84021155",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "商务中心",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 326.0,
+                "rating": 3.9,
+                "hotel_id": 341
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京青蓝大厦吧。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我愿意入住北京青蓝大厦。谢谢！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

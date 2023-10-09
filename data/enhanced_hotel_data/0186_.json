@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我带着孩子想去酒店住宿。请帮我推荐一家最低价格是600-700元的，评分是4.5分以上的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京永兴花园饭店",
+                "type": "高档型",
+                "address": "北京海淀区阜成路101号",
+                "subway": "西钓鱼台地铁站C口",
+                "phone": "010-88111188",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "桑拿",
+                    "早餐服务",
+                    "接待外宾"
+                ],
+                "price": 618.0,
+                "rating": 4.6,
+                "hotel_id": 393
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京永兴花园饭店住宿吧，这家酒店不错。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是618元。"
+    }
+]

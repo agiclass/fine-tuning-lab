@@ -1,0 +1,41 @@
+[
+    {
+        "role": "user",
+        "content": "你好，帮我推荐一个价格在100-200元之间的酒店，最好评分在4分以上的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京首科商务酒店",
+                "type": "舒适型",
+                "address": "北京丰台区西客站南路华源三里一号",
+                "subway": "六里桥东地铁站D口",
+                "phone": "010-63379955",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 200.0,
+                "rating": 4.0,
+                "hotel_id": 386
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐北京首科商务酒店。"
+    }
+]

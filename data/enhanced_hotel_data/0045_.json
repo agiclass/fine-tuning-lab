@@ -1,0 +1,66 @@
+[
+    {
+        "role": "user",
+        "content": "然后，我想入住一家评分是4.5分以上的餐馆，请推荐。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "user",
+        "content": "哦，不好意思，请推荐一家评分是4.5分以上的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京贵都大酒店",
+                "type": "高档型",
+                "address": "北京西城区广安门内大街217号",
+                "subway": "菜市口地铁站D口",
+                "phone": "010-51979888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "商务中心",
+                    "接站服务",
+                    "接机服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 1354.0,
+                "rating": 4.7,
+                "hotel_id": 0
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那您可以到北京贵都大酒店入住，那里环境很不错的。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的房价是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京贵都大酒店的每晚房价是1354元。"
+    }
+]

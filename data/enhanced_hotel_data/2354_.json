@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "很好。吃过饭我和同学就在酒店休息了。请帮我推荐一家评分是4.5分以上，最低价格是100-200元的经济型酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "海友酒店(北京木樨园店)",
+                "type": "经济型",
+                "address": "北京丰台区南木樨园83号",
+                "subway": "大红门地铁站C2口",
+                "phone": "010-67255818",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存"
+                ],
+                "price": 180.0,
+                "rating": 4.6,
+                "hotel_id": 1037
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您和同学去海友酒店(北京木樨园店)休息。"
+    },
+    {
+        "role": "user",
+        "content": "嗯，好的。我和同学就住在海友酒店(北京木樨园店)了。谢谢你的推荐！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

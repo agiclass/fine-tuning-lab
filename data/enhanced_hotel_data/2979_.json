@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "在吗，能帮我介绍一家酒店，要经济型的，最好是一天400-500元的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "IU酒店(北京科技大学店)(原欣润都宾馆)",
+                "type": "经济型",
+                "address": "北京海淀区志新路11号",
+                "subway": "北沙滩地铁站C口",
+                "phone": "010-82398180",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 419.0,
+                "rating": 4.6,
+                "hotel_id": 1055
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "这样的酒店满地都是，我推荐你去IU酒店(北京科技大学店)(原欣润都宾馆)入住吧。"
+    },
+    {
+        "role": "user",
+        "content": "谢谢推荐！我决定入住IU酒店(北京科技大学店)。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

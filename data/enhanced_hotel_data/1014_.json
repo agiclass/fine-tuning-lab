@@ -1,0 +1,54 @@
+[
+    {
+        "role": "user",
+        "content": "吃完饭我想找一家最低价格200-300元的，有无烟房的经济型酒店住宿，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无烟房"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "速8酒店(北京前门大栅栏店)",
+                "type": "经济型",
+                "address": "北京西城区前门大栅栏西街56号",
+                "subway": "珠市口地铁站A口",
+                "phone": "010-63135895",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "商务中心",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 228.0,
+                "rating": 4.1,
+                "hotel_id": 22
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去速8酒店(北京前门大栅栏店)住宿。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店有没有商务中心？"
+    },
+    {
+        "role": "assistant",
+        "content": "有商务中心。"
+    }
+]

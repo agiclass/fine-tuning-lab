@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想预约一家经济型的酒店，价格在300-400元，最好有健身房的！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "健身房"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京行者居酒店",
+                "type": "高档型",
+                "address": "北京丰台区苇子坑125号",
+                "subway": "宋家庄地铁站D口",
+                "phone": "010-87169611",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 386.0,
+                "rating": 4.5,
+                "hotel_id": 816
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京行者居酒店很不错，价格是386元，但他是高档型的。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京行者居酒店的价格是386元每晚。"
+    }
+]

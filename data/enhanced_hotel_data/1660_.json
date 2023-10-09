@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "麻烦您再帮我找一家评分是4.5分以上并且最低价格是500-600元的酒店吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "Hotels潮·酒店(北京亦庄店)",
+                "type": "高档型",
+                "address": "北京通州区经济技术开发区经海七路100号10号楼",
+                "subway": "次渠南地铁站A口",
+                "phone": "010-57249088",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "商务中心",
+                    "棋牌室",
+                    "早餐服务免费",
+                    "接站服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 526.0,
+                "rating": 4.6,
+                "hotel_id": 531
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "Hotels潮·酒店(北京亦庄店)这家酒店可以满足您的需要。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我就入住Hotels潮·酒店(北京亦庄店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

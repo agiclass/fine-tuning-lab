@@ -1,0 +1,34 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一家评分5分最低价格在500-600元的酒店住宿，酒店要有宽带上网服务的，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "宽带上网"
+            ],
+            "price_range_lower": 500,
+            "price_range_upper": 600,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉,没有符合您要求的，推荐您去评分4."
+    },
+    {
+        "role": "user",
+        "content": "嗨，没问题，我愿意入住那家评分4的酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

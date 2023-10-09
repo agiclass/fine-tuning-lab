@@ -1,0 +1,66 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我们本周打算开公司会议，能帮我找一个评分是5分，有商业中心的酒店吗，我们需要商业中心来开会。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "商业中心"
+            ],
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京丰荣君华酒店",
+                "type": "高档型",
+                "address": "北京顺义区首都机场国门商务区李天路27号",
+                "subway": "T3航站楼地铁站",
+                "phone": "010-81463366",
+                "facilities": [
+                    "公共区域提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "叫醒服务"
+                ],
+                "price": -1.0,
+                "rating": 5.0,
+                "hotel_id": 237
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "只有一家酒店符合您的要求，北京丰荣君华酒店，推荐给您。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "北京丰荣君华酒店的评分是5分。"
+    },
+    {
+        "role": "user",
+        "content": "我决定住在北京丰荣君华酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

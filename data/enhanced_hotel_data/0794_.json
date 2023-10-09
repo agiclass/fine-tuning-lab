@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "玩完后我想找一个价格在300-400元之间的酒店入住，最好评分在4.5分以上的，有推荐的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京恒豪酒店",
+                "type": "舒适型",
+                "address": "北京通州区物资学院路3号院30号楼",
+                "subway": "物资学院路地铁站D口",
+                "phone": "010-80880888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "无烟房",
+                    "桑拿",
+                    "行李寄存",
+                    "叫醒服务",
+                    "收费停车位"
+                ],
+                "price": 360.0,
+                "rating": 4.5,
+                "hotel_id": 573
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京恒豪酒店。"
+    },
+    {
+        "role": "user",
+        "content": "非常感谢！那就订北京恒豪酒店吧！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

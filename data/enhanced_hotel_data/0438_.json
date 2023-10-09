@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "好的，我打算在游玩结束后找一个评分是4分以上，价格是400-500元的经济型酒店住宿，你有什么好的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 400,
+            "price_range_upper": 500,
+            "rating_range_lower": 4.0,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林联盟酒店(北京亚运村店)",
+                "type": "经济型",
+                "address": "北京朝阳区亚运村安慧北里雅园1号楼",
+                "subway": "安立路地铁站C口",
+                "phone": "010-64966632",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 439.0,
+                "rating": 4.3,
+                "hotel_id": 666
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "格林联盟酒店(北京亚运村店)就是一个很好的去处。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "格林联盟酒店(北京亚运村店)的价格是439元。"
+    },
+    {
+        "role": "user",
+        "content": "嗯，那我就决定住格林联盟酒店(北京亚运村店)了！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

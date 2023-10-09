@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "那帮我找一个酒店，价格在100-200元的景点。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京一六九商务酒店",
+                "type": "舒适型",
+                "address": "北京顺义区天竺镇天柱东路8号",
+                "subway": "国展地铁站C口",
+                "phone": "010-64588836",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 154.0,
+                "rating": 4.5,
+                "hotel_id": 59
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京一六九商务酒店。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住北京一六九商务酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

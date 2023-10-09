@@ -1,0 +1,52 @@
+[
+    {
+        "role": "user",
+        "content": "你好，能帮我找一个提供无障碍设施的舒适型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无障碍设施"
+            ],
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京四季天成酒店",
+                "type": "舒适型",
+                "address": "北京西城区福长街45号(北京天桥剧场西侧)",
+                "subway": "珠市口地铁站D口",
+                "phone": "010-62266969",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "暖气",
+                    "残疾人设施",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 282.0,
+                "rating": 4.3,
+                "hotel_id": 86
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "当然可以啊，北京四季天成酒店就是这样的地方呢。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店有商务中心吗？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店没有商务中心。"
+    }
+]

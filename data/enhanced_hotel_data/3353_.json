@@ -1,0 +1,58 @@
+[
+    {
+        "role": "user",
+        "content": "好，再帮我推荐一个价位在700-800元之间的酒店吧，最好评分在4.5分以上的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 700,
+            "price_range_upper": 800,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "桔子水晶酒店(北京前门店)",
+                "type": "高档型",
+                "address": "北京西城区香厂路41号",
+                "subway": "珠市口地铁站D口",
+                "phone": "010-80698388",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 731.0,
+                "rating": 4.9,
+                "hotel_id": 897
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐桔子水晶酒店(北京前门店)。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "桔子水晶酒店(北京前门店)的价格是731元。"
+    },
+    {
+        "role": "user",
+        "content": "谢谢！那我就入住桔子水晶酒店(北京前门店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

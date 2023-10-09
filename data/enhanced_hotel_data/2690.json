@@ -1,0 +1,46 @@
+[
+    {
+        "role": "user",
+        "content": "吃完饭我想找一个价格在600-700元之间的酒店入住，最好评分达到5分，有推荐的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 600,
+            "price_range_upper": 700,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "桔子酒店·精选(北京三元桥店)",
+                "type": "舒适型",
+                "address": "北京朝阳区静安里30号",
+                "subway": "三元桥地铁站D口",
+                "phone": "010-52245959",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 610.0,
+                "rating": 4.8,
+                "hotel_id": 201
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，没有这么高评分的酒店，为您推荐桔子酒店·精选(北京三元桥店)，评分是4.8分。"
+    }
+]

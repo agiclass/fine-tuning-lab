@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想带女朋友找一家最低价格300-400元的经济型酒店住宿，游玩中式餐厅和24小时热水供应，给我推荐一家吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "24小时热水供应",
+                "中式餐厅"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "汉庭酒店(北京北苑店)",
+                "type": "经济型",
+                "address": "北京朝阳区北苑路18号院4号楼",
+                "subway": "立水桥南地铁站C口",
+                "phone": "010-60606099",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 324.0,
+                "rating": 4.4,
+                "hotel_id": 953
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐汉庭酒店(北京北苑店)。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的评分是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的评分是4.4。"
+    }
+]

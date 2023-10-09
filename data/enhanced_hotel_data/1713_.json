@@ -1,0 +1,55 @@
+[
+    {
+        "role": "user",
+        "content": "我和家人刚下车，想找个评分是4.5分以上、价格是200-300元的酒店住宿，帮个忙呗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家快捷酒店(北京苹果园地铁站店)",
+                "type": "经济型",
+                "address": "北京石景山区阜石路300-1号",
+                "subway": "苹果园地铁站A口",
+                "phone": "010-68853008",
+                "facilities": [
+                    "部分房间提供wifi",
+                    "24小时热水",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 226.0,
+                "rating": 4.7,
+                "hotel_id": 575
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "如家快捷酒店(北京苹果园地铁站店)评分4.7、价格226元。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这个酒店的价格是226元。"
+    },
+    {
+        "role": "user",
+        "content": "我决定住这个酒店了，帮我预订一间房吧。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，我会帮您预订一间房间。祝您入住愉快！"
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "你好，可以帮我安排一个价格是200-300元的高档型酒店吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京观唐假日酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区北苑路甲176号",
+                "subway": "惠新西街北口地铁站A口",
+                "phone": "010-64921818",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 282.0,
+                "rating": 4.2,
+                "hotel_id": 221
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "没问题啊，北京观唐假日酒店就是一个很好的去处啊！"
+    },
+    {
+        "role": "user",
+        "content": "谢谢！我决定入住北京观唐假日酒店。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,53 @@
+[
+    {
+        "role": "user",
+        "content": "在么？我需要找家价格100-200元的酒店，在公共区域和部分房间能提供wifi的，能否帮我看一下？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "公共区域和部分房间提供wifi"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "昌浩商务酒店(北京南站店)",
+                "type": "舒适型",
+                "address": "北京丰台区右安门外大街开阳里三街六区15号",
+                "subway": "北京南站地铁站D口",
+                "phone": "010-83539288",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 196.0,
+                "rating": 4.2,
+                "hotel_id": 63
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "你可以去昌浩商务酒店(北京南站店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住昌浩商务酒店(北京南站店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

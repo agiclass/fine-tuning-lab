@@ -1,0 +1,70 @@
+[
+    {
+        "role": "user",
+        "content": "再帮我介绍一家高档型的酒店，价格100-200元之间，谢谢！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京布提克精品酒店",
+                "type": "高档型",
+                "address": "北京顺义区天竺镇府前一街24号",
+                "subway": "国展地铁站C口",
+                "phone": "010-84163601",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "国际长途电话",
+                    "免费国内长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "会议室",
+                    "无烟房",
+                    "接站服务",
+                    "接机服务",
+                    "洗衣服务",
+                    "行李寄存",
+                    "租车",
+                    "叫醒服务"
+                ],
+                "price": 196.0,
+                "rating": 4.8,
+                "hotel_id": 161
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京布提克精品酒店很不错的，符合您的要求！"
+    },
+    {
+        "role": "user",
+        "content": "评分是4分以上么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "type": "高档型",
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "是的，4.8分。"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "role": "user",
+        "content": "嗯，最后再麻烦您帮我找个评分在4分以上、然后价格200-300元之间的酒店住宿。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京畅悦时尚酒店(原乐活酒店)",
+                "type": "舒适型",
+                "address": "北京石景山区苹果园南路东口9号",
+                "subway": "苹果园地铁站C口",
+                "phone": "010-68882332",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 269.0,
+                "rating": 4.5,
+                "hotel_id": 84
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "那我推荐您北京畅悦时尚酒店(原乐活酒店)，它符合您对住宿的要求。"
+    }
+]

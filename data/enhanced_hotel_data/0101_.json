@@ -1,0 +1,59 @@
+[
+    {
+        "role": "user",
+        "content": "嗯嗯，可以。玩累了直接住下了。帮我找一家评分是5分，最低价格是300-400元的酒店，这家酒店最好有暖气和健身房。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "健身房",
+                "暖气"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京行者居酒店",
+                "type": "高档型",
+                "address": "北京丰台区苇子坑125号",
+                "subway": "宋家庄地铁站D口",
+                "phone": "010-87169611",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 386.0,
+                "rating": 4.5,
+                "hotel_id": 816
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去北京行者居酒店酒店住店，不过这家酒店的评分是4.5分，可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "好的，那就去北京行者居酒店吧！听起来挺不错的。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

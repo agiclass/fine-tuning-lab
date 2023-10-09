@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "吃完饭晚上我要找一个酒店休息，有没有评分在4.5分以上的经济型酒店呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "和家宾馆连锁(北京后海店)(原德胜门店)",
+                "type": "经济型",
+                "address": "北京西城区鼓楼西大街小八道湾胡同6号",
+                "subway": "鼓楼大街地铁站E口",
+                "phone": "010-64039931",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "中式餐厅",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 233.0,
+                "rating": 4.7,
+                "hotel_id": 471
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐和家宾馆连锁(北京后海店)(原德胜门店)。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的电话是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的电话是010-64039931。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就入住和家宾馆连锁(北京后海店)(原德胜门店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "role": "user",
+        "content": "好的。游玩结束想去休息。请帮我找一家最低价格是300-400元的酒店。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京星月亮马酒店",
+                "type": "舒适型",
+                "address": "北京朝阳区酒仙桥南路9号楼4号院",
+                "subway": "东风北桥地铁站C2口",
+                "phone": "010-59275588",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 393.0,
+                "rating": 4.0,
+                "hotel_id": 302
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "符合您条件的好多啊，您看您去北京星月亮马酒店，可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "好。那北京星月亮马酒店能宽带上网吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "facilities": [
+                "宽带上网"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "可以宽带上网的。"
+    },
+    {
+        "role": "user",
+        "content": "嗯嗯。北京星月亮马酒店的部分房间有无线网吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "facilities": [
+                "部分房间有无线网"
+            ]
+        }
+    }
+]

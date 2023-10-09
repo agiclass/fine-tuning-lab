@@ -1,0 +1,60 @@
+[
+    {
+        "role": "user",
+        "content": "好的。我想约闰蜜出来聊天，求推荐一家有SPA、提供中式餐厅的酒店，评分要在4.5分以上，最低价格在100-200元吧。谢了！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "SPA",
+                "中式餐厅"
+            ],
+            "price_range_lower": 100,
+            "price_range_upper": 200,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京尚品假日酒店",
+                "type": "舒适型",
+                "address": "北京房山区良乡拱辰南大街91号",
+                "subway": "良乡南关地铁站A2口",
+                "phone": "010-60350828",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "SPA",
+                    "无烟房",
+                    "棋牌室",
+                    "早餐服务",
+                    "接待外宾",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 203.0,
+                "rating": 4.6,
+                "hotel_id": 909
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐北京尚品假日酒店，可以满足您的要求，但是价格是203元，您看可以吗？"
+    },
+    {
+        "role": "user",
+        "content": "请问这家酒店是否有免费wifi呢？"
+    },
+    {
+        "role": "assistant",
+        "content": "是的，这家酒店提供免费的wifi服务。"
+    }
+]

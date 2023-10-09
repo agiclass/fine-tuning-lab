@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "content": "好的，游玩结束后，我打算找个评分是4.5分以上，价格是300-400元的经济型酒店住宿，有什么好的推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "7天连锁酒店(北京航天桥店)",
+                "type": "经济型",
+                "address": "北京海淀区定慧东里18号楼",
+                "subway": "西钓鱼台地铁站C口",
+                "phone": "010-88111977",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费国内长途电话",
+                    "24小时热水",
+                    "无烟房",
+                    "洗衣服务"
+                ],
+                "price": 316.0,
+                "rating": 4.5,
+                "hotel_id": 748
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "个人感觉7天连锁酒店(北京航天桥店)还是不错的，性价比非常高。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的地址是什么？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的地址是北京海淀区定慧东里18号楼。"
+    }
+]

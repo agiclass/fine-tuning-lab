@@ -1,0 +1,51 @@
+[
+    {
+        "role": "user",
+        "content": "晚上我想要找一家提供行李寄存的经济型酒店，有什么建议么？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "行李寄存"
+            ],
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "布丁酒店(北京水立方店)",
+                "type": "经济型",
+                "address": "北京西城区北三环中路甲3号",
+                "subway": "安华桥地铁站A口",
+                "phone": "010-62058128",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 189.0,
+                "rating": 4.0,
+                "hotel_id": 517
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "您可以考虑布丁酒店(北京水立方店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住布丁酒店(北京水立方店)"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快"
+    }
+]

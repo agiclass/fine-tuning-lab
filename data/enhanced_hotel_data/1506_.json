@@ -1,0 +1,56 @@
+[
+    {
+        "role": "user",
+        "content": "好的，你还是给我推荐一个价格在200-300元之间的酒店吧，要能提供无烟房的，最好评分在4.5分以上。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "无烟房"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "锦江之星(北京广渠门店)",
+                "type": "经济型",
+                "address": "北京东城区东花市北里东区1号东段",
+                "subway": "广渠门内地铁站B口",
+                "phone": "010-51005188",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "24小时热水",
+                    "无烟房",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 237.0,
+                "rating": 4.6,
+                "hotel_id": 226
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐锦江之星(北京广渠门店)。"
+    },
+    {
+        "role": "user",
+        "content": "嗯，好的！我决定入住锦江之星(北京广渠门店)！"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

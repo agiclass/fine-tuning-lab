@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "晚上我和老公想找一个评分在4.5分以上的经济型酒店入住，帮我推荐下吧。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 4.5,
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家快捷酒店(北京西客站六里桥店)",
+                "type": "经济型",
+                "address": "北京丰台区太平桥西路华源一里3-4号楼",
+                "subway": "六里桥东地铁站D口",
+                "phone": "010-63371881",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 256.0,
+                "rating": 4.8,
+                "hotel_id": 686
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "推荐您去如家快捷酒店(北京西客站六里桥店)。"
+    },
+    {
+        "role": "user",
+        "content": "这家酒店的价格是多少？"
+    },
+    {
+        "role": "assistant",
+        "content": "这家酒店的价格是每晚256元。"
+    }
+]

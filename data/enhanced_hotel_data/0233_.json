@@ -1,0 +1,57 @@
+[
+    {
+        "role": "user",
+        "content": "好的，请给我推荐一家评分5分最低价格在200-300元的酒店住宿，酒店要有接站服务的。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "接站服务"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "格林豪泰(北京首都机场航站楼店)",
+                "type": "经济型",
+                "address": "北京朝阳区首都机场货运东路1号B区",
+                "subway": "T2航站楼地铁站",
+                "phone": "010-64501081",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "24小时热水",
+                    "早餐服务",
+                    "接站服务",
+                    "接机服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "收费停车位"
+                ],
+                "price": 266.0,
+                "rating": 4.1,
+                "hotel_id": 138
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，评分没有符合您要求的，推荐您去评分4.1分的格林豪泰(北京首都机场航站楼店)。"
+    },
+    {
+        "role": "user",
+        "content": "这个酒店有没有洗衣服务？"
+    },
+    {
+        "role": "assistant",
+        "content": "是的，这家酒店提供洗衣服务。"
+    }
+]

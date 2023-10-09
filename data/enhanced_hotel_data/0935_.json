@@ -1,0 +1,49 @@
+[
+    {
+        "role": "user",
+        "content": "你好，我想找一个提供会议室和酒店每个角落都有wifi，价格是300-400元的酒店住宿，你有什么好的酒店推荐吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "会议室",
+                "酒店每个角落都有wifi"
+            ],
+            "price_range_lower": 300,
+            "price_range_upper": 400
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京行者居酒店",
+                "type": "高档型",
+                "address": "北京丰台区苇子坑125号",
+                "subway": "宋家庄地铁站D口",
+                "phone": "010-87169611",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 386.0,
+                "rating": 4.5,
+                "hotel_id": 816
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "北京行者居酒店是一个非常好的去处，这是旅行者的家。"
+    }
+]

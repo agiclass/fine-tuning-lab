@@ -1,0 +1,30 @@
+[
+    {
+        "role": "user",
+        "content": "嗯呢。还有这家酒店评分是5分，类型是舒适型的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "rating_range_lower": 5.0,
+            "rating_range_upper": 5.0,
+            "type": "舒适型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "哪个都不是呢，不过评分也不低呢是4分，类型是豪华型的。"
+    },
+    {
+        "role": "user",
+        "content": "那好吧，我就入住这家酒店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

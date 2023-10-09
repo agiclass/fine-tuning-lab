@@ -1,0 +1,67 @@
+[
+    {
+        "role": "user",
+        "content": "那这家酒店是经济型吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "经济型"
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "不是的。是高档型的。"
+    },
+    {
+        "role": "user",
+        "content": "逛一天下来，我估计我的体力也透支了，我还是先找好酒店吧，帮我看看哪家酒店提供洗衣服务，评分还是4.5分以上。"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "type": "经济型",
+            "facilities": [
+                "洗衣服务"
+            ],
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京骏马国际酒店",
+                "type": "高档型",
+                "address": "北京海淀区中关村东路南1条2号",
+                "subway": "知春里地铁站B口",
+                "phone": "010-82885858",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 518.0,
+                "rating": 4.5,
+                "hotel_id": 33
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "是的。您去北京骏马国际酒店吧。服务好。"
+    }
+]

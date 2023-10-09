@@ -1,0 +1,52 @@
+[
+    {
+        "role": "user",
+        "content": "玩完后我想找一个能提供早餐服务的并且价格在200-300元之间的酒店入住，我希望评分在4.5分以上，有推荐的吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "早餐服务"
+            ],
+            "price_range_lower": 200,
+            "price_range_upper": 300,
+            "rating_range_lower": 4.5
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "如家快捷酒店(北京玉泉路店)",
+                "type": "经济型",
+                "address": "北京丰台区小屯路4号",
+                "subway": "玉泉路地铁站C2口",
+                "phone": "010-68695588",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "24小时热水",
+                    "无烟房",
+                    "商务中心",
+                    "早餐服务"
+                ],
+                "price": 297.0,
+                "rating": 4.7,
+                "hotel_id": 734
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "为您推荐如家快捷酒店(北京玉泉路店)。"
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住如家快捷酒店(北京玉泉路店)了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]

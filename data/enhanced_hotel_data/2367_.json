@@ -1,0 +1,22 @@
+[
+    {
+        "role": "user",
+        "content": "这下我可是有口福了呢，那么酒店设施提供室内游泳设施吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "facilities": [
+                "室内游泳设施"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "抱歉，该酒店的酒店设施不提供室内游泳池的。"
+    }
+]

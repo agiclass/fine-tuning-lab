@@ -1,0 +1,149 @@
+[
+    {
+        "role": "user",
+        "content": "你好，请帮我推荐一家高档型的酒店，价格在700-800元之间的！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 700,
+            "price_range_upper": 800,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京中成天坛假日酒店",
+                "type": "高档型",
+                "address": "北京丰台区南三环定安东里1号",
+                "subway": "景泰站地铁站B口",
+                "phone": "010-67626688",
+                "facilities": [
+                    "酒店各处提供wifi",
+                    "宽带上网",
+                    "免费市内电话",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "残疾人设施",
+                    "室内游泳池",
+                    "会议室",
+                    "健身房",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "桑拿",
+                    "洗衣服务",
+                    "叫醒服务"
+                ],
+                "price": 775.0,
+                "rating": 4.4,
+                "hotel_id": 435
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐北京中成天坛假日酒店，价格775元！"
+    },
+    {
+        "role": "user",
+        "content": "酒店是否有中式餐厅和无烟房间呢？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 700,
+            "price_range_upper": 800,
+            "type": "高档型",
+            "facilities": [
+                "中式餐厅",
+                "无烟房间"
+            ]
+        }
+    },
+    {
+        "role": "user",
+        "content": "好的！重新给我推荐个高档型，价格在700-800元的酒店！"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 700,
+            "price_range_upper": 800,
+            "type": "高档型",
+            "facilities": [
+                "中式餐厅",
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京市政协会议中心",
+                "type": "高档型",
+                "address": "北京东城区建国门内大街13号",
+                "subway": "东单地铁站1号线B口",
+                "phone": "010-65276611",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "暖气",
+                    "中式餐厅",
+                    "室内游泳池",
+                    "会议室",
+                    "健身房",
+                    "SPA",
+                    "无烟房",
+                    "商务中心",
+                    "桑拿",
+                    "早餐服务",
+                    "接待外宾",
+                    "洗衣服务",
+                    "行李寄存",
+                    "叫醒服务"
+                ],
+                "price": 798.0,
+                "rating": 4.7,
+                "hotel_id": 25
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "给您推荐北京市政协会议中心。这个价格是798元！"
+    },
+    {
+        "role": "user",
+        "content": "这个有中餐馆和无烟房吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 700,
+            "price_range_upper": 800,
+            "type": "高档型",
+            "facilities": [
+                "中餐馆",
+                "无烟房"
+            ]
+        }
+    },
+    {
+        "role": "user",
+        "content": "好的，我决定入住北京市政协会议中心。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快！"
+    }
+]

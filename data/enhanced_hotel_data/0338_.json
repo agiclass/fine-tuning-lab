@@ -1,0 +1,80 @@
+[
+    {
+        "role": "user",
+        "content": "收到，吃完饭我打算找个价格是300-400元的高档型酒店，有啥好地方吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "高档型"
+        }
+    },
+    {
+        "role": "return",
+        "records": [
+            {
+                "name": "北京五环大酒店",
+                "type": "高档型",
+                "address": "北京朝阳区东三环南路15号",
+                "subway": "潘家园地铁站C2口",
+                "phone": "010-67673888",
+                "facilities": [
+                    "公共区域和部分房间提供wifi",
+                    "宽带上网",
+                    "国际长途电话",
+                    "吹风机",
+                    "24小时热水",
+                    "西式餐厅",
+                    "中式餐厅",
+                    "会议室",
+                    "无烟房",
+                    "商务中心",
+                    "酒吧",
+                    "洗衣服务",
+                    "叫醒服务"
+                ],
+                "price": 328.0,
+                "rating": 4.1,
+                "hotel_id": 308
+            }
+        ]
+    },
+    {
+        "role": "assistant",
+        "content": "我推荐你去北京五环大酒店。"
+    },
+    {
+        "role": "user",
+        "content": "啊，帮我看看看护小孩和酒吧服务吗？"
+    },
+    {
+        "role": "search",
+        "arguments": {
+            "price_range_lower": 300,
+            "price_range_upper": 400,
+            "type": "高档型",
+            "facilities": [
+                "看护小孩服务",
+                "酒吧"
+            ]
+        }
+    },
+    {
+        "role": "return",
+        "records": []
+    },
+    {
+        "role": "assistant",
+        "content": "他家只有酒吧服务。"
+    },
+    {
+        "role": "user",
+        "content": "好的，那我就选择入住北京五环大酒店了。"
+    },
+    {
+        "role": "assistant",
+        "content": "好的，祝您入住愉快。"
+    }
+]
