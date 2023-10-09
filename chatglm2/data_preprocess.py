@@ -44,17 +44,21 @@ class Preprocessor:
             else:
                 if turn["role"] == "search":
                     obj = turn["arguments"]
+                    filtered_obj = {k: v for k, v in obj.items() if v is not None}
+                    prompt += turn["role"] + ":\n" + json.dumps(filtered_obj,indent=4,ensure_ascii=False) + "\n"
                 else:
                     obj = turn["records"]
-                filtered_obj = {k: v for k, v in obj.items() if v is not None}                
-                prompt += turn["role"] + ":\n" + json.dumps(filtered_obj,indent=4,ensure_ascii=False) + "\n"
+                    prompt += turn["role"] + ":\n" + json.dumps(obj,indent=4,ensure_ascii=False) + "\n"   
+                
         return prompt
 
     def _build_response(self,response):
         if response["role"] == "assistant":
             return "assistant: " + response["content"]
         else:
-            return "search:\n" + json.dumps(response["arguments"],indent=4,ensure_ascii=False)
+            obj = response["arguments"]
+            filtered_obj = {k: v for k, v in obj.items() if v is not None}
+            return "search:\n" + json.dumps(filtered_obj,indent=4,ensure_ascii=False)
     
     # 处理测试(dev/test)数据
     '''
