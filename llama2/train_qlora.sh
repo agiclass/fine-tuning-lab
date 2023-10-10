@@ -1,5 +1,5 @@
 #!/bin/bash
-LR=2e-3
+LR=2e-4
 LORA_RANK=8
 #timestamp=$(date +%Y%m%d_%H%M%S)
 
@@ -31,5 +31,6 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --learning_rate $LR \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 \
-    --lora_dropout 0.1 
+    --lora_dropout 0.1 \
+    --fp16
 
