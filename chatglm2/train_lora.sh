@@ -2,6 +2,7 @@
 LR=2e-3
 LORA_RANK=8
 #timestamp=$(date +%Y%m%d_%H%M%S)
+DATA_FS="/root/autodl-tmp"
 
 LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --do_train \
@@ -13,7 +14,7 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --prompt_column context \
     --response_column response \
     --overwrite_cache \
-    --model_name_or_path "/root/chatglm2-6b" \
+    --model_name_or_path "${DATA_FS}/chatglm2-6b" \
     --output_dir "output/chatglm2-6b-lora" \
     --max_source_length 2048 \
     --max_target_length 1024 \

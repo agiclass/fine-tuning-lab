@@ -1,37 +1,110 @@
-#!/usr/bin/env python
-# coding=utf-8
-
-import logging
+import argparse
+import bitsandbytes as bnb
+from functools import partial
 import os
-import sys
-import json
-import time
-import numpy as np
 import torch
-import torch.nn as nn
-import transformers
+
 from transformers import (
-    AutoConfig,
-    AutoModel,
+    AutoModelForCausalLM,
     AutoTokenizer,
     DataCollatorForSeq2Seq,
     HfArgumentParser,
     Seq2SeqTrainingArguments,
+    BitsAndBytesConfig,
     set_seed,
 )
 
-from data_preprocess import Preprocessor
+import logging
+
 from ..common.trainer_seq2seq import Seq2SeqTrainer
 from ..common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from ..common.data_helper import load_raw_datasets, print_dataset_example
 from ..common.evaluator import Evaluator, save_predictions
 from ..common.checkpoint_helper import load_lora_checkpoint
+from data_preprocess import Preprocessor
 
-from peft import get_peft_model, LoraConfig, TaskType
-from peft import PeftModel
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, AutoPeftModelForCausalLM
 
 logger = logging.getLogger(__name__)
 
+def load_model(model_name, bnb_config):
+    n_gpus = torch.cuda.device_count()
+    max_memory = f'{24500}MB'
+
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name,
+        quantization_config=bnb_config,
+        device_map="auto", # dispatch efficiently the model on the available ressources
+        max_memory = {i: max_memory for i in range(n_gpus)},
+    )
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=True)
+
+    # Needed for LLaMA tokenizer
+    tokenizer.pad_token = tokenizer.eos_token
+
+    return model, tokenizer
+
+def create_bnb_config():
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+    )
+
+    return bnb_config
+
+def create_peft_config(modules,peft_args):
+    """
+    Create Parameter-Efficient Fine-Tuning config for your model
+    :param modules: Names of the modules to apply Lora to
+    """
+    config = LoraConfig(
+        r=peft_args.lora_rank,  # dimension of the updated matrices
+        lora_alpha=peft_args.lora_alpha,  # parameter for scaling
+        target_modules=modules,
+        lora_dropout=peft_args.lora_dropout,  # dropout probability for layers
+        bias="none",
+        task_type="CAUSAL_LM",
+    )
+
+    return config
+
+def find_all_linear_names(model):
+    cls = bnb.nn.Linear4bit #if args.bits == 4 else (bnb.nn.Linear8bitLt if args.bits == 8 else torch.nn.Linear)
+    lora_module_names = set()
+    for name, module in model.named_modules():
+        if isinstance(module, cls):
+            names = name.split('.')
+            lora_module_names.add(names[0] if len(names) == 1 else names[-1])
+
+    if 'lm_head' in lora_module_names:  # needed for 16-bit
+        lora_module_names.remove('lm_head')
+    return list(lora_module_names)
+
+
+def print_trainable_parameters(model, use_4bit=False):
+    # int4 如果调用PEFT原生的函数，计算的参数量会少一半
+
+    """
+    Prints the number of trainable parameters in the model.
+    """
+    trainable_params = 0
+    all_param = 0
+    for _, param in model.named_parameters():
+        num_params = param.numel()
+        # if using DS Zero 3 and the weights are initialized empty
+        if num_params == 0 and hasattr(param, "ds_numel"):
+            num_params = param.ds_numel
+
+        all_param += num_params
+        if param.requires_grad:
+            trainable_params += num_params
+    if use_4bit:
+        trainable_params /= 2
+    logger.info(
+        f"all params: {all_param:,d} || trainable params: {trainable_params:,d} || trainable%: {100 * trainable_params / all_param}"
+    )
 
 def main():
 
@@ -40,56 +113,30 @@ def main():
     
     '''
     参数归类:
-        model_args: ChatGLM模型自身的超参
+        model_args: Llama2模型自身的超参
         data_args: 数据集相关参数
         peft_args: 小参数量微调相关的超参
         training_args: 训练器相关参数
     '''
     model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
 
-    # Setup logging
-    logging.basicConfig(
-        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-        datefmt="%m/%d/%Y %H:%M:%S",
-        handlers=[logging.StreamHandler(sys.stdout)],
-    )
-
-    log_level = training_args.get_process_log_level()
-    logger.setLevel(log_level)
-    transformers.utils.logging.set_verbosity(log_level)
-    transformers.utils.logging.enable_default_handler()
-    transformers.utils.logging.enable_explicit_format()
+    bnb_config = create_bnb_config()
+    model, tokenizer = load_model(model_args.model_name_or_path, bnb_config)
 
     
-    logger.warning(f"Training/evaluation parameters {training_args}")
+    # Using the prepare_model_for_kbit_training method from PEFT
+    model = prepare_model_for_kbit_training(model)
 
+    # Get lora module names
+    modules = find_all_linear_names(model)
 
-    # 设置随机种子（以保证实验可复现）
-    set_seed(training_args.seed)
-
-    # 加载ChatGLM的Tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
-
-    # 加载模型
-    model = AutoModel.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
-
-    model = model.half()
-    model.is_parallelizable = True
-    model.model_parallel = True
-    
-    peft_config = LoraConfig(
-        task_type=TaskType.CAUSAL_LM,
-        inference_mode=False,
-        r=peft_args.lora_rank,
-        lora_alpha=peft_args.lora_alpha,
-        lora_dropout=peft_args.lora_dropout,
-        target_modules=["query_key_value"],
-    )
+    # Create PEFT config for these modules and wrap the model to PEFT
+    peft_config = create_peft_config(modules)
 
     raw_model = model
+    model = get_peft_model(model, peft_config)
 
-    model = get_peft_model(model, peft_config).cuda()
-
+    # Load checkpoint if given
     if peft_args.lora_checkpoint is not None:
         model = load_lora_checkpoint(
             raw_model,
@@ -99,6 +146,9 @@ def main():
         )
 
 
+    # Print information about the percentage of trainable parameters
+    print_trainable_parameters(model)
+    
     # 加载数据集
     raw_datasets = load_raw_datasets(data_args,model_args.cache_dir)
 
@@ -182,7 +232,6 @@ def main():
     training_args.generation_max_length = data_args.max_source_length + data_args.max_target_length + 1
     training_args.generation_num_beams = 1
 
-
     trainer = Seq2SeqTrainer(
         model=model,
         args=training_args,
@@ -233,3 +282,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+

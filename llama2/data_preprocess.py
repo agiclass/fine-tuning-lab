@@ -13,7 +13,7 @@ class Preprocessor:
     
     # 处理测试(dev/test)数据
     '''
-        测试数据的拼接方式：[pad][pad]...[gmask_token][sop_token]输入文本[pad][pad]....输出文本
+        测试数据的拼接方式：[pad][pad]...[bos_token]输入文本[pad][pad]....输出文本
     '''
     def preprocess_function_eval(self,examples):  
         inputs, targets = [], []
@@ -29,6 +29,7 @@ class Preprocessor:
                 targets.append(response)
 
         self.tokenizer.truncation_side = 'left'
+        self.tokenizer.padding_side = 'left'
 
         # 对输入文本（prompt）做tokenize
         model_inputs = self.tokenizer(
@@ -38,12 +39,15 @@ class Preprocessor:
             padding=True
         )
 
+        self.tokenizer.padding_side = 'right'
+
         # 对输出文本（response）做tokenize
         labels = self.tokenizer(
             text_target=targets, 
             max_length=self.max_target_length, 
             truncation=True, 
-            padding=True
+            padding=True,
+            add_special_tokens=False
         )
 
         # 如果对pad token不进行loss计算，则将pad token标识为-100（模型约定的值）
@@ -58,7 +62,7 @@ class Preprocessor:
 
     # 处理训练(train)数据
     '''
-        训练数据的拼接方式：[gmask_token][sop_token]输入文本输出文本[eos_token][pad][pad]....
+        训练数据的拼接方式：[bos_token]输入文本输出文本[eos_token][pad][pad]....
     '''
     def preprocess_function_train(self,examples):
         max_seq_length = self.max_source_length + self.max_target_length
@@ -76,22 +80,22 @@ class Preprocessor:
                 #prompt = self.tokenizer.build_prompt(query)
                 a_ids = self.tokenizer.encode(
                     text=prompt, 
-                    add_special_tokens=True, 
+                    add_special_tokens=False, 
                     truncation=True,
-                    max_length=self.max_source_length
+                    max_length=self.max_source_length-1
                 )
                 b_ids = self.tokenizer.encode(
                     text=response, 
                     add_special_tokens=False, 
                     truncation=True,
-                    max_length=self.max_target_length
+                    max_length=self.max_target_length-1
                 )
 
 			
-                context_length = len(a_ids)
+                context_length = len(a_ids) + 1
 
                 # 手工拼接
-                input_ids = a_ids + b_ids + [self.tokenizer.eos_token_id]
+                input_ids = [self.tokenizer.bos_token_id] + a_ids + b_ids + [self.tokenizer.eos_token_id]
                 
                 # 手工pad
                 labels = [self.tokenizer.pad_token_id] * context_length + b_ids + [self.tokenizer.eos_token_id]
