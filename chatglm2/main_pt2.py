@@ -192,8 +192,8 @@ def main():
             self.lr_scheduler = get_polynomial_decay_schedule_with_warmup(
                 self.optimizer, 0, num_training_steps, power=2)
 
-    #trainer = PolyDecaySeq2SeqTrainer(
-    trainer = Seq2SeqTrainer(
+    trainer = PolyDecaySeq2SeqTrainer(
+    #trainer = Seq2SeqTrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,
