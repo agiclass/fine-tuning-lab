@@ -5,7 +5,7 @@ LORA_RANK=8
 
 DATA_FS="/root/autodl-tmp"
 
-LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
+LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --do_train \
     --do_eval \
     --do_predict \

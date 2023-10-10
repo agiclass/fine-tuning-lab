@@ -4,7 +4,7 @@ DATA_FS="/root/autodl-tmp"
 
 CHECKPOINT_DIR="PATH/TO/YOUR/CHECKPOINT"
 
-CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
+CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --do_predict \
     --test_file ../data/test.lite.jsonl \
     --prompt_column context \
