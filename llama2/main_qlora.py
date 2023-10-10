@@ -136,7 +136,7 @@ def main():
     modules = find_all_linear_names(model)
 
     # Create PEFT config for these modules and wrap the model to PEFT
-    peft_config = create_peft_config(modules)
+    peft_config = create_peft_config(modules,peft_args)
 
     raw_model = model
     model = get_peft_model(model, peft_config)
