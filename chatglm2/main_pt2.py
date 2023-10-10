@@ -21,7 +21,6 @@ from transformers import (
     Seq2SeqTrainingArguments,
     set_seed,
 )
-from transformers import get_polynomial_decay_schedule_with_warmup
 
 from data_preprocess import Preprocessor
 from common.trainer_seq2seq import Seq2SeqTrainer
