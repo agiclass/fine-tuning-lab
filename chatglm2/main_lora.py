@@ -198,9 +198,8 @@ def main():
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=evaluator.compute_metrics, # 训练过程中是否阶段性跑测试（否则直接计算loss）
-        save_changed=peft_args.lora_rank is not None #是否只保存训练的参数
+        save_lora=True #是否只保存训练的参数
     )
-    
     
     # Training
     if training_args.do_train:
