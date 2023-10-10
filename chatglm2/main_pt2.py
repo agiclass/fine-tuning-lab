@@ -19,10 +19,12 @@ from transformers import (
     Seq2SeqTrainingArguments,
     set_seed,
 )
-from trainer_seq2seq import Seq2SeqTrainer
-from data_preprocess import Preprocessor, load_raw_datasets, print_dataset_example
-from evaluator import Evaluator, save_predictions
-from arguments import ModelArguments, DataTrainingArguments, PeftArguments
+
+from data_preprocess import Preprocessor
+from ..common.trainer_seq2seq import Seq2SeqTrainer
+from ..common.data_helper import load_raw_datasets, print_dataset_example
+from ..common.evaluator import Evaluator, save_predictions
+from ..common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
 
 logger = logging.getLogger(__name__)
 
