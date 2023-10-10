@@ -185,7 +185,7 @@ def main():
     training_args.generation_max_length = data_args.max_source_length + data_args.max_target_length + 1
     training_args.generation_num_beams = 1
 
-    class PolyDecaySeq2SeqTrainer:
+    class PolyDecaySeq2SeqTrainer(Seq2SeqTrainer):
         def create_optimizer_and_scheduler(self, num_training_steps):
             logger.warning("Set get_polynomial_decay_schedule_with_warmup power 2")
             self.create_optimizer()
