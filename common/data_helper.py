@@ -1,12 +1,12 @@
 from datasets import load_dataset
 import numpy as np
+from .evaluator import remove_minus100
 
 def print_dataset_example(example,tokenizer):
     print("input_ids",example["input_ids"])
     print("inputs", tokenizer.decode(example["input_ids"],skip_special_tokens=True))
     print("label_ids", example["labels"])
-    label_ids = example["labels"]
-    label_ids = np.where(label_ids != -100, label_ids, tokenizer.pad_token_id)
+    label_ids = remove_minus100(example["labels"],tokenizer.pad_token_id)
     print("labels", tokenizer.decode(example["labels"],skip_special_tokens=True))
 
 def load_raw_datasets(data_args,cache_dir):

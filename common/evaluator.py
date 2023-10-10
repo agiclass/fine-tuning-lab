@@ -4,6 +4,11 @@ import numpy as np
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import json
 
+def remove_minus100(ids,val):
+    ids = np.array(ids)
+    ids = np.where(ids == -100, val, ids)
+    return ids
+
 class Evaluator:
     def __init__(self,tokenizer):
         self.tokenizer = tokenizer
@@ -77,8 +82,7 @@ class Evaluator:
         if isinstance(preds, tuple):
             preds = preds[0]
         decoded_preds = self.tokenizer.batch_decode(preds, skip_special_tokens=True)
-        
-        labels = np.where(labels != -100, labels, self.tokenizer.pad_token_id)
+        labels = remove_minus100(labels,self.tokenizer.pad_token_id)
         decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
 
         score_dict = {
@@ -135,8 +139,7 @@ def save_predictions(predict_results, tokenizer, output_dir):
             predict_results.predictions, skip_special_tokens=True, clean_up_tokenization_spaces=True
         )
     predictions = [pred.strip() for pred in predictions]
-    label_ids = predict_results.label_ids
-    label_ids = np.where(label_ids != -100, label_ids, tokenizer.pad_token_id)
+    label_ids = remove_minus100(predict_results.label_ids,tokenizer.pad_token_id)
     labels = tokenizer.batch_decode(
         label_ids, skip_special_tokens=True, clean_up_tokenization_spaces=True
     )
