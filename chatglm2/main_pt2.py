@@ -19,6 +19,7 @@ from transformers import (
     Seq2SeqTrainingArguments,
     set_seed,
 )
+from transformers import get_polynomial_decay_schedule_with_warmup
 
 from data_preprocess import Preprocessor
 from ..common.trainer_seq2seq import Seq2SeqTrainer
@@ -182,6 +183,14 @@ def main():
     training_args.generation_max_length = data_args.max_source_length + data_args.max_target_length + 1
     training_args.generation_num_beams = 1
 
+    class PolyDecaySeq2SeqTrainer:
+        def create_optimizer_and_scheduler(self, num_training_steps):
+            logger.warning("Set get_polynomial_decay_schedule_with_warmup power 2")
+            self.create_optimizer()
+            self.lr_scheduler = get_polynomial_decay_schedule_with_warmup(
+                self.optimizer, 0, num_training_steps, power=2)
+
+    #trainer = PolyDecaySeq2SeqTrainer(
     trainer = Seq2SeqTrainer(
         model=model,
         args=training_args,
@@ -189,10 +198,10 @@ def main():
         eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
+        optim="paged_adamw_8bit",
         compute_metrics=evaluator.compute_metrics if training_args.predict_with_generate else None, # 训练过程中是否阶段性跑测试（否则直接计算loss）
         save_changed=peft_args.pre_seq_len is not None #是否只保存训练的参数
     )
-
 
     # Training
     if training_args.do_train:

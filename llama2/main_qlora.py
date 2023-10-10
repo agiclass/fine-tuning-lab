@@ -241,6 +241,7 @@ def main():
         eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
+        optim="paged_adamw_8bit",
         compute_metrics=evaluator.compute_metrics, # 训练过程中是否阶段性跑测试（否则直接计算loss）
         save_lora=True #是否只保存训练的参数
     )
