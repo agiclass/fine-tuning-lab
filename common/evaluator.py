@@ -135,8 +135,10 @@ def save_predictions(predict_results, tokenizer, output_dir):
             predict_results.predictions, skip_special_tokens=True, clean_up_tokenization_spaces=True
         )
     predictions = [pred.strip() for pred in predictions]
+    label_ids = predict_results.label_ids
+    label_ids = np.where(label_ids != -100, label_ids, tokenizer.pad_token_id)
     labels = tokenizer.batch_decode(
-        predict_results.label_ids, skip_special_tokens=True, clean_up_tokenization_spaces=True
+        label_ids, skip_special_tokens=True, clean_up_tokenization_spaces=True
     )
     labels = [label.strip() for label in labels]
     output_prediction_file = os.path.join(output_dir, "generated_predictions.txt")
