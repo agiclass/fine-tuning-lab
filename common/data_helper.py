@@ -7,7 +7,7 @@ def print_dataset_example(example,tokenizer):
     print("inputs", tokenizer.decode(example["input_ids"],skip_special_tokens=True))
     print("label_ids", example["labels"])
     label_ids = remove_minus100(example["labels"],tokenizer.pad_token_id)
-    print("labels", tokenizer.decode(example["labels"],skip_special_tokens=True))
+    print("labels", tokenizer.decode(label_ids,skip_special_tokens=True))
 
 def load_raw_datasets(data_args,cache_dir):
     data_files = {}
