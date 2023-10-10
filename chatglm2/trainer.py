@@ -18,6 +18,7 @@ The Trainer class, to easily train a 🤗 Transformers from scratch or finetune 
 import os
 from typing import Optional
 from transformers import Trainer
+from peft import PeftModel
 
 import torch
 from transformers.modeling_utils import PreTrainedModel, unwrap_model
@@ -30,8 +31,9 @@ TRAINING_ARGS_NAME = "training_args.bin"
 
 
 class PrefixTrainer(Trainer):
-    def __init__(self, *args, save_changed=False, **kwargs):
+    def __init__(self, *args, save_changed=False, save_lora=False, **kwargs):
         self.save_changed = save_changed
+        self.save_lora = save_lora
         super().__init__(*args, **kwargs)
 
     def _save(self, output_dir: Optional[str] = None, state_dict=None):
@@ -41,7 +43,7 @@ class PrefixTrainer(Trainer):
         logger.info(f"Saving model checkpoint to {output_dir}")
         # Save a trained model and configuration using `save_pretrained()`.
         # They can then be reloaded using `from_pretrained()`
-        if not isinstance(self.model, PreTrainedModel):
+        if not isinstance(self.model, PreTrainedModel) and not isinstance(self.model, PeftModel):
             if isinstance(unwrap_model(self.model), PreTrainedModel):
                 if state_dict is None:
                     state_dict = self.model.state_dict()
@@ -60,6 +62,9 @@ class PrefixTrainer(Trainer):
                     if v.requires_grad:
                         filtered_state_dict[k] = state_dict[k]
                 self.model.save_pretrained(output_dir, state_dict=filtered_state_dict)
+            elif self.save_lora and isinstance(self.model, PeftModel):
+                print("Saving LoRA adapter only")
+                self.model.save_pretrained(output_dir)
             else:
                 print("Saving the whole model")
                 self.model.save_pretrained(output_dir, state_dict=state_dict)

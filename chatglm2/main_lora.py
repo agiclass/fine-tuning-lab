@@ -81,17 +81,29 @@ def main():
         lora_dropout=peft_args.lora_dropout,
         target_modules=["query_key_value"],
     )
+
+    raw_model = model
+
     model = get_peft_model(model, peft_config).cuda()
 
     if peft_args.lora_checkpoint is not None:
-        model.load_state_dict(torch.load(
-                os.path.join(peft_args.lora_checkpoint, "pytorch_model.bin")
-            ), 
-            strict=False
-        ) 
-        #logger.warning(f"load checkpoint from: {peft_args.lora_checkpoint}")
-        #model = PeftModel.from_pretrained(model,peft_args.lora_checkpoint)
-        #model = model.merge_and_unload()
+        adapter_path = os.path.join(peft_args.lora_checkpoint, "adapter_model.bin")
+        if os.path.exists(adapter_path):
+            model = PeftModel.from_pretrained(raw_model, peft_args.lora_checkpoint)
+            logger.info(f"load checkpoint (adapter) from: {peft_args.lora_checkpoint}")
+        else:
+            sd_path = os.path.join(peft_args.lora_checkpoint, "pytorch_model.bin")
+            if os.path.exists(sd_path):
+                model.load_state_dict(
+                    torch.load(sd_path), 
+                    strict=False
+                )
+                logger.info(f"load checkpoint (state_dict) from: {peft_args.lora_checkpoint}")
+            else:
+                logger.error(f"no checkpoint found at: {peft_args.lora_checkpoint}")
+        
+        if not training_args.do_train:
+            model = model.merge_and_unload()
 
 
     # 加载数据集
