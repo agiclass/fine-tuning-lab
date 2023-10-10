@@ -1,3 +1,6 @@
+import sys
+sys.path.append('..')
+
 import argparse
 import bitsandbytes as bnb
 from functools import partial

@@ -1,3 +1,6 @@
+import sys
+sys.path.append('..')
+
 import json
 from ..common.prompt_builder import build_prompt, build_response
 
