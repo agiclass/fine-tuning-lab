@@ -43,7 +43,7 @@ def load_model(model_name, bnb_config):
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=True)
 
     # Needed for LLaMA tokenizer
-    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.pad_token = '<pad>' #tokenizer.eos_token
 
     return model, tokenizer
 

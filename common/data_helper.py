@@ -3,7 +3,7 @@ import numpy as np
 
 def print_dataset_example(example,tokenizer):
     print("input_ids",example["input_ids"])
-    print("inputs", tokenizer.decode(example["input_ids"]))
+    print("inputs", tokenizer.decode(example["input_ids"],skip_special_tokens=True))
     print("label_ids", example["labels"])
     label_ids = example["labels"]
     label_ids = np.where(label_ids != -100, label_ids, tokenizer.pad_token_id)

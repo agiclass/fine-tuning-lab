@@ -2,9 +2,11 @@ import json
 
 def build_prompt(context):
     prompt = ""
-    for i, turn in enumerate(context):
+    i = 0
+    for turn in context:
         if turn["role"] in ["user","return"]:
             prompt += f"[Round {i}]\n\n"
+            i += 1
         if turn["role"] in ["user","assistant"]:
             prompt += turn["role"] + ": " + turn["content"] + "\n\n"
         else:
