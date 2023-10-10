@@ -24,11 +24,11 @@ from transformers import (
 from transformers import get_polynomial_decay_schedule_with_warmup
 
 from data_preprocess import Preprocessor
-from ..common.trainer_seq2seq import Seq2SeqTrainer
-from ..common.data_helper import load_raw_datasets, print_dataset_example
-from ..common.evaluator import Evaluator, save_predictions
-from ..common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
-from ..common.checkpoint_helper import load_pt2_checkpoint
+from common.trainer_seq2seq import Seq2SeqTrainer
+from common.data_helper import load_raw_datasets, print_dataset_example
+from common.evaluator import Evaluator, save_predictions
+from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
+from common.checkpoint_helper import load_pt2_checkpoint
 
 logger = logging.getLogger(__name__)
 

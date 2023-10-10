@@ -19,7 +19,7 @@ from torch import nn
 from torch.utils.data import Dataset
 
 from transformers.deepspeed import is_deepspeed_zero3_enabled
-from trainer import PrefixTrainer
+from .trainer import PrefixTrainer
 from transformers.trainer_utils import PredictionOutput
 from transformers.utils import logging
 

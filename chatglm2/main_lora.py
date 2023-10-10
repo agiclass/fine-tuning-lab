@@ -23,11 +23,11 @@ from transformers import (
 )
 
 from data_preprocess import Preprocessor
-from ..common.trainer_seq2seq import Seq2SeqTrainer
-from ..common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
-from ..common.data_helper import load_raw_datasets, print_dataset_example
-from ..common.evaluator import Evaluator, save_predictions
-from ..common.checkpoint_helper import load_lora_checkpoint
+from common.trainer_seq2seq import Seq2SeqTrainer
+from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
+from common.data_helper import load_raw_datasets, print_dataset_example
+from common.evaluator import Evaluator, save_predictions
+from common.checkpoint_helper import load_lora_checkpoint
 
 from peft import get_peft_model, LoraConfig, TaskType
 from peft import PeftModel
