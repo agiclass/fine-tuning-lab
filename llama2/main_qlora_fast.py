@@ -12,17 +12,16 @@ from transformers import (
     AutoTokenizer,
     DataCollatorForSeq2Seq,
     HfArgumentParser,
-    Seq2SeqTrainingArguments,
     BitsAndBytesConfig,
+    Trainer,
+    TrainingArguments,
     set_seed,
 )
 
 import logging
 
-from common.trainer_seq2seq import Seq2SeqTrainer
 from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from common.data_helper import load_raw_datasets, print_dataset_example
-from common.evaluator import Evaluator, save_predictions
 from common.checkpoint_helper import load_lora_checkpoint
 from data_preprocess import Preprocessor
 
@@ -112,7 +111,7 @@ def print_trainable_parameters(model, use_4bit=False):
 def main():
 
     # 解析命令行参数
-    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, Seq2SeqTrainingArguments))
+    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, TrainingArguments))
     
     '''
     参数归类:
@@ -196,7 +195,7 @@ def main():
         
         with training_args.main_process_first(desc="validation dataset map pre-processing"):
             eval_dataset = eval_dataset.map(
-                data_processor.preprocess_function_eval,
+                data_processor.preprocess_function_train,
                 batched=True,
                 num_proc=data_args.preprocessing_num_workers,
                 remove_columns=column_names,
@@ -204,21 +203,6 @@ def main():
                 desc="Running tokenizer on validation dataset",
             )
         print_dataset_example(eval_dataset[0],tokenizer)
-
-    if training_args.do_predict:
-        if "test" not in raw_datasets:
-            raise ValueError("--do_predict requires a test dataset")
-        predict_dataset = raw_datasets["test"]
-        with training_args.main_process_first(desc="prediction dataset map pre-processing"):
-            predict_dataset = predict_dataset.map(
-                data_processor.preprocess_function_eval,
-                batched=True,
-                num_proc=data_args.preprocessing_num_workers,
-                remove_columns=column_names,
-                load_from_cache_file=not data_args.overwrite_cache,
-                desc="Running tokenizer on prediction dataset",
-            )
-        print_dataset_example(predict_dataset[0],tokenizer)
 
     # Data collator
     label_pad_token_id = -100 if data_args.ignore_pad_token_for_loss else tokenizer.pad_token_id
@@ -230,22 +214,13 @@ def main():
         padding=False
     )
 
-    # Metric
-    evaluator = Evaluator(tokenizer)
-
-    # Override the decoding parameters of Seq2SeqTrainer
-    training_args.generation_max_length = data_args.max_source_length + data_args.max_target_length + 1
-    training_args.generation_num_beams = 1
-    
-    trainer = Seq2SeqTrainer(
+    trainer = Trainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,
         eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
-        compute_metrics=evaluator.compute_metrics, # 训练过程中是否阶段性跑测试（否则直接计算loss）
-        save_lora=True #是否只保存训练的参数
     )
     
     # Training
@@ -267,22 +242,6 @@ def main():
         trainer.log_metrics("train", metrics)
         trainer.save_metrics("train", metrics)
         trainer.save_state()
-
-    # Testing
-    results = {}
-    if training_args.do_predict:
-        logger.info("*** Predict ***")
-        predict_results = trainer.predict(predict_dataset, metric_key_prefix="predict", max_new_tokens=data_args.max_target_length, num_beams=training_args.generation_num_beams, do_sample=False)
-        metrics = predict_results.metrics
-        metrics["predict_samples"] = len(predict_dataset)
-
-        trainer.log_metrics("predict", metrics)
-        trainer.save_metrics("predict", metrics)
-
-        save_predictions(predict_results,tokenizer,training_args.output_dir)
-
-
-    return results
 
 
 if __name__ == "__main__":

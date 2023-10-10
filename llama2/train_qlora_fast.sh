@@ -5,13 +5,11 @@ LORA_RANK=8
 
 DATA_FS="/root/autodl-tmp"
 
-LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
+LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora_fast.py \
     --do_train \
     --do_eval \
-    --do_predict \
     --train_file ../data/train.lite.jsonl \
     --validation_file ../data/dev.lite.jsonl \
-    --test_file ../data/test.lite.jsonl \
     --prompt_column context \
     --response_column response \
     --overwrite_cache \
@@ -23,10 +21,8 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --per_device_train_batch_size 2 \
     --per_device_eval_batch_size 2 \
     --gradient_accumulation_steps 8 \
-    --predict_with_generate \
     --evaluation_strategy steps \
     --eval_steps 40 \
-    --eval_delay 120 \
     --num_train_epochs 1 \
     --logging_steps 40 \
     --save_steps 40 \
