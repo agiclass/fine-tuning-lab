@@ -24,10 +24,10 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --gradient_accumulation_steps 16 \
     --predict_with_generate \
     --evaluation_strategy steps \
-    --eval_steps 30 \
+    --eval_steps 20 \
     --num_train_epochs 1 \
-    --logging_steps 30 \
-    --save_steps 30 \
+    --logging_steps 20 \
+    --save_steps 20 \
     --learning_rate $LR \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 \
