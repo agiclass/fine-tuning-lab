@@ -32,6 +32,42 @@ from peft import PeftModel
 
 logger = logging.getLogger(__name__)
 
+def load_model(model_name):
+    # 加载ChatGLM的Tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+
+    # 加载模型
+    model = AutoModel.from_pretrained(model_name, trust_remote_code=True)
+
+    model = model.half()
+    model.is_parallelizable = True
+    model.model_parallel = True
+    return model, tokenizer
+
+def create_peft_config(peft_args):
+    peft_config = LoraConfig(
+        task_type=TaskType.CAUSAL_LM,
+        inference_mode=False,
+        r=peft_args.lora_rank,
+        lora_alpha=peft_args.lora_alpha,
+        lora_dropout=peft_args.lora_dropout,
+        target_modules=["query_key_value"],
+    )
+    return peft_config
+
+def setup_logger(training_args):
+    # Setup logging
+    logging.basicConfig(
+        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+        datefmt="%m/%d/%Y %H:%M:%S",
+        handlers=[logging.StreamHandler(sys.stdout)],
+    )
+
+    log_level = training_args.get_process_log_level()
+    logger.setLevel(log_level)
+    transformers.utils.logging.set_verbosity(log_level)
+    transformers.utils.logging.enable_default_handler()
+    transformers.utils.logging.enable_explicit_format()
 
 def main():
 
@@ -47,19 +83,7 @@ def main():
     '''
     model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
 
-    # Setup logging
-    logging.basicConfig(
-        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-        datefmt="%m/%d/%Y %H:%M:%S",
-        handlers=[logging.StreamHandler(sys.stdout)],
-    )
-
-    log_level = training_args.get_process_log_level()
-    logger.setLevel(log_level)
-    transformers.utils.logging.set_verbosity(log_level)
-    transformers.utils.logging.enable_default_handler()
-    transformers.utils.logging.enable_explicit_format()
-
+    setup_logger(training_args)
     
     logger.warning(f"Training/evaluation parameters {training_args}")
 
@@ -67,24 +91,11 @@ def main():
     # 设置随机种子（以保证实验可复现）
     set_seed(training_args.seed)
 
-    # 加载ChatGLM的Tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
-
-    # 加载模型
-    model = AutoModel.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
-
-    model = model.half()
-    model.is_parallelizable = True
-    model.model_parallel = True
+    # 加载模型和Tokenizer
+    model, tokenizer = load_model(model_args.model_name_or_path)
     
-    peft_config = LoraConfig(
-        task_type=TaskType.CAUSAL_LM,
-        inference_mode=False,
-        r=peft_args.lora_rank,
-        lora_alpha=peft_args.lora_alpha,
-        lora_dropout=peft_args.lora_dropout,
-        target_modules=["query_key_value"],
-    )
+    # 生成PEFT配置
+    peft_config = create_peft_config(peft_args)
 
     raw_model = model
 
@@ -97,6 +108,7 @@ def main():
             logger=logger,
             merge=not training_args.do_train
         )
+        model = model.cuda()
 
 
     # 加载数据集

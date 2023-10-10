@@ -25,21 +25,50 @@ from ..common.trainer_seq2seq import Seq2SeqTrainer
 from ..common.data_helper import load_raw_datasets, print_dataset_example
 from ..common.evaluator import Evaluator, save_predictions
 from ..common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
+from ..common.checkpoint_helper import load_pt2_checkpoint
 
 logger = logging.getLogger(__name__)
 
+def load_model(model_name, peft_args):
+    # 加载ChatGLM的Config
+    config = AutoConfig.from_pretrained(model_name, trust_remote_code=True)
+    config.pre_seq_len = peft_args.pre_seq_len
+    config.prefix_projection = peft_args.prefix_projection
 
-def load_checkpoint(model, peft_args):
-    # Loading extra state dict of prefix encoder
-    prefix_state_dict = torch.load(
-        os.path.join(peft_args.ptuning_checkpoint, "pytorch_model.bin")
-    )
-    new_prefix_state_dict = {}
-    for k, v in prefix_state_dict.items():
-        if k.startswith("transformer.prefix_encoder."):
-            new_prefix_state_dict[k[len("transformer.prefix_encoder."):]] = v
-    model.transformer.prefix_encoder.load_state_dict(new_prefix_state_dict)
+    # 加载ChatGLM的Tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+
+    # 加载模型
+    model = AutoModel.from_pretrained(model_name, config=config, trust_remote_code=True)
+    return model, tokenizer
+
+def quantize_model(model,model_args,peft_args):
+    if model_args.quantization_bit is not None:
+        print(f"Quantized to {model_args.quantization_bit} bit")
+        model = model.quantize(model_args.quantization_bit)
+    if peft_args.pre_seq_len is not None:
+        # P-tuning v2
+        model = model.half()
+        model.transformer.prefix_encoder.float()
+    else:
+        # Finetune
+        model = model.float()
     return model
+
+def setup_logger(training_args):
+    # Setup logging
+    logging.basicConfig(
+        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
+        datefmt="%m/%d/%Y %H:%M:%S",
+        handlers=[logging.StreamHandler(sys.stdout)],
+    )
+
+    log_level = training_args.get_process_log_level()
+    logger.setLevel(log_level)
+    transformers.utils.logging.set_verbosity(log_level)
+    transformers.utils.logging.enable_default_handler()
+    transformers.utils.logging.enable_explicit_format()
+
 
 def main():
 
@@ -55,52 +84,21 @@ def main():
     '''
     model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
 
-    # Setup logging
-    logging.basicConfig(
-        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-        datefmt="%m/%d/%Y %H:%M:%S",
-        handlers=[logging.StreamHandler(sys.stdout)],
-    )
-
-    log_level = training_args.get_process_log_level()
-    logger.setLevel(log_level)
-    transformers.utils.logging.set_verbosity(log_level)
-    transformers.utils.logging.enable_default_handler()
-    transformers.utils.logging.enable_explicit_format()
+    setup_logger(training_args)
 
     logger.warning(f"Training/evaluation parameters {training_args}")
-
 
     # 设置随机种子（以保证实验可复现）
     set_seed(training_args.seed)
 
-
-    # 加载ChatGLM的Config
-    config = AutoConfig.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
-    config.pre_seq_len = peft_args.pre_seq_len
-    config.prefix_projection = peft_args.prefix_projection
-
-    # 加载ChatGLM的Tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
-
-    # 加载模型
-    model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, trust_remote_code=True)
-    
+    # 加载模型和Tokenizer
+    model, tokenizer = load_model(model_args.model_name_or_path, peft_args)
     
     if peft_args.ptuning_checkpoint is not None:
         # 加载Checkpoint
-        model = load_checkpoint(model,peft_args)
+        model = load_pt2_checkpoint(model,peft_args)
 
-    if model_args.quantization_bit is not None:
-        print(f"Quantized to {model_args.quantization_bit} bit")
-        model = model.quantize(model_args.quantization_bit)
-    if peft_args.pre_seq_len is not None:
-        # P-tuning v2
-        model = model.half()
-        model.transformer.prefix_encoder.float()
-    else:
-        # Finetune
-        model = model.float()
+    model = quantize_model(model,model_args,peft_args)
 
     # 加载数据集
     raw_datasets = load_raw_datasets(data_args,model_args.cache_dir)

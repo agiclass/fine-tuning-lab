@@ -25,3 +25,15 @@ def load_lora_checkpoint(model,checkpoint_path, logger=None, merge=False):
         model = model.merge_and_unload()
         
     return model
+
+def load_pt2_checkpoint(model, peft_args):
+    # Loading extra state dict of prefix encoder
+    prefix_state_dict = torch.load(
+        os.path.join(peft_args.ptuning_checkpoint, "pytorch_model.bin")
+    )
+    new_prefix_state_dict = {}
+    for k, v in prefix_state_dict.items():
+        if k.startswith("transformer.prefix_encoder."):
+            new_prefix_state_dict[k[len("transformer.prefix_encoder."):]] = v
+    model.transformer.prefix_encoder.load_state_dict(new_prefix_state_dict)
+    return model

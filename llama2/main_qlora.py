@@ -123,6 +123,8 @@ def main():
     bnb_config = create_bnb_config()
     model, tokenizer = load_model(model_args.model_name_or_path, bnb_config)
 
+    # 设置随机种子（以保证实验可复现）
+    set_seed(training_args.seed)
     
     # Using the prepare_model_for_kbit_training method from PEFT
     model = prepare_model_for_kbit_training(model)
