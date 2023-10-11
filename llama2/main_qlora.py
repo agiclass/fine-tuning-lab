@@ -148,7 +148,7 @@ def main():
             raw_model,
             peft_args.lora_checkpoint,
             logger=logger,
-            merge=not training_args.do_train
+            merge=False
         )
 
 
