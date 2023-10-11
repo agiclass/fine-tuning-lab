@@ -105,7 +105,7 @@ class Evaluator:
             if pred.startswith("assistant:") and label.startswith("assistant:"):
                 start = len("assistant:")
                 bleu_score = self._bleu4(pred[start:],label[start:])
-                bleu_scores.append(round(bleu_score * 100, 4))
+                bleu_scores.append(bleu_score)
             # 评估NLU的槽准确率
             elif pred.startswith("search:") and label.startswith("search:"):
                 start = len("search:")
@@ -118,7 +118,7 @@ class Evaluator:
                 bleu_scores.append(0)
             # 尝试计算NLU的槽识别率
             else:
-                correct, pred_slots, true_slots = self._slot_accuracy(pred[start:],label[start:])
+                correct, pred_slots, true_slots = self._slot_accuracy(pred,label)
                 true_slot_count += true_slots
                 pred_slot_count += pred_slots
                 correct_slot_count += correct
@@ -127,6 +127,8 @@ class Evaluator:
         score_dict["slot_R"] = float(correct_slot_count/true_slot_count)
         score_dict["slot_F1"] = 2*score_dict["slot_P"]*score_dict["slot_R"]/(score_dict["slot_P"]+score_dict["slot_R"])
         score_dict["bleu-4"] = float(np.mean(bleu_scores))
+        for k, v in score_dict.items():
+            score_dict[k] = round(v * 100, 4)
         return score_dict
 
 def replace_all(input_str,src,tgt):
