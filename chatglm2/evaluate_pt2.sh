@@ -5,7 +5,7 @@ CHECKPOINT_DIR="PATH/TO/YOUR/CHECKPOINT"
 
 CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --do_predict \
-    --test_file ../data/test.lite.jsonl \
+    --test_file ../data/test.jsonl \
     --prompt_column context \
     --response_column response \
     --overwrite_cache \

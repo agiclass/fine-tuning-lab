@@ -8,8 +8,8 @@ DATA_FS="/root/autodl-tmp"
 LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora_fast.py \
     --do_train \
     --do_eval \
-    --train_file ../data/train.lite.jsonl \
-    --validation_file ../data/dev.lite.jsonl \
+    --train_file ../data/train.jsonl \
+    --validation_file ../data/dev.jsonl \
     --prompt_column context \
     --response_column response \
     --overwrite_cache \

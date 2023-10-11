@@ -8,9 +8,9 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --do_train \
     --do_eval \
     --do_predict \
-    --train_file ../data/train.lite.jsonl \
-    --validation_file ../data/dev.lite.jsonl \
-    --test_file ../data/test.lite.jsonl \
+    --train_file ../data/train.jsonl \
+    --validation_file ../data/dev.jsonl \
+    --test_file ../data/test.jsonl \
     --prompt_column context \
     --response_column response \
     --overwrite_cache \
