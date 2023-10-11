@@ -30,22 +30,17 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, Au
 
 logger = logging.getLogger(__name__)
 
-def load_model(model_name, bnb_config=None):
+def load_model(model_name, bnb_config):
     n_gpus = torch.cuda.device_count()
     max_memory = f'{24500}MB'
-    if bnb_config:
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            quantization_config=bnb_config,
-            device_map="auto", # dispatch efficiently the model on the available ressources
-            max_memory = {i: max_memory for i in range(n_gpus)},
-        )
-    else:
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            torch_dtype=torch.float16,
-            device_map="auto", # dispatch efficiently the model on the available ressources
-        )
+
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name,
+        quantization_config=bnb_config,
+        device_map="auto", # dispatch efficiently the model on the available ressources
+        max_memory = {i: max_memory for i in range(n_gpus)},
+    )
+    
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=True)
 
     # Needed for LLaMA tokenizer
@@ -130,10 +125,7 @@ def main():
     model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
 
     bnb_config = create_bnb_config()
-    model, tokenizer = load_model(
-        model_args.model_name_or_path, 
-        bnb_config if training_args.do_train else None,
-    )
+    model, tokenizer = load_model(model_args.model_name_or_path, bnb_config)
 
     # 设置随机种子（以保证实验可复现）
     set_seed(training_args.seed)
