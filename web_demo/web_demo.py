@@ -55,8 +55,8 @@ def get_completion(prompt):
 db = HotelDB()
 model, tokenizer, max_source_length, max_target_length = init_model()
 
-def chat(query, chatbot, context, search_field, return_field):
-    context.append({'role':'user','content':query})
+def chat(user_input, chatbot, context, search_field, return_field):
+    context.append({'role':'user','content':user_input})
     response = get_completion(build_prompt(context))
     # 判断以search命令结尾时去执行搜索
     if re.search(r'\s*search:\s*\{.*?\}\s*$', response, re.DOTALL):
@@ -80,8 +80,8 @@ def chat(query, chatbot, context, search_field, return_field):
     # reply = match[-1][0].strip() if match else "[LLM no reply] 我没有明白您的意思"
     reply = match.strip() if match else "[LLM no reply] 我没有明白您的意思"
     # 记录问答历史以供显示
-    chatbot.append((query, reply))
-    return chatbot, context, search_field, return_field
+    chatbot.append((user_input, reply))
+    return "", chatbot, context, search_field, return_field
 
 def reset_state():
     return [], []
@@ -106,7 +106,7 @@ def main():
         context = gr.State([])
 
         submitBtn.click(chat, [user_input, chatbot, context, search_field, return_field],
-                        [chatbot, context, search_field, return_field])
+                        [user_input, chatbot, context, search_field, return_field])
         emptyBtn.click(reset_state, outputs=[chatbot, context])
 
     demo.queue().launch(share=False, server_name='0.0.0.0', inbrowser=True)
