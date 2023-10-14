@@ -13,4 +13,4 @@ scipy==1.10.1
 nltk==3.8.1
 peft
 python-dotenv==1.0.0
- weaviate-client==3.24.2
+weaviate-client==3.24.2
