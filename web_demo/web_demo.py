@@ -61,8 +61,8 @@ def chat(user_input, chatbot, context, search_field, return_field):
     # 判断以search命令结尾时去执行搜索
     if re.search(r'\s*search:\s*\{.*?\}\s*$', response, re.DOTALL):
         # 取出最新一条 'search:' 后面的json查询条件
-        match = re.findall(r'\s*search:\s*(\{.*?\})', response, re.DOTALL)[-1]
-        search_field = match.strip() if match else "{}"
+        match_json = re.findall(r'\s*search:\s*(\{.*?\})', response, re.DOTALL)[-1]
+        search_field = match_json.strip() if match_json else "{}"
         try:
             search_field = json.loads(search_field)
             context.append({'role':'search','arguments':search_field})
@@ -72,13 +72,17 @@ def chat(user_input, chatbot, context, search_field, return_field):
             data = {key: [item[key] for item in return_field] for key in keys}
             data = data or {"hotel": []}
             return_field = pd.DataFrame(data)
-        except Exception:
-            pass
+            search_field = json.dumps(search_field,ensure_ascii=False,indent=2)
+        except Exception as e:
+            return_field = pd.DataFrame({"hotel": []})
+            print(f'search db failed\n{e}')
     # 如果不是search命令结尾，那么让LLM生成回复
     response = get_completion(build_prompt(context))
-    match = re.findall(r'\s*assistant:(.*?)(。|\n|$)', response, re.DOTALL)[-1][0]
-    # reply = match[-1][0].strip() if match else "[LLM no reply] 我没有明白您的意思"
-    reply = match.strip() if match else "[LLM no reply] 我没有明白您的意思"
+    reply = "[assistant no reply] 我没有明白您的意思"
+    matches_reply = re.findall(r'\s*assistant:(.*?)(。|\n|$)', response, re.DOTALL)
+    if matches_reply:
+        match_reply = matches_reply[-1][0]
+        reply = match_reply.strip()
     # 记录问答历史以供显示
     chatbot.append((user_input, reply))
     return "", chatbot, context, search_field, return_field
@@ -109,7 +113,7 @@ def main():
                         [user_input, chatbot, context, search_field, return_field])
         emptyBtn.click(reset_state, outputs=[chatbot, context])
 
-    demo.queue().launch(share=False, server_name='0.0.0.0', inbrowser=True)
+    demo.queue().launch(share=False, server_name='0.0.0.0', server_port=6006, inbrowser=True)
 
 
 if __name__ == "__main__":
