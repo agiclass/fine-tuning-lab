@@ -110,7 +110,7 @@ def main():
                         [user_input, chatbot, context, search_field, return_field])
         emptyBtn.click(reset_state, outputs=[chatbot, context])
 
-    demo.queue().launch(share=False, server_name='0.0.0.0', inbrowser=True)
+    demo.queue().launch(share=False, server_name='0.0.0.0', server_port=6006, inbrowser=True)
 
 
 if __name__ == "__main__":
