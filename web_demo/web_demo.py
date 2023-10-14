@@ -87,6 +87,7 @@ def chat(user_input, chatbot, context, search_field, return_field):
     start = response.find(":")+1
     reply = response[start:].strip()
     chatbot.append((user_input, reply))
+    context.append({'role':'assistant','content':reply})
     return "", chatbot, context, search_field, return_field
 
 def reset_state():
