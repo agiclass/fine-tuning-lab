@@ -10,22 +10,26 @@ def remove_minus100(ids,val):
     return ids
 
 def parse_json(string):
-    start = 0
-    end = len(string)
-    if not string.startswith("{"):
-        start = string.find("{")
-        if start == -1:
-            return None
-    if not string.endswith("}"):
-        end - string.rfind("}")
-        if end == -1 or end <= start:
-            return None
-    string = string[start:end]
-    try:
-        obj = json.loads(string)
-        return obj
-    except:
+    # 找到最后一个 'search:' 的位置
+    search_pos = string.rfind('search:')
+    if search_pos == -1:
         return None
+    # 从 'search:' 后面开始寻找第一个 '{'
+    start = string.find('{', search_pos)
+    if start == -1:
+        return None
+    # 从找到的 '{' 位置开始，向后寻找最后一个 '}'
+    end = string.rfind('}', start)
+    if end == -1:
+        return None
+    # 提取并尝试解析 JSON
+    json_string = string[start:end + 1]
+    try:
+        obj = json.loads(json_string)
+        return obj
+    except json.JSONDecodeError:
+        return None
+
 
 class Evaluator:
     def __init__(self,tokenizer):

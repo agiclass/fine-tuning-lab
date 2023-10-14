@@ -91,7 +91,7 @@ def chat(user_input, chatbot, context, search_field, return_field):
     return "", chatbot, context, search_field, return_field
 
 def reset_state():
-    return [], []
+    return [], [], "", []
 
 def main():
     with gr.Blocks() as demo:
@@ -114,7 +114,7 @@ def main():
 
         submitBtn.click(chat, [user_input, chatbot, context, search_field, return_field],
                         [user_input, chatbot, context, search_field, return_field])
-        emptyBtn.click(reset_state, outputs=[chatbot, context])
+        emptyBtn.click(reset_state, outputs=[chatbot, context, search_field, return_field])
 
     demo.queue().launch(share=False, server_name='0.0.0.0', server_port=6006, inbrowser=True)
 
