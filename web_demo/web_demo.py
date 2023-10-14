@@ -13,34 +13,39 @@ from transformers import AutoModel, AutoTokenizer, HfArgumentParser
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 
 from db_client import HotelDB
-from common.checkpoint_helper import load_lora_checkpoint
+from common.checkpoint_helper import load_lora_checkpoint, load_pt2_checkpoint
 from common.prompt_helper import build_prompt, build_response
 from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from common.evaluator import parse_json
+
 
 def init_model():
     # 解析命令行参数
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments))
     model_args, data_args, peft_args = parser.parse_args_into_dataclasses()
-    # 加载Tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
-    # 加载Model
-    model = AutoModel.from_pretrained(model_args.model_name_or_path, trust_remote_code=True).half()
-    model.is_parallelizable = True
-    model.model_parallel = True
-    # 加载LoRA
-    peft_config = LoraConfig(
-        task_type=TaskType.CAUSAL_LM,
-        inference_mode=False,
-        r=peft_args.lora_rank,
-        lora_alpha=peft_args.lora_alpha,
-        lora_dropout=peft_args.lora_dropout,
-        target_modules=["query_key_value"],
-    )
-    raw_model = model
-    model = get_peft_model(model, peft_config).cuda()
-    if peft_args.lora_checkpoint is not None:
-        model = load_lora_checkpoint(raw_model, peft_args.lora_checkpoint).cuda()
+    
+    model, tokenizer = None, None
+    name = model_args.model_name_or_path
+    
+    if "glm" in name.lower():
+        if peft_args.lora_checkpoint is not None:
+            from chatglm2.main_lora import load_model
+            model, tokenizer = load_model(name)
+            model = load_lora_checkpoint(model, peft_args.lora_checkpoint,merge=True).cuda()
+        elif peft_args.ptuning_checkpoint:
+            from chatglm2.main_pt2 import load_model, quantize_model
+            model, tokenizer = load_model(name)
+            model = load_pt2_checkpoint(model,peft_args)
+            model = quantize_model(model,model_args,peft_args)
+
+    elif "llama" in name.lower():
+        from llama2.main_qlora import load_model, create_bnb_config
+        bnb_config = create_bnb_config()
+        model, tokenizer = load_model(name, bnb_config)
+        model = load_lora_checkpoint(model, peft_args.lora_checkpoint).cuda()        
+    else:
+        raise f"Unknown model {name}"
+    
     return model, tokenizer, data_args.max_source_length, data_args.max_target_length
 
 def get_completion(prompt):

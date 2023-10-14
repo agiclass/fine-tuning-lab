@@ -4,7 +4,6 @@ DATA_FS="/root/autodl-tmp" # chatglm-6b所在目录
 CHECKPOINT_DIR="PATH/TO/LORA/CHECKPOINT"
 
 CUDA_VISIBLE_DEVICES=0 python3 web_demo.py \
-    --overwrite_cache \
     --model_name_or_path "${DATA_FS}/chatglm2-6b" \
     --lora_checkpoint $CHECKPOINT_DIR \
     --max_source_length 2048 \
