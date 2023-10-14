@@ -9,6 +9,24 @@ def remove_minus100(ids,val):
     ids = np.where(ids == -100, val, ids)
     return ids
 
+def parse_json(string):
+    start = 0
+    end = len(string)
+    if not string.startswith("{"):
+        start = string.find("{")
+        if start == -1:
+            return None
+    if not string.endswith("}"):
+        end - string.rfind("}")
+        if end == -1 or end <= start:
+            return None
+    string = string[start:end]
+    try:
+        obj = json.loads(string)
+        return obj
+    except:
+        return None
+
 class Evaluator:
     def __init__(self,tokenizer):
         self.tokenizer = tokenizer
@@ -26,24 +44,6 @@ class Evaluator:
         bleu_score = sentence_bleu([reference], hypothesis, smoothing_function=SmoothingFunction().method3)
         return bleu_score
 
-    def _parse_json(self,string):
-        start = 0
-        end = len(string)
-        if not string.startswith("{"):
-            start = string.find("{")
-            if start == -1:
-                return None
-        if not string.endswith("}"):
-            end - string.rfind("}")
-            if end == -1 or end <= start:
-                return None
-        string = string[start:end]
-        try:
-            obj = json.loads(string)
-            return obj
-        except:
-            return None
-
     def _slot_count(self,json_label):
         count = 0
         if json_label is not None:
@@ -57,8 +57,8 @@ class Evaluator:
     def _slot_accuracy(self,pred,label):
         pred = pred.strip()
         label = label.strip()
-        pred = self._parse_json(pred)
-        label = self._parse_json(label)
+        pred = parse_json(pred)
+        label = parse_json(label)
         correct = 0
         
         if pred is not None:

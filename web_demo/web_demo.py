@@ -16,6 +16,7 @@ from db_client import HotelDB
 from common.checkpoint_helper import load_lora_checkpoint
 from common.prompt_helper import build_prompt, build_response
 from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
+from common.evaluator import parse_json
 
 def init_model():
     # 解析命令行参数
@@ -58,28 +59,28 @@ model, tokenizer, max_source_length, max_target_length = init_model()
 def chat(user_input, chatbot, context, search_field, return_field):
     context.append({'role':'user','content':user_input})
     response = get_completion(build_prompt(context))
-    # 判断以search命令结尾时去执行搜索
-    if re.search(r'\s*search:\s*\{.*?\}\s*$', response, re.DOTALL):
+    # 判断以search命令开头时去执行搜索
+    if response.strip().startswith("search:"):
         # 取出最新一条 'search:' 后面的json查询条件
-        match = re.findall(r'\s*search:\s*(\{.*?\})', response, re.DOTALL)[-1]
-        search_field = match.strip() if match else "{}"
-        try:
-            search_field = json.loads(search_field)
+        search_query = parse_json(response)
+        if search_query is not None:
+            search_field = json.dumps(search_query,indent=4,ensure_ascii=False)
             context.append({'role':'search','arguments':search_field})
+
+            # 调用酒店查询接口
             return_field = db.search(search_field, limit=3)
             context.append({'role':'return','records':return_field})
             keys = return_field[0].keys() if return_field else []
             data = {key: [item[key] for item in return_field] for key in keys}
             data = data or {"hotel": []}
             return_field = pd.DataFrame(data)
-        except Exception:
-            pass
-    # 如果不是search命令结尾，那么让LLM生成回复
-    response = get_completion(build_prompt(context))
-    match = re.findall(r'\s*assistant:(.*?)(。|\n|$)', response, re.DOTALL)[-1][0]
-    # reply = match[-1][0].strip() if match else "[LLM no reply] 我没有明白您的意思"
-    reply = match.strip() if match else "[LLM no reply] 我没有明白您的意思"
-    # 记录问答历史以供显示
+        
+            # 将查询结果发给LLM，再次那么让LLM生成回复
+            response = get_completion(build_prompt(context))
+    
+    
+    start = response.find(":")+1
+    reply = response[start:].strip()
     chatbot.append((user_input, reply))
     return "", chatbot, context, search_field, return_field
 
