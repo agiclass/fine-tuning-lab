@@ -3,7 +3,7 @@ LR=2e-4
 LORA_RANK=8
 #timestamp=$(date +%Y%m%d_%H%M%S)
 
-DATA_FS="/root/autodl-tmp"
+DATA_FS="../../models"
 
 LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora_fast.py \
     --do_train \

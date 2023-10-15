@@ -127,9 +127,9 @@ class Evaluator:
                 pred_slot_count += pred_slots
                 correct_slot_count += correct
         
-        score_dict["slot_P"] = float(correct_slot_count/pred_slot_count)
-        score_dict["slot_R"] = float(correct_slot_count/true_slot_count)
-        score_dict["slot_F1"] = 2*score_dict["slot_P"]*score_dict["slot_R"]/(score_dict["slot_P"]+score_dict["slot_R"])
+        score_dict["slot_P"] = float(correct_slot_count/pred_slot_count) if pred_slot_count > 0 else 0
+        score_dict["slot_R"] = float(correct_slot_count/true_slot_count) if true_slot_count > 0 else 0
+        score_dict["slot_F1"] = 2*score_dict["slot_P"]*score_dict["slot_R"]/(score_dict["slot_P"]+score_dict["slot_R"]) if (score_dict["slot_P"]+score_dict["slot_R"]) > 0 else 0
         score_dict["bleu-4"] = float(np.mean(bleu_scores))
         for k, v in score_dict.items():
             score_dict[k] = round(v * 100, 4)
