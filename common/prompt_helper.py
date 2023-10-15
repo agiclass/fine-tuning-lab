@@ -1,6 +1,10 @@
 import json
 
 def build_prompt(context):
+    
+    if isinstance(context,str):
+        context = json.loads(context)
+    
     prompt = ""
     i = 0
     for turn in context:
@@ -21,6 +25,9 @@ def build_prompt(context):
     return prompt
 
 def build_response(response):
+    if isinstance(response,str):
+        response = json.loads(response)
+    
     if response["role"] == "assistant":
         return "assistant: " + response["content"]
     else:

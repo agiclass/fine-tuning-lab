@@ -10,8 +10,8 @@ def process_dialog(dialog, data):
     for turn in dialog:
         if (turn["role"] == "assistant" or turn["role"] == "search") and len(buffer)>0:
             data.append({
-                "context" : copy.deepcopy(buffer),
-                "response" : turn
+                "context" : json.dumps(buffer,ensure_ascii=False),
+                "response" : json.dumps(turn,ensure_ascii=False)
             })
         buffer.append(turn)
     return data
