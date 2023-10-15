@@ -1,0 +1,2788 @@
+[
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个比900元便宜的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，请帮我找一下价格在900以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查一下价格不超过200的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我找一个价格高于1100元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查找价格在900以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在1100元之上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一家价格在900元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要订一个价格在400元之上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在900以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一下价格不超过700的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在500以上的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在400元以内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格在400以内的酒店，能帮我查一下吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格低于600元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在1000以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请问有价格比700高的酒店吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于1100的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要一个价格在1100元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格不超过200元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格低于700的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一个价格低于1200的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格在600以内的酒店，能帮我查一下吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在600元以上的酒店，你能帮我查一下吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在700以上的酒店，给我查查"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格不低于900元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要订一个价格超过1100元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在600元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在200元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "找个价格在400元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在1100元以下的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在500元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要订一个价格在900元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于1100的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格低于1000的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在400元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，请问有价格在900元以内的酒店可以预订吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在200元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订一个价格在700元以内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查找价格在1200元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格不超过800的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我找个价格在200元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1200元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格低于600元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1100元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格至少1200元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有人吗，订一个在300元之上的宾馆噢"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在700元以上的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在300元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在600元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在200元以上酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在200元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在500以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我查查酒店，价格在500以里的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于500元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，我想找一个价格不超过1200的酒店，可以帮我查一下吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一家价格在400元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格低于1000元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有没有价格低于500的酒店呢？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在300元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在1200以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要找一个价格比1200高的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在1200元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在1200元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有没有价格在400元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格不超过1100元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请问有300元以下的酒店吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在500元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在200以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要订一个价格在400元之上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要一个价格在1100元之上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找价格不超过1100的酒店，帮我查一下"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在400元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格不低于900的酒店，帮我查下"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在500以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我查一下价格在700以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在500元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于200元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1200的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在300元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在800元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一个价格在400元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在300元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在700元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在400以上的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在800以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在600元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于200的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比900高的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在1000元之上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在500元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我查查价格在500元以内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在500以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格高于1200元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格在400元以内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在900元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格不超过1000的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格低于900的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要找一个价格高于1200元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在1000元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查一下价格低于300的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在900元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在600以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在200元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过200的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有人吗，帮我找个价格在200元之上的酒店呀"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格不超过900的酒店，帮我查一下"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我找一个价格比500高的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在1000元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不低于400的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格在600以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找个价格在900元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想订一个价格在900元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在300元以下的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一个价格低于800元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，请帮我找一个价格在500元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查找价格高于700的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有人吗，订一个在300元之上的宾馆噢"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格低于200元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "能不能帮我找一下价格在200元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格低于900的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在200以上的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找个价格不低于600的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于700元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在200元以上酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在500以内的酒店，给我查查"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1200的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在500以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在600元之上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要预订一个价格在1000元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我查一下价格在600元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比900低的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在1000以内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要一个价格不超过700元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在200元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在200元以上酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，请帮我找一下价格在700元以内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1100的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比400低的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在200以内的酒店，给我查查"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在800以上的酒店，给我查查"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在1100以上的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在200元以上酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请问有价格在600元以内的酒店可供预订吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有人吗，订一个在300元之上的宾馆噢"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格在200以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要查找价格低于1100的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "能不能给我找一下价格200以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比400低的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请问有价格在600以上的酒店吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查询一下价格在700元以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找个价格在600元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比500低的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我查查酒店，价格在800以上的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比400低的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在800元之上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于1200的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，请问有价格在1000元以上的酒店可以预订吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1200元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在600以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比400低的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格不超过900的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在900元以上的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在400元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过700元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有没有价格不超过400的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格不超过1100的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格高于1200元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格至少800元的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查一下价格在1000以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在200以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，有价格在700以内的酒店可以订吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格在600以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请问有没有价格在1000元以下的酒店呢？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格比300高的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在500元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格不超过1200的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我订个价格在200元以上酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要找一个价格低于200的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想查一下价格不超过1100元的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在1000元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要一个价格在1200元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "可以帮我找一个价格在600元以上的酒店吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格在300以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查找价格在900以内的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，请帮忙找一个价格在1000元以上的酒店，谢谢"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要订一个价格在1200元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要订一个价格在500元之上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格在500元以下的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在200元以上的酒店，帮我查一下"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在700元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在1100元之内的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格不超过600的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格不超过1100的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比200高的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比400低的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在800以上的酒店，给我查查"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要找一个价格低于1200的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在700元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有人吗，订一个在300元之上的宾馆噢"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300
+            }
+        }
+    ]
+]

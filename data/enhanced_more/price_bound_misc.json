@@ -1,0 +1,1657 @@
+[
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个经济型的酒店，价格要在1000元以上"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个舒适型的酒店，价格在400元以上的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我查查酒店，有泳池和wifi的，价格在300元以上的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300,
+                "facilities": [
+                    "泳池",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在400元以下，设施包括wifi和泳池的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400,
+                "facilities": [
+                    "wifi",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一个价格不超过1200的经济型酒店，评分不低于2星级的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200,
+                "rating_range_lower": 2,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格不超过1000的酒店，有按摩和热水的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000,
+                "facilities": [
+                    "按摩",
+                    "热水"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在700元以上的豪华型酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请找一下豪华型的酒店，价格低于200，评分大于等于2的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200,
+                "rating_range_lower": 2,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在800元以上的酒店，里面有棋牌室和洗衣机的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800,
+                "facilities": [
+                    "棋牌室",
+                    "洗衣机"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要一个评分在4分及以上，价格在400元以内，有停车场和棋牌室的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400,
+                "rating_range_lower": 4,
+                "facilities": [
+                    "停车场",
+                    "棋牌室"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要订一个价格在1100元之上的舒适型酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一下价格在500元以内，评分超过2分的酒店，要有泳池和停车场的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500,
+                "rating_range_lower": 2,
+                "facilities": [
+                    "泳池",
+                    "停车场"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在1000元以内的酒店，要有停车场和wifi的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000,
+                "facilities": [
+                    "停车场",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我找一个价格在600元以内, 评分不低于4分, 有泳池和停车场的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600,
+                "rating_range_lower": 4,
+                "facilities": [
+                    "泳池",
+                    "停车场"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在800以内的酒店，最好有泳池和按摩服务的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 800,
+                "facilities": [
+                    "泳池",
+                    "按摩"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格低于800的经济型酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在900元之内，评分高于3，且有棋牌室和wifi的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900,
+                "rating_range_lower": 3,
+                "facilities": [
+                    "棋牌室",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个经济型的酒店，价格不要超过1200元。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1100元并且有按摩和洗衣机的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100,
+                "facilities": [
+                    "按摩",
+                    "洗衣机"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格低于600元的酒店，要有泳池和停车场。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600,
+                "facilities": [
+                    "泳池",
+                    "停车场"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在1000元以上的酒店，带有棋牌室和泳池的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000,
+                "facilities": [
+                    "棋牌室",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在300以内的经济型酒店，给我查查有吗"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在200元以上的舒适酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在800元以上的酒店，最好有wifi和热水设施的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800,
+                "facilities": [
+                    "wifi",
+                    "热水"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，能帮我找一下舒适型的酒店吗，价格不要超过1100，评分要在3分以上的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100,
+                "rating_range_lower": 3,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比800高的经济酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个舒适型的酒店，价格不超过1100元的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在500元以上的酒店，有停车场和wifi的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500,
+                "facilities": [
+                    "停车场",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在900元以上的酒店，最好有按摩和wifi设施的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900,
+                "facilities": [
+                    "按摩",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在600元以上的豪华酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一下经济型的酒店，价格在900以内的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请问有价格在200以内且评分不低于2的酒店吗？要求有热水和按摩设施"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200,
+                "rating_range_lower": 2,
+                "facilities": [
+                    "热水",
+                    "按摩"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在1200元以上的酒店，带有泳池和棋牌室的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200,
+                "facilities": [
+                    "泳池",
+                    "棋牌室"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，我想订一个价格在900以内，有按摩和泳池设施的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900,
+                "facilities": [
+                    "按摩",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要一个价格在1200元以上并且有wifi和棋牌室的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200,
+                "facilities": [
+                    "wifi",
+                    "棋牌室"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个比500元高的经济酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要找一家经济型的酒店，评分至少为4分，价格不超过400元。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400,
+                "rating_range_lower": 4,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在800元以内的酒店，最好有停车场和洗衣机的设施"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 800,
+                "facilities": [
+                    "停车场",
+                    "洗衣机"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要找一个价格在500以内的酒店，里面有洗衣机和泳池的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500,
+                "facilities": [
+                    "洗衣机",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个豪华型的酒店，价格低于1100，评分不低于3分的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100,
+                "rating_range_lower": 3,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我订一个舒适型的价格在500元以上的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我找一个价格在700元以内的酒店，要有棋牌室和wifi"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "facilities": [
+                    "棋牌室",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个有棋牌室和停车场的价格比1000以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000,
+                "facilities": [
+                    "棋牌室",
+                    "停车场"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一家价格在700元以内的豪华酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个经济型的酒店，价格在1200以内，评分不低于2分的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200,
+                "rating_range_lower": 2,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个豪华酒店，价格不低于200的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我查查酒店，有热水和停车场的，价格在700以里的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "facilities": [
+                    "热水",
+                    "停车场"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下价格不超过400的酒店，要有热水和按摩服务的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400,
+                "facilities": [
+                    "热水",
+                    "按摩"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在300以内的经济型酒店，帮我查查有没有"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在300元之内的豪华酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个有停车场和泳池的价格在1000元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000,
+                "facilities": [
+                    "停车场",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我找一个价格低于300的豪华酒店，最低评分2星的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 300,
+                "rating_range_lower": 2,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要一个价格在1100元以上，且有棋牌室和wifi的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100,
+                "facilities": [
+                    "棋牌室",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个评分高于4，价格在700元以下的豪华酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "rating_range_lower": 4,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过1200元的经济酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格超过1000元且提供wifi和洗衣机的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000,
+                "facilities": [
+                    "wifi",
+                    "洗衣机"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请给我找一个经济型的酒店，价格在900元以下的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 900,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找个豪华酒店，价格不超过700元。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个舒适型的酒店，价格要超过1000元的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我订一间豪华型的酒店，价格在1100元以上的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1100,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一下评分在3分以上的豪华酒店，价格不超过1000元的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000,
+                "rating_range_lower": 3,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格不超过700的舒适型酒店，评分要在3分以上的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "rating_range_lower": 3,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在800以内的酒店，有停车场和热水的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 800,
+                "facilities": [
+                    "停车场",
+                    "热水"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一个舒适型的价格在200元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我找一个价格在500元以上的酒店，设施包括停车场和wifi"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 500,
+                "facilities": [
+                    "停车场",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮忙找一下价格在1200以下，评分超过4分且有洗衣机和wifi的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200,
+                "rating_range_lower": 4,
+                "facilities": [
+                    "洗衣机",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在1000以内的舒适型酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "给我查查舒适型的酒店，价格在400以内的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 400,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个评分在4分以上的酒店，价格不超过1200元，最好有wifi和泳池"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200,
+                "rating_range_lower": 4,
+                "facilities": [
+                    "wifi",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格不超过800元，评分不低于3分，并且有洗衣机和wifi设施的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 800,
+                "rating_range_lower": 3,
+                "facilities": [
+                    "洗衣机",
+                    "wifi"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮个忙，找一下价格在500内的酒店，要有棋牌室和热水的噢"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500,
+                "facilities": [
+                    "棋牌室",
+                    "热水"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格比400高的豪华酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 400,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我需要一个价格在200以下的酒店，评分要大于等于4分，还要有洗衣机和泳池的设施。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 200,
+                "rating_range_lower": 4,
+                "facilities": [
+                    "洗衣机",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个价格在900元以上的酒店，里面有按摩和棋牌室的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 900,
+                "facilities": [
+                    "按摩",
+                    "棋牌室"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在200元起，有棋牌室和按摩服务的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200,
+                "facilities": [
+                    "棋牌室",
+                    "按摩"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一家经济型的价格在800元以下的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 800,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找个价格在700元之内的豪华酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想要一个棋牌室和按摩的酒店，价格不能低于800元。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800,
+                "facilities": [
+                    "棋牌室",
+                    "按摩"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找个价格在1200元以内，有按摩和热水设施的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1200,
+                "facilities": [
+                    "按摩",
+                    "热水"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找个价格超过300的酒店，有棋牌室和洗衣机的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300,
+                "facilities": [
+                    "棋牌室",
+                    "洗衣机"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我预定一个价格不超过1100元的，设有wifi和洗衣机的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100,
+                "facilities": [
+                    "wifi",
+                    "洗衣机"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在600元之上的，有停车场和按摩服务的酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 600,
+                "facilities": [
+                    "停车场",
+                    "按摩"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "帮我找一个价格在700元以内的酒店，最好有按摩和泳池设施的。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "facilities": [
+                    "按摩",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在200元以上的，有棋牌室和热水设施的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200,
+                "facilities": [
+                    "棋牌室",
+                    "热水"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找个舒适型的酒店，价格不超过700元。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 700,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个经济型酒店，价格在300元以上。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 300,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查找一个价格不超过1000的酒店，设施包括棋牌室和停车场。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000,
+                "facilities": [
+                    "棋牌室",
+                    "停车场"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在1000以内的舒适型酒店，给我查查吧"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我想找一个价格在800元以上的经济型酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 800,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一家价格在1000元以下的舒适型酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1000,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个舒适型的价格在700元以上的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 700,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在500元以内的豪华型酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 500,
+                "type": "豪华型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "有价格在600元以下的经济型酒店吗？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600,
+                "type": "经济型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "你好，请帮我查一下，有没有评分大于2分，价格在600以内，并且有提供热水和洗衣机设施的酒店？"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600,
+                "rating_range_lower": 2,
+                "facilities": [
+                    "热水",
+                    "洗衣机"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一家价格在600元以下，设施包括洗衣机和泳池的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 600,
+                "facilities": [
+                    "洗衣机",
+                    "泳池"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我找一个价格在200元以上的有泳池和热水的酒店。"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 200,
+                "facilities": [
+                    "泳池",
+                    "热水"
+                ]
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找价格在1000元之上的舒适酒店"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1000,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "我要找一个舒适型的酒店，价格在1200元以上的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_lower": 1200,
+                "type": "舒适型"
+            }
+        }
+    ],
+    [
+        {
+            "role": "user",
+            "content": {
+                "content": "请帮我查一下价格低于1100的酒店，要有停车场和wifi的"
+            }
+        },
+        {
+            "role": "search",
+            "arguments": {
+                "price_range_upper": 1100,
+                "facilities": [
+                    "停车场",
+                    "wifi"
+                ]
+            }
+        }
+    ]
+]

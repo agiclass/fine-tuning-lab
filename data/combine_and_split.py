@@ -3,28 +3,52 @@ import os
 import random
 import copy
 
-def process_file(filename,data):
-    with open(filename,'r',encoding="utf-8") as fp:
-        dialog = json.load(fp)
-        buffer = []
-        for turn in dialog:
-            if (turn["role"] == "assistant" or turn["role"] == "search") and len(buffer)>0:
-                data.append({
-                    "context" : copy.deepcopy(buffer),
-                    "response" : turn
-                })
-            buffer.append(turn)
+random.seed(42)
+
+def process_dialog(dialog, data):
+    buffer = []
+    for turn in dialog:
+        if (turn["role"] == "assistant" or turn["role"] == "search") and len(buffer)>0:
+            data.append({
+                "context" : copy.deepcopy(buffer),
+                "response" : turn
+            })
+        buffer.append(turn)
     return data
 
+def data_to_turns(data):
+    ans = []
+    for dial in data:
+        process_dialog(dial,ans)
+    return ans
+
 def process_dir(dir_path,data,n=None):
-    i = 0
+    files = []
     for filename in os.listdir(dir_path):
         file_path = os.path.join(dir_path, filename)
         if os.path.isfile(file_path):
-            process_file(file_path,data)
-        i += 1
-        if i == n:
-            break
+            files.append(file_path)
+    
+    random.shuffle(files)
+    if n is not None:
+        files = files[:n]
+    
+    for file_path in files:
+        with open(file_path,'r',encoding="utf-8") as fp:
+            dialog = json.load(fp)
+            data.append(dialog)
+    
+    return data
+
+def process_dir_v2(dir_path, data):
+    for filename in os.listdir(dir_path):
+        file_path = os.path.join(dir_path, filename)
+        if os.path.isfile(file_path):
+            with open(file_path,'r',encoding="utf-8") as fp:
+                dialogs = json.load(fp)
+                for dial in dialogs:
+                    data.append(dial)
+                    #process_dialog(dial,data)
     return data
 
 def split_data(data,ratio):
@@ -43,16 +67,32 @@ def write_jsonl(data,filename):
             json_str = json.dumps(example,ensure_ascii=False)
             fp.write(json_str+"\n")
 
-def main(raw_data_path,output_dir=".",ratio=0.1,n=None):
+def main(raw_data_path, more_data_path=None, output_dir=".",ratio=0.1,n=None):
     
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
     data = []
     data = process_dir(raw_data_path,data,n)
-    train_data, dev_data, test_data = split_data(data,ratio)
-    write_jsonl(train_data,os.path.join(output_dir,"train.jsonl" if n is None else "train.lite.jsonl"))
-    write_jsonl(dev_data,os.path.join(output_dir,"dev.jsonl" if n is None else "dev.lite.jsonl"))
-    write_jsonl(test_data,os.path.join(output_dir,"test.jsonl" if n is None else "test.lite.jsonl" ))
 
-main("enhanced_hotel_data",n=2000)
+    if more_data_path is not None:
+        data = process_dir_v2(more_data_path,data)
+
+    train_data, dev_data, test_data = split_data(data,ratio)
+
+    write_jsonl(
+        data_to_turns(train_data),
+        os.path.join(output_dir,"train.jsonl")
+    )
+
+    write_jsonl(
+        data_to_turns(dev_data),
+        os.path.join(output_dir,"dev.jsonl")
+    )
+
+    write_jsonl(
+        data_to_turns(test_data),
+        os.path.join(output_dir,"test.jsonl")
+    )
+
+main("enhanced_hotel_data",more_data_path="enhanced_more",n=1500)

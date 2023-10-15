@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
-load_dotenv("api_keys.env") 
-
+load_dotenv("api_keys.env")
 import os
 import re
 import json
@@ -24,7 +23,7 @@ class HotelDB():
                  api_key=None):
                  
         if api_key is None:
-          api_key = os.getenv("WEAVIATE_KEY")
+          api_key = os.getenv("WEAVIATE_KEY") 
 
         self.client = weaviate.Client(url=url,
           auth_client_secret=weaviate.AuthApiKey(api_key=api_key),
@@ -273,20 +272,23 @@ class HotelDB():
                 candidates = sorted(
                     candidates, key=lambda x: x[dsl["sort.slot"]]
                 )
+        
+        if "name" in dsl:
+          final = []
+          for r in candidates:
+              if all(char in r['name'] for char in dsl['name']):
+                  final.append(r)
+          candidates = final
+        
         if len(candidates) > limit:
             candidates = candidates[:limit]
+        
         return candidates
+
 
 if __name__ == "__main__":
     db = HotelDB()
-
-    dsl = {
-        'price_range_upper': 500, 
-        'rating_range_lower': 4, 
-        'facilities': ['热水', '免费电话'],
-        'type': '经济型'
-    }
-
-    result = db.search(dsl, limit=3)
+    name = "汉庭"
+    result = db.search({'name':name}, limit=3)
     
-    print(json.dumps(result,ensure_ascii=False,indent=2))
+    print(json.dumps(result,ensure_ascii=False))
