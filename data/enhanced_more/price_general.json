@@ -2,9 +2,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要订一个价格在三百多块的酒店"
-            }
+            "content": "我要订一个价格在三百多块的酒店"
         },
         {
             "role": "search",
@@ -17,9 +15,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个价格在八百多块的酒店"
-            }
+            "content": "我想找一个价格在八百多块的酒店"
         },
         {
             "role": "search",
@@ -32,9 +28,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个800到900块钱左右的酒店。"
-            }
+            "content": "请帮我找一个800到900块钱左右的酒店。"
         },
         {
             "role": "search",
@@ -47,9 +41,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在700到800元之间的酒店。"
-            }
+            "content": "请帮我找一个价格在700到800元之间的酒店。"
         },
         {
             "role": "search",
@@ -62,9 +54,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找个价格在两三百的酒店。"
-            }
+            "content": "请帮我找个价格在两三百的酒店。"
         },
         {
             "role": "search",
@@ -77,9 +67,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在五六百的酒店。"
-            }
+            "content": "请帮我找一个价格在五六百的酒店。"
         },
         {
             "role": "search",
@@ -92,9 +80,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查找价格在四至五百之间的酒店。"
-            }
+            "content": "请帮我查找价格在四至五百之间的酒店。"
         },
         {
             "role": "search",
@@ -107,9 +93,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在八百多块的酒店"
-            }
+            "content": "请帮我找一个价格在八百多块的酒店"
         },
         {
             "role": "search",
@@ -122,9 +106,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在三四百的酒店吗"
-            }
+            "content": "你好，有价格在三四百的酒店吗"
         },
         {
             "role": "search",
@@ -137,9 +119,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "给我找一个价格在五六百的酒店"
-            }
+            "content": "给我找一个价格在五六百的酒店"
         },
         {
             "role": "search",
@@ -152,9 +132,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，请帮我找个价格在两三百的酒店。"
-            }
+            "content": "你好，请帮我找个价格在两三百的酒店。"
         },
         {
             "role": "search",
@@ -167,9 +145,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "给我查查酒店，价格三五百的"
-            }
+            "content": "给我查查酒店，价格三五百的"
         },
         {
             "role": "search",
@@ -182,9 +158,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找个价格在九百到一千块之间的酒店"
-            }
+            "content": "我想找个价格在九百到一千块之间的酒店"
         },
         {
             "role": "search",
@@ -197,9 +171,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要找一个价格在七八百元左右的酒店。"
-            }
+            "content": "我要找一个价格在七八百元左右的酒店。"
         },
         {
             "role": "search",
@@ -212,9 +184,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个200到300元左右的酒店，可以帮忙吗？"
-            }
+            "content": "我想找一个200到300元左右的酒店，可以帮忙吗？"
         },
         {
             "role": "search",
@@ -227,9 +197,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想要找个价格在五六百之间的酒店。"
-            }
+            "content": "我想要找个价格在五六百之间的酒店。"
         },
         {
             "role": "search",
@@ -242,9 +210,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请给我订一个价格在400到500之间的酒店。"
-            }
+            "content": "请给我订一个价格在400到500之间的酒店。"
         },
         {
             "role": "search",
@@ -257,9 +223,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查一下价格八百到一千的酒店。"
-            }
+            "content": "请帮我查一下价格八百到一千的酒店。"
         },
         {
             "role": "search",
@@ -272,9 +236,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在八百到一千元之间的酒店。"
-            }
+            "content": "请帮我找一个价格在八百到一千元之间的酒店。"
         },
         {
             "role": "search",
@@ -287,9 +249,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要找一个价格在五六百的酒店"
-            }
+            "content": "我要找一个价格在五六百的酒店"
         },
         {
             "role": "search",
@@ -302,9 +262,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要订一个价格在三百多块的酒店。"
-            }
+            "content": "我要订一个价格在三百多块的酒店。"
         },
         {
             "role": "search",
@@ -317,9 +275,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查一下价格在五百到六百之间的酒店"
-            }
+            "content": "请帮我查一下价格在五百到六百之间的酒店"
         },
         {
             "role": "search",
@@ -332,9 +288,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个价格在七八百的酒店"
-            }
+            "content": "我想找一个价格在七八百的酒店"
         },
         {
             "role": "search",
@@ -347,9 +301,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，请问有价格在七百到九百之间的酒店吗？"
-            }
+            "content": "你好，请问有价格在七百到九百之间的酒店吗？"
         },
         {
             "role": "search",
@@ -362,9 +314,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找个五六百块钱左右的酒店。"
-            }
+            "content": "我想找个五六百块钱左右的酒店。"
         },
         {
             "role": "search",
@@ -377,9 +327,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在八百到一千元之间的酒店。"
-            }
+            "content": "请帮我找一个价格在八百到一千元之间的酒店。"
         },
         {
             "role": "search",
@@ -392,9 +340,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一下价格在五六百的酒店"
-            }
+            "content": "请帮我找一下价格在五六百的酒店"
         },
         {
             "role": "search",
@@ -407,9 +353,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个价格在五六百之间的酒店。"
-            }
+            "content": "我想找一个价格在五六百之间的酒店。"
         },
         {
             "role": "search",
@@ -422,9 +366,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在三百到五百的酒店可以订吗"
-            }
+            "content": "你好，有价格在三百到五百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -437,9 +379,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找个价格在六七百的酒店。"
-            }
+            "content": "我想找个价格在六七百的酒店。"
         },
         {
             "role": "search",
@@ -452,9 +392,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在五六百的酒店。"
-            }
+            "content": "请帮我找一个价格在五六百的酒店。"
         },
         {
             "role": "search",
@@ -467,9 +405,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "帮我找个价格在八九百元左右的酒店。"
-            }
+            "content": "帮我找个价格在八九百元左右的酒店。"
         },
         {
             "role": "search",
@@ -482,9 +418,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查一下价格在九百到一千一百的酒店"
-            }
+            "content": "请帮我查一下价格在九百到一千一百的酒店"
         },
         {
             "role": "search",
@@ -497,9 +431,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要订一个价格在五百多块的宾馆"
-            }
+            "content": "我要订一个价格在五百多块的宾馆"
         },
         {
             "role": "search",
@@ -512,9 +444,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，给我订一个600多元的酒店，有吗"
-            }
+            "content": "你好，给我订一个600多元的酒店，有吗"
         },
         {
             "role": "search",
@@ -527,9 +457,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在三四百元之间的酒店。"
-            }
+            "content": "请帮我找一个价格在三四百元之间的酒店。"
         },
         {
             "role": "search",
@@ -542,9 +470,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在三五百的酒店可以订吗"
-            }
+            "content": "你好，有价格在三五百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -557,9 +483,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，请帮我找一个价格在四五百的酒店，谢谢。"
-            }
+            "content": "你好，请帮我找一个价格在四五百的酒店，谢谢。"
         },
         {
             "role": "search",
@@ -572,9 +496,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要找个价格在五百到六百的旅馆"
-            }
+            "content": "我要找个价格在五百到六百的旅馆"
         },
         {
             "role": "search",
@@ -587,9 +509,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我订一个价格大概在七八百元左右的酒店。"
-            }
+            "content": "请帮我订一个价格大概在七八百元左右的酒店。"
         },
         {
             "role": "search",
@@ -602,9 +522,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我需要查询价格在900到1000元之间的酒店"
-            }
+            "content": "我需要查询价格在900到1000元之间的酒店"
         },
         {
             "role": "search",
@@ -617,9 +535,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一下价格五百到六百的酒店。"
-            }
+            "content": "请帮我找一下价格五百到六百的酒店。"
         },
         {
             "role": "search",
@@ -632,9 +548,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在五六百的酒店可以订吗"
-            }
+            "content": "你好，有价格在五六百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -647,9 +561,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查询价格在五百到七百之间的酒店"
-            }
+            "content": "请帮我查询价格在五百到七百之间的酒店"
         },
         {
             "role": "search",
@@ -662,9 +574,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找个价格在九百多块的酒店"
-            }
+            "content": "我想找个价格在九百多块的酒店"
         },
         {
             "role": "search",
@@ -677,9 +587,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个价格在900到1000元左右的酒店。"
-            }
+            "content": "我想找一个价格在900到1000元左右的酒店。"
         },
         {
             "role": "search",
@@ -692,9 +600,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，给我订一个600多元的酒店，有吗"
-            }
+            "content": "你好，给我订一个600多元的酒店，有吗"
         },
         {
             "role": "search",
@@ -707,9 +613,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一家价格七八百的酒店。"
-            }
+            "content": "请帮我找一家价格七八百的酒店。"
         },
         {
             "role": "search",
@@ -722,9 +626,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "给我查查酒店，价格在三百到五百之间的"
-            }
+            "content": "给我查查酒店，价格在三百到五百之间的"
         },
         {
             "role": "search",
@@ -737,9 +639,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找个价格五百多的酒店。"
-            }
+            "content": "请帮我找个价格五百多的酒店。"
         },
         {
             "role": "search",
@@ -752,9 +652,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个价格在七百到九百之间的酒店。"
-            }
+            "content": "我想找一个价格在七百到九百之间的酒店。"
         },
         {
             "role": "search",
@@ -767,9 +665,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在二三百的酒店"
-            }
+            "content": "请帮我找一个价格在二三百的酒店"
         },
         {
             "role": "search",
@@ -782,9 +678,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在四五百的酒店可以订吗"
-            }
+            "content": "你好，有价格在四五百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -797,9 +691,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "给我查查价格在七八百元的酒店。"
-            }
+            "content": "给我查查价格在七八百元的酒店。"
         },
         {
             "role": "search",
@@ -812,9 +704,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在二三百的酒店可以订吗"
-            }
+            "content": "你好，有价格在二三百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -827,9 +717,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请给我订一个价格在三四百之间的酒店。"
-            }
+            "content": "请给我订一个价格在三四百之间的酒店。"
         },
         {
             "role": "search",
@@ -842,9 +730,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要订一个价格在三百多块的酒店。"
-            }
+            "content": "我要订一个价格在三百多块的酒店。"
         },
         {
             "role": "search",
@@ -857,9 +743,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "给我查查价格在三四百之间的酒店"
-            }
+            "content": "给我查查价格在三四百之间的酒店"
         },
         {
             "role": "search",
@@ -872,9 +756,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在三四百的酒店可以订吗"
-            }
+            "content": "你好，有价格在三四百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -887,9 +769,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个价格在九百到一千块左右的酒店。"
-            }
+            "content": "我想找一个价格在九百到一千块左右的酒店。"
         },
         {
             "role": "search",
@@ -902,9 +782,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要找一个价格在三百到五百块之间的酒店"
-            }
+            "content": "我要找一个价格在三百到五百块之间的酒店"
         },
         {
             "role": "search",
@@ -917,9 +795,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查一下价格在九百到一千的酒店"
-            }
+            "content": "请帮我查一下价格在九百到一千的酒店"
         },
         {
             "role": "search",
@@ -932,9 +808,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请给我订个价格四百多的酒店。"
-            }
+            "content": "请给我订个价格四百多的酒店。"
         },
         {
             "role": "search",
@@ -947,9 +821,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请给我订个价格四百多的酒店。"
-            }
+            "content": "请给我订个价格四百多的酒店。"
         },
         {
             "role": "search",
@@ -962,9 +834,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，给我订一个600多元的酒店，有吗"
-            }
+            "content": "你好，给我订一个600多元的酒店，有吗"
         },
         {
             "role": "search",
@@ -977,9 +847,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一家价格在八百多的酒店。"
-            }
+            "content": "请帮我找一家价格在八百多的酒店。"
         },
         {
             "role": "search",
@@ -992,9 +860,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "帮我找个价格在五七百元的酒店。"
-            }
+            "content": "帮我找个价格在五七百元的酒店。"
         },
         {
             "role": "search",
@@ -1007,9 +873,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找找价格七八百左右的酒店"
-            }
+            "content": "请帮我找找价格七八百左右的酒店"
         },
         {
             "role": "search",
@@ -1022,9 +886,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "您好，请问有价格在三百到四百之间的酒店吗？"
-            }
+            "content": "您好，请问有价格在三百到四百之间的酒店吗？"
         },
         {
             "role": "search",
@@ -1037,9 +899,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，请帮我找一个800-900元左右的酒店。"
-            }
+            "content": "你好，请帮我找一个800-900元左右的酒店。"
         },
         {
             "role": "search",
@@ -1052,9 +912,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "帮我找一个价格在五百到六百元之间的酒店。"
-            }
+            "content": "帮我找一个价格在五百到六百元之间的酒店。"
         },
         {
             "role": "search",
@@ -1067,9 +925,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "麻烦帮我预订一个价格在900多到1100左右的酒店。"
-            }
+            "content": "麻烦帮我预订一个价格在900多到1100左右的酒店。"
         },
         {
             "role": "search",
@@ -1082,9 +938,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想预订一个四五百元的酒店，有什么推荐的吗？"
-            }
+            "content": "我想预订一个四五百元的酒店，有什么推荐的吗？"
         },
         {
             "role": "search",
@@ -1097,9 +951,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "帮我找一个四五百块钱左右的酒店"
-            }
+            "content": "帮我找一个四五百块钱左右的酒店"
         },
         {
             "role": "search",
@@ -1112,9 +964,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想要一个价格在四五百左右的酒店。"
-            }
+            "content": "我想要一个价格在四五百左右的酒店。"
         },
         {
             "role": "search",
@@ -1127,9 +977,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在八百到一千元的酒店可以订吗"
-            }
+            "content": "你好，有价格在八百到一千元的酒店可以订吗"
         },
         {
             "role": "search",
@@ -1142,9 +990,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一下价格在三百到四百之间的酒店。"
-            }
+            "content": "请帮我找一下价格在三百到四百之间的酒店。"
         },
         {
             "role": "search",
@@ -1157,9 +1003,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请给我订一个价格在400到500之间的酒店。"
-            }
+            "content": "请给我订一个价格在400到500之间的酒店。"
         },
         {
             "role": "search",
@@ -1172,9 +1016,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，我想订一个价格在五六百之间的酒店"
-            }
+            "content": "你好，我想订一个价格在五六百之间的酒店"
         },
         {
             "role": "search",
@@ -1187,9 +1029,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查询价格在五六百元的酒店。"
-            }
+            "content": "请帮我查询价格在五六百元的酒店。"
         },
         {
             "role": "search",
@@ -1202,9 +1042,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在二三百元的酒店。"
-            }
+            "content": "请帮我找一个价格在二三百元的酒店。"
         },
         {
             "role": "search",
@@ -1217,9 +1055,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我要订一个价格在三百多块的宾馆"
-            }
+            "content": "我要订一个价格在三百多块的宾馆"
         },
         {
             "role": "search",
@@ -1232,9 +1068,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，我想预订一个五六百元左右的酒店，有没有推荐的？"
-            }
+            "content": "你好，我想预订一个五六百元左右的酒店，有没有推荐的？"
         },
         {
             "role": "search",
@@ -1247,9 +1081,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想查询价格在八九百之间的酒店"
-            }
+            "content": "我想查询价格在八九百之间的酒店"
         },
         {
             "role": "search",
@@ -1262,9 +1094,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在六到八百的酒店可以订吗"
-            }
+            "content": "你好，有价格在六到八百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -1277,9 +1107,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在七百到八百之间的酒店"
-            }
+            "content": "请帮我找一个价格在七百到八百之间的酒店"
         },
         {
             "role": "search",
@@ -1292,9 +1120,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想找一个价格在二百到四百之间的酒店"
-            }
+            "content": "我想找一个价格在二百到四百之间的酒店"
         },
         {
             "role": "search",
@@ -1307,9 +1133,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请问有没有价格在七百到九百的酒店可以预订呢？"
-            }
+            "content": "请问有没有价格在七百到九百的酒店可以预订呢？"
         },
         {
             "role": "search",
@@ -1322,9 +1146,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，请给我找一个五六百元左右的酒店，谢谢"
-            }
+            "content": "你好，请给我找一个五六百元左右的酒店，谢谢"
         },
         {
             "role": "search",
@@ -1337,9 +1159,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一下价格在三四百之间的酒店"
-            }
+            "content": "请帮我找一下价格在三四百之间的酒店"
         },
         {
             "role": "search",
@@ -1352,9 +1172,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "你好，有价格在四五百的酒店可以订吗"
-            }
+            "content": "你好，有价格在四五百的酒店可以订吗"
         },
         {
             "role": "search",
@@ -1367,9 +1185,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "我想订一个价格在900到1000元左右的酒店"
-            }
+            "content": "我想订一个价格在900到1000元左右的酒店"
         },
         {
             "role": "search",
@@ -1382,9 +1198,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在两三百之间的酒店。"
-            }
+            "content": "请帮我找一个价格在两三百之间的酒店。"
         },
         {
             "role": "search",
@@ -1397,9 +1211,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请给我订个价格四百多的酒店。"
-            }
+            "content": "请给我订个价格四百多的酒店。"
         },
         {
             "role": "search",
@@ -1412,9 +1224,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请给我找个价格在九百到一千元之间的酒店。"
-            }
+            "content": "请给我找个价格在九百到一千元之间的酒店。"
         },
         {
             "role": "search",
@@ -1427,9 +1237,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在三到四百元之间的酒店。"
-            }
+            "content": "请帮我找一个价格在三到四百元之间的酒店。"
         },
         {
             "role": "search",
@@ -1442,9 +1250,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在八九百元左右的酒店。"
-            }
+            "content": "请帮我找一个价格在八九百元左右的酒店。"
         },
         {
             "role": "search",
@@ -1457,9 +1263,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我查询价格为七九百的酒店"
-            }
+            "content": "请帮我查询价格为七九百的酒店"
         },
         {
             "role": "search",
@@ -1472,9 +1276,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "帮我找个价格在三四百元的酒店。"
-            }
+            "content": "帮我找个价格在三四百元的酒店。"
         },
         {
             "role": "search",
@@ -1487,9 +1289,7 @@
     [
         {
             "role": "user",
-            "content": {
-                "content": "请帮我找一个价格在900到1000之间的酒店"
-            }
+            "content": "请帮我找一个价格在900到1000之间的酒店"
         },
         {
             "role": "search",
