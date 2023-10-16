@@ -57,7 +57,6 @@ def get_completion(prompt):
     with torch.no_grad():
         outputs = model.generate(**inputs, max_length=max_target_length + max_source_length + 1, num_beams=1, do_sample=False)
     response = tokenizer.decode(outputs[0][inputs['input_ids'].shape[0]:], skip_special_tokens=True)
-    print(response)
     return response
 
 # init gloab variables
@@ -67,6 +66,7 @@ model, tokenizer, max_source_length, max_target_length = init_model()
 def chat(user_input, chatbot, context, search_field, return_field):
     context.append({'role':'user','content':user_input})
     response = get_completion(build_prompt(context))
+    print(response)
     # 判断以search命令开头时去执行搜索
     if "search:" in response:
         # 取出最新一条 'search:' 后面的json查询条件
