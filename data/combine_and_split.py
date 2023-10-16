@@ -24,6 +24,13 @@ def data_to_turns(data,shuffle=False):
         random.shuffle(ans)
     return ans
 
+def is_multi_search(dialog):
+    count = 0
+    for turn in dialog:
+        if turn["role"] == "search":
+            count += 1
+    return count > 1
+
 def process_dir(dir_path,data,n=None):
     files = []
     for filename in os.listdir(dir_path):
@@ -31,16 +38,25 @@ def process_dir(dir_path,data,n=None):
         if os.path.isfile(file_path):
             files.append(file_path)
     
-    random.shuffle(files)
-    if n is not None:
-        files = files[:n]
-    
     for file_path in files:
         with open(file_path,'r',encoding="utf-8") as fp:
             dialog = json.load(fp)
             data.append(dialog)
+
+    multi = []
+    single = []
+
+    for dial in data:
+        if is_multi_search(dial):
+            multi.append(dial)
+        else:
+            single.append(dial)
+
+    random.shuffle(single)
+    if n is not None:
+        single = single[:n-len(multi)]
     
-    return data
+    return multi+single
 
 def process_dir_v2(dir_path, data):
     for filename in os.listdir(dir_path):
@@ -84,17 +100,17 @@ def main(raw_data_path, more_data_path=None, output_dir=".",ratio=0.1,n=None):
 
     write_jsonl(
         data_to_turns(train_data),
-        os.path.join(output_dir,"train.jsonl")
+        os.path.join(output_dir,"train.jsonl" if n is not None else "train.full.jsonl")
     )
 
     write_jsonl(
         data_to_turns(dev_data),
-        os.path.join(output_dir,"dev.jsonl")
+        os.path.join(output_dir,"dev.jsonl" if n is not None else "dev.full.jsonl" )
     )
 
     write_jsonl(
         data_to_turns(test_data),
-        os.path.join(output_dir,"test.jsonl")
+        os.path.join(output_dir,"test.jsonl" if n is not None else "test.full.jsonl")
     )
 
 main("enhanced_hotel_data",more_data_path="enhanced_more",n=1500)
