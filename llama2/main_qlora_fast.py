@@ -23,7 +23,7 @@ import logging
 from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from common.data_helper import load_raw_datasets, print_dataset_example
 from common.checkpoint_helper import load_lora_checkpoint
-from data_preprocess import Preprocessor
+from .data_preprocess import Preprocessor
 
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, AutoPeftModelForCausalLM
 
