@@ -51,11 +51,13 @@ def init_model():
     return model, tokenizer, data_args.max_source_length, data_args.max_target_length
 
 def get_completion(prompt):
+    print(prompt)
     inputs = tokenizer(prompt, return_tensors="pt", truncation=True, padding=True, max_length=max_source_length)
     inputs = inputs.to(model.device)
     with torch.no_grad():
         outputs = model.generate(**inputs, max_length=max_target_length + max_source_length + 1, num_beams=1, do_sample=False)
     response = tokenizer.decode(outputs[0][inputs['input_ids'].shape[1]:], skip_special_tokens=True)
+    print(response)
     return response
 
 # init gloab variables
@@ -73,7 +75,7 @@ def remove_search_history(context):
 def chat(user_input, chatbot, context, search_field, return_field):
     context.append({'role':'user','content':user_input})
     response = get_completion(build_prompt(context))
-    print(response)
+    #print(response)
     # 判断以search命令开头时去执行搜索
     if "search:" in response:
         # 取出最新一条 'search:' 后面的json查询条件
@@ -94,7 +96,7 @@ def chat(user_input, chatbot, context, search_field, return_field):
 
             # 将查询结果发给LLM，再次那么让LLM生成回复
             response = get_completion(build_prompt(context))
-            print(response)
+            #print(response)
 
 
     start = response.rfind(":")+1
