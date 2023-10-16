@@ -4,6 +4,8 @@ import dotenv
 dotenv.load_dotenv('api_keys.env')
 import sys
 sys.path.append('..')
+sys.path.append('../chatglm2')
+sys.path.append('../llama2')
 import os
 import re
 import json

@@ -2,7 +2,7 @@
 # coding=utf-8
 import sys
 sys.path.append('..')
-
+sys.path.append('.')
 import logging
 import os
 import sys
@@ -22,7 +22,7 @@ from transformers import (
     set_seed,
 )
 
-from .data_preprocess import Preprocessor
+from data_preprocess import Preprocessor
 from common.trainer_seq2seq import Seq2SeqTrainer
 from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from common.data_helper import load_raw_datasets, print_dataset_example
