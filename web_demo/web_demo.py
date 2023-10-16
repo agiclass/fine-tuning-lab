@@ -62,6 +62,14 @@ def get_completion(prompt):
 db = HotelDB()
 model, tokenizer, max_source_length, max_target_length = init_model()
 
+def remove_search_history(context):
+    i = 0
+    while i < len(context):
+        if context[i]['role'] in ['search','return']:
+            del context[i]
+        else:
+            i += 1
+
 def chat(user_input, chatbot, context, search_field, return_field):
     context.append({'role':'user','content':user_input})
     response = get_completion(build_prompt(context))
@@ -72,8 +80,8 @@ def chat(user_input, chatbot, context, search_field, return_field):
         search_query = parse_json(response)
         if search_query is not None:
             search_field = json.dumps(search_query,indent=4,ensure_ascii=False)
+            remove_search_history(context)
             context.append({'role':'search','arguments':search_query})
-
             # 调用酒店查询接口
             return_field = db.search(search_query, limit=3)
             context.append({'role':'return','records':return_field})
@@ -86,6 +94,7 @@ def chat(user_input, chatbot, context, search_field, return_field):
 
             # 将查询结果发给LLM，再次那么让LLM生成回复
             response = get_completion(build_prompt(context))
+            print(response)
 
 
     start = response.rfind(":")+1
