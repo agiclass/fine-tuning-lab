@@ -53,10 +53,9 @@ def init_model():
 def get_completion(prompt):
     inputs = tokenizer(prompt, return_tensors="pt", truncation=True, padding=True, max_length=max_source_length)
     inputs = inputs.to(model.device)
-    print(inputs['input_ids'].shape)
     with torch.no_grad():
         outputs = model.generate(**inputs, max_length=max_target_length + max_source_length + 1, num_beams=1, do_sample=False)
-    response = tokenizer.decode(outputs[0][inputs['input_ids'].shape[0]:], skip_special_tokens=True)
+    response = tokenizer.decode(outputs[0][inputs['input_ids'].shape[1]:], skip_special_tokens=True)
     return response
 
 # init gloab variables
