@@ -8,15 +8,25 @@ import weaviate
 from tqdm import tqdm
 
 def rrf(rankings, k=60):
+    if not isinstance(rankings, list):
+        raise ValueError("Rankings should be a list.")
     scores = dict()
     for ranking in rankings:
+        if not ranking:  # 如果ranking为空，跳过它
+            continue
         for i, doc in enumerate(ranking):
-            doc_id = doc['hotel_id'] if isinstance(doc, dict) else doc
+            if not isinstance(doc, dict):
+                raise ValueError("Each item should be dict type.")
+            doc_id = doc.get('hotel_id', None)
+            if doc_id is None:
+                raise ValueError("Each item should have 'hotel_id' key.")
             if doc_id not in scores:
                 scores[doc_id] = (0, doc)
             scores[doc_id] = (scores[doc_id][0] + 1 / (k + i), doc)
+
     sorted_scores = sorted(scores.values(), key=lambda x: x[0], reverse=True)
     return [item[1] for item in sorted_scores]
+
 
 class HotelDB():
     def __init__(self, url="https://hotel-db-pm1fugkm.weaviate.network", 
@@ -290,5 +300,4 @@ if __name__ == "__main__":
     db = HotelDB()
     name = "汉庭"
     result = db.search({'name':name}, limit=3)
-    
     print(json.dumps(result,ensure_ascii=False))

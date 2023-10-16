@@ -78,7 +78,9 @@ def chat(user_input, chatbot, context, search_field, return_field):
             # 调用酒店查询接口
             return_field = db.search(search_query, limit=3)
             context.append({'role':'return','records':return_field})
-            keys = return_field[0].keys() if return_field else []
+            keys = []
+            if return_field:
+                keys = ['name', 'address', 'phone', 'price', 'rating', 'subway', 'type', 'facilities']
             data = {key: [item[key] for item in return_field] for key in keys}
             data = data or {"hotel": []}
             return_field = pd.DataFrame(data)
@@ -103,13 +105,16 @@ def main():
         with gr.Row():
             with gr.Column(scale=2):
                 chatbot = gr.Chatbot()
+            with gr.Column(scale=2):
+                gr.HTML("""<h4>Search</h4>""")
+                search_field = gr.Textbox(show_label=False, placeholder="search...", lines=8)
                 user_input = gr.Textbox(show_label=False, placeholder="输入框...", lines=2)
                 with gr.Row():
                     submitBtn = gr.Button("提交", variant="primary")
                     emptyBtn = gr.Button("清空")
-            with gr.Column(scale=2):
-                gr.HTML("""<h4>Search</h4>""")
-                search_field = gr.Textbox(show_label=False, placeholder="search...")
+
+        with gr.Row():
+            with gr.Column():
                 gr.HTML("""<h4>Return</h4>""")
                 return_field = gr.Dataframe()
 
