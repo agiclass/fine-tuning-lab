@@ -113,4 +113,5 @@ def main(raw_data_path, more_data_path=None, output_dir=".",ratio=0.1,n=None):
         os.path.join(output_dir,"test.jsonl" if n is not None else "test.full.jsonl")
     )
 
-main("enhanced_hotel_data",more_data_path="enhanced_more",n=1500)
+#main("enhanced_hotel_data",more_data_path="enhanced_more",n=1500)
+main("enhanced_hotel_data",more_data_path="enhanced_more",n=None)
