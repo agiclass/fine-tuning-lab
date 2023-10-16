@@ -16,10 +16,12 @@ def process_dialog(dialog, data):
         buffer.append(turn)
     return data
 
-def data_to_turns(data):
+def data_to_turns(data,shuffle=False):
     ans = []
     for dial in data:
         process_dialog(dial,ans)
+    if shuffle:
+        random.shuffle(ans)
     return ans
 
 def process_dir(dir_path,data,n=None):

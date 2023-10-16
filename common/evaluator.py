@@ -3,18 +3,21 @@ import numpy as np
 #from rouge_chinese import Rouge
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import json
+import re
 
 def remove_minus100(ids,val):
+    """
+        -100是HF预留的id（不参与loss计算）
+        有的tokenizer在decode -100时会报错
+        因此在decode之前去除（替换为pad_id）
+    """
     ids = np.array(ids)
     ids = np.where(ids == -100, val, ids)
     return ids
 
 def parse_json(string):
-    # 找到最后一个 'search:' 的位置
-    search_pos = string.rfind('search:')
-    if search_pos == -1:
-        return None
-    # 从 'search:' 后面开始寻找第一个 '{'
+    search_pos = 0
+    # 开始寻找第一个 '{'
     start = string.find('{', search_pos)
     if start == -1:
         return None
@@ -105,23 +108,17 @@ class Evaluator:
             pred = pred.strip()
             label = label.strip()
 
-            # 评估两个回复句子的BLEU SCORE    
+              
             if pred.startswith("assistant:") and label.startswith("assistant:"):
+                # 评估两个回复句子的BLEU SCORE  
                 start = len("assistant:")
                 bleu_score = self._bleu4(pred[start:],label[start:])
                 bleu_scores.append(bleu_score)
-            # 评估NLU的槽准确率
-            elif pred.startswith("search:") and label.startswith("search:"):
-                start = len("search:")
-                correct, pred_slots, true_slots = self._slot_accuracy(pred[start:],label[start:])
-                true_slot_count += true_slots
-                pred_slot_count += pred_slots
-                correct_slot_count += correct
-            # 本次BLEU SCORE为0
             elif label.startswith("assistant:"):
+                # 本次BLEU SCORE为0
                 bleu_scores.append(0)
-            # 尝试计算NLU的槽识别率
             else:
+                # 尝试计算NLU的槽识别率
                 correct, pred_slots, true_slots = self._slot_accuracy(pred,label)
                 true_slot_count += true_slots
                 pred_slot_count += pred_slots
@@ -153,5 +150,5 @@ def save_predictions(predict_results, tokenizer, output_dir):
     output_prediction_file = os.path.join(output_dir, "generated_predictions.txt")
     with open(output_prediction_file, "w", encoding="utf-8") as writer:
         for p, l in zip(predictions, labels):
-            res = json.dumps({"labels": replace_all(l,'<image_-100>',''), "predict": p}, ensure_ascii=False)
+            res = json.dumps({"labels": l, "predict": p}, ensure_ascii=False)
             writer.write(f"{res}\n")
