@@ -214,6 +214,7 @@ def main():
         trainer.log_metrics("train", metrics)
         trainer.save_metrics("train", metrics)
         trainer.save_state()
+        trainer.save_model()
 
     # Evaluation
     if training_args.do_eval:
@@ -223,8 +224,7 @@ def main():
 
         trainer.log_metrics("eval", metrics)
         trainer.save_metrics("eval", metrics)
-        trainer.save_model()
-
+        
     # Testing
     results = {}
     if training_args.do_predict:
