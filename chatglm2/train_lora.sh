@@ -30,7 +30,5 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_lora.py \
     --learning_rate $LR \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 \
-    --lora_dropout 0.1 \
-    --load_best_model_at_end \
-    --metric_for_best_model "slot_F1" 
+    --lora_dropout 0.1 
 

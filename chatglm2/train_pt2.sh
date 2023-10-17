@@ -28,6 +28,4 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_pt2.py \
     --save_steps 320 \
     --learning_rate $LR \
     --pre_seq_len $PRE_SEQ_LEN \
-    --quantization_bit 4 \
-    --load_best_model_at_end \
-    --metric_for_best_model "slot_F1" 
+    --quantization_bit 4 

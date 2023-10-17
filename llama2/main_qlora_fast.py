@@ -204,6 +204,21 @@ def main():
             )
         print_dataset_example(eval_dataset[0],tokenizer)
 
+    if training_args.do_predict:
+        if "test" not in raw_datasets:
+            raise ValueError("--do_predict requires a test dataset")
+        predict_dataset = raw_datasets["test"]
+        with training_args.main_process_first(desc="prediction dataset map pre-processing"):
+            predict_dataset = predict_dataset.map(
+                data_processor.preprocess_function_train,
+                batched=True,
+                num_proc=data_args.preprocessing_num_workers,
+                remove_columns=column_names,
+                load_from_cache_file=not data_args.overwrite_cache,
+                desc="Running tokenizer on prediction dataset",
+            )
+        print_dataset_example(predict_dataset[0],tokenizer)
+
     # Data collator
     label_pad_token_id = -100 if data_args.ignore_pad_token_for_loss else tokenizer.pad_token_id
     data_collator = DataCollatorForSeq2Seq(
@@ -242,6 +257,29 @@ def main():
         trainer.log_metrics("train", metrics)
         trainer.save_metrics("train", metrics)
         trainer.save_state()
+
+    # Evaluation
+    if training_args.do_eval:
+        logger.info("*** Evaluate ***")
+        metrics = trainer.evaluate(metric_key_prefix="eval")
+        metrics["eval_samples"] = len(eval_dataset)
+
+        trainer.log_metrics("eval", metrics)
+        trainer.save_metrics("eval", metrics)
+        trainer.save_model()
+
+    # Testing
+    results = {}
+    if training_args.do_predict:
+        logger.info("*** Predict ***")
+        predict_results = trainer.predict(predict_dataset, metric_key_prefix="predict")
+        metrics = predict_results.metrics
+        metrics["predict_samples"] = len(predict_dataset)
+
+        trainer.log_metrics("predict", metrics)
+        trainer.save_metrics("predict", metrics)
+
+    return results
 
 
 if __name__ == "__main__":

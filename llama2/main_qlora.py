@@ -269,6 +269,16 @@ def main():
         trainer.save_metrics("train", metrics)
         trainer.save_state()
 
+    # Evaluation
+    if training_args.do_eval:
+        logger.info("*** Evaluate ***")
+        metrics = trainer.evaluate(metric_key_prefix="eval", do_sample=False, max_length=training_args.generation_max_length)
+        metrics["eval_samples"] = len(eval_dataset)
+
+        trainer.log_metrics("eval", metrics)
+        trainer.save_metrics("eval", metrics)
+        trainer.save_model()
+
     # Testing
     results = {}
     if training_args.do_predict:

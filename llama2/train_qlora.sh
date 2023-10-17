@@ -26,7 +26,6 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --predict_with_generate \
     --evaluation_strategy steps \
     --eval_steps 40 \
-    --eval_delay 120 \
     --num_train_epochs 1 \
     --logging_steps 40 \
     --save_steps 40 \

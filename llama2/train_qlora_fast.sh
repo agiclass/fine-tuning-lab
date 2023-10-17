@@ -30,6 +30,4 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora_fast.py \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 \
     --lora_dropout 0.1 \
-    --fp16 \
-    --load_best_model_at_end  
-
+    --fp16 
