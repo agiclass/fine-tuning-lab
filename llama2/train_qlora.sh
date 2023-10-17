@@ -20,15 +20,15 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --optim "paged_adamw_8bit" \
     --max_source_length 2048 \
     --max_target_length 1024 \
-    --per_device_train_batch_size 2 \
+    --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 1 \
-    --gradient_accumulation_steps 8 \
+    --gradient_accumulation_steps 32 \
     --predict_with_generate \
     --evaluation_strategy steps \
-    --eval_steps 40 \
+    --eval_steps 20 \
     --num_train_epochs 1 \
-    --logging_steps 40 \
-    --save_steps 40 \
+    --logging_steps 20 \
+    --save_steps 20 \
     --learning_rate $LR \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 \
