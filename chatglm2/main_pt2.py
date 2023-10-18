@@ -214,7 +214,7 @@ def main():
         trainer.log_metrics("train", metrics)
         trainer.save_metrics("train", metrics)
         trainer.save_state()
-        trainer.save_model()
+        trainer.save_model(os.path.join(training_args.output_dir,"checkpoint-last"))
 
     # Evaluation
     if training_args.do_eval:
