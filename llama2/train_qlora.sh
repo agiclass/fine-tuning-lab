@@ -22,16 +22,17 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --max_target_length 1024 \
     --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 1 \
-    --gradient_accumulation_steps 32 \
+    --gradient_accumulation_steps 4 \
     --predict_with_generate \
     --evaluation_strategy steps \
-    --eval_steps 20 \
+    --eval_steps 160 \
     --num_train_epochs 1 \
-    --logging_steps 20 \
-    --save_steps 20 \
+    --logging_steps 160 \
+    --save_steps 160 \
     --learning_rate $LR \
     --lora_rank $LORA_RANK \
     --lora_alpha 32 \
     --lora_dropout 0.1 \
-    --fp16
+    --fp16 \
+    --warmup_ratio 0.1
 
