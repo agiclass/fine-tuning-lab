@@ -46,7 +46,7 @@ def init_model():
         from llama2.main_qlora import load_model, create_bnb_config
         bnb_config = create_bnb_config()
         model, tokenizer = load_model(name, bnb_config)
-        model = load_lora_checkpoint(model, peft_args.lora_checkpoint).cuda()
+        model = load_lora_checkpoint(model, peft_args.lora_checkpoint)
     else:
         raise f"Unknown model {name}"
 
