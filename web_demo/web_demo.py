@@ -38,9 +38,10 @@ def init_model():
             model = load_lora_checkpoint(model, peft_args.lora_checkpoint,merge=True).cuda()
         elif peft_args.ptuning_checkpoint:
             from chatglm2.main_pt2 import load_model, quantize_model
-            model, tokenizer = load_model(name)
+            model, tokenizer = load_model(name, peft_args)
             model = load_pt2_checkpoint(model,peft_args)
             model = quantize_model(model,model_args,peft_args)
+            model = model.cuda()
 
     elif "llama" in name.lower():
         from llama2.main_qlora import load_model, create_bnb_config
@@ -54,7 +55,7 @@ def init_model():
 
 def get_completion(prompt):
     print(prompt)
-    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, padding=True, max_length=max_source_length)
+    inputs = tokenizer(prompt, return_token_type_ids=False, return_tensors="pt", truncation=True, padding=True, max_length=max_source_length)
     inputs = inputs.to(model.device)
     with torch.no_grad():
         outputs = model.generate(**inputs, max_length=max_target_length + max_source_length + 1, num_beams=1, do_sample=False)

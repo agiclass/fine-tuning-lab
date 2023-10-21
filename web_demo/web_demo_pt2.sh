@@ -1,9 +1,13 @@
 PRE_SEQ_LEN=128
 
-MODEL_PATH="/root/chatglm2-6b"
-CHECKPOINT_DIR="output/chatglm2-6b-pt/checkpoint-600/"
+DATA_FS="/root/autodl-tmp" # chatglm-6b所在目录
+CHECKPOINT_DIR="PATH/TO/LORA/CHECKPOINT"
 
 CUDA_VISIBLE_DEVICES=0 python3 web_demo.py \
-    --model_name_or_path $MODEL_PATH \
+    --model_name_or_path "${DATA_FS}/chatglm2-6b" \
     --ptuning_checkpoint $CHECKPOINT_DIR \
-    --pre_seq_len $PRE_SEQ_LEN 
+    --overwrite_cache \
+    --max_source_length 2048 \
+    --max_target_length 1024 \
+    --pre_seq_len $PRE_SEQ_LEN \
+    --quantization_bit 4
