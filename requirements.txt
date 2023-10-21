@@ -4,8 +4,8 @@ cpm_kernels
 torch==2.0.1
 gradio
 mdtex2html
-sentencepiece
-accelerate
+sentencepiece==0.1.99
+accelerate==0.23.0
 sse-starlette
 streamlit>=1.24.0
 bitsandbytes==0.41.1
