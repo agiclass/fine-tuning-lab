@@ -11,7 +11,7 @@ streamlit>=1.24.0
 bitsandbytes==0.41.1
 scipy==1.10.1
 nltk==3.8.1
-peft==0.4.0
+peft==0.5.0
 python-dotenv==1.0.0
 weaviate-client==3.24.2
 datasets==2.14.5
