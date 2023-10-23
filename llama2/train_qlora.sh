@@ -34,5 +34,6 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python3 main_qlora.py \
     --lora_alpha 32 \
     --lora_dropout 0.1 \
     --fp16 \
-    --warmup_ratio 0.1
+    --warmup_ratio 0.1 \
+    --seed 23
 
