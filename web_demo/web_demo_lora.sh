@@ -1,7 +1,7 @@
 #!/bin/bash
 LORA_RANK=8
 DATA_FS="/root/autodl-tmp" # chatglm-6b所在目录
-CHECKPOINT_DIR="PATH/TO/LORA/CHECKPOINT"
+CHECKPOINT_DIR="/root/workspace/checkpoints/chatglm2-6b-lora"
 
 CUDA_VISIBLE_DEVICES=0 python3 web_demo.py \
     --model_name_or_path "${DATA_FS}/chatglm2-6b" \

@@ -29,14 +29,8 @@ def rrf(rankings, k=60):
 
 
 class HotelDB():
-    def __init__(self, url="https://hotel-db-pm1fugkm.weaviate.network", 
-                 api_key=None):
-                 
-        if api_key is None:
-          api_key = os.getenv("WEAVIATE_KEY") 
-
+    def __init__(self, url="http://118.193.33.124:8080", api_key=None):
         self.client = weaviate.Client(url=url,
-          auth_client_secret=weaviate.AuthApiKey(api_key=api_key),
           additional_headers={"X-OpenAI-Api-Key":os.getenv("OPENAI_API_KEY")}
         )
 

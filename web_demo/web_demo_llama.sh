@@ -1,6 +1,6 @@
 LORA_RANK=8
 DATA_FS="/root/autodl-tmp" # Llama-2-7b-hf所在目录
-CHECKPOINT_DIR="PATH/TO/LORA/CHECKPOINT"
+CHECKPOINT_DIR="/root/workspace/checkpoints/llama2-7b-qlora"
 
 CUDA_VISIBLE_DEVICES=0 python3 web_demo.py \
     --model_name_or_path "${DATA_FS}/Llama-2-7b-hf" \
