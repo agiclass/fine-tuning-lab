@@ -92,8 +92,8 @@ def main():
             data_args.max_seq_length,
         )
 
-        if training_args.local_rank < 1:
-            sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
+        # if training_args.local_rank < 1:
+        #     sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
 
     if training_args.do_eval:
         with open(data_args.validation_file, "r", encoding="utf-8") as f:
@@ -105,8 +105,8 @@ def main():
             data_args.max_seq_length,
         )
 
-        if training_args.local_rank < 1:
-            sanity_check(eval_dataset[0]['input_ids'], eval_dataset[0]['labels'], tokenizer)
+        # if training_args.local_rank < 1:
+        #     sanity_check(eval_dataset[0]['input_ids'], eval_dataset[0]['labels'], tokenizer)
 
     # Data collator
     data_collator = DataCollatorForSeq2Seq(

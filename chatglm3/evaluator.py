@@ -1,9 +1,43 @@
 import os
-import numpy as np
-#from rouge_chinese import Rouge
-from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import json
-import re
+import numpy as np
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
+
+def post_process(response):
+    for response in response.split("<|assistant|>"):
+        splited = response.split("\n", maxsplit=1)
+        if len(splited) == 2:
+            metadata, response = splited
+        else:
+            metadata = ""
+            response = splited[0]
+        if not metadata.strip():
+            response = response.strip()
+        else:
+            response = "\n".join(response.split("\n")[1:-1])
+            def tool_call(**kwargs):
+                return kwargs
+            if response:
+                try:
+                    parameters = eval(response)
+                except:
+                    parameters = {}
+                response = {"name": metadata.strip(), "parameters": parameters}
+    return response
+
+def split_tokens(array):
+    mapping = {64795:"<|user|>",64797:"<|observation|>"}
+    delimiters = mapping.keys()
+    turns = []
+    idx = 0
+    for i, num in enumerate(array):
+        if num in delimiters:
+            if i > idx:
+                turns.append((array[idx:i],mapping[num]))
+            idx = i + 1
+    if idx < len(array):
+        turns.append((array[idx:], "<|user|>"))
+    return turns
 
 def remove_minus100(ids,val):
     """
@@ -15,33 +49,14 @@ def remove_minus100(ids,val):
     ids = np.where(ids == -100, val, ids)
     return ids
 
-def parse_json(string):
-    search_pos = 0
-    # 开始寻找第一个 '{'
-    start = string.find('{', search_pos)
-    if start == -1:
-        return None
-    # 从找到的 '{' 位置开始，向后寻找最后一个 '}'
-    end = string.rfind('}', start)
-    if end == -1:
-        return None
-    # 提取并尝试解析 JSON
-    json_string = string[start:end + 1]
-    try:
-        obj = json.loads(json_string)
-        return obj
-    except json.JSONDecodeError:
-        return None
-
-
 class Evaluator:
     def __init__(self,tokenizer):
         self.tokenizer = tokenizer
 
-    def _bleu4(self,pred,label):
+    def _bleu4(self, pred, label):
         pred = pred.strip()
         label = label.strip()
-        
+
         hypothesis = list(pred)
         reference = list(label)
 
@@ -51,23 +66,8 @@ class Evaluator:
         bleu_score = sentence_bleu([reference], hypothesis, smoothing_function=SmoothingFunction().method3)
         return bleu_score
 
-    def _slot_count(self,json_label):
-        count = 0
-        if json_label is not None:
-            for _, v in json_label.items():
-                if isinstance(v,list):
-                    count += len(v)
-                else:
-                    count += 1
-        return count
-
-    def _slot_accuracy(self,pred,label):
-        pred = pred.strip()
-        label = label.strip()
-        pred = parse_json(pred)
-        label = parse_json(label)
+    def _slot_accuracy(self, pred, label):
         correct = 0
-        
         if pred is not None:
             for k, v in pred.items():
                 if v is None:
@@ -78,64 +78,69 @@ class Evaluator:
                     else:
                         for t in v:
                             correct += int(t in label[k])
-        
-        pred_slots = self._slot_count(pred)
-        true_slots = self._slot_count(label)
+
+        pred_slots = sum(len(v) if isinstance(v, list) else 1 for v in pred.values()) if pred else 0
+        true_slots = sum(len(v) if isinstance(v, list) else 1 for v in label.values()) if label else 0
 
         return correct, pred_slots, true_slots
 
     def compute_metrics(self, eval_preds):
-        preds, labels = eval_preds
-        if isinstance(preds, tuple):
-            preds = preds[0]
-        decoded_preds = self.tokenizer.batch_decode(preds, skip_special_tokens=True)
-        labels = remove_minus100(labels,self.tokenizer.pad_token_id)
-        decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
-
         score_dict = {
-            "slot_P": None,
-            "slot_R": None,
-            "slot_F1": None,
-            "bleu-4": None,
+            "slot_P": 0,
+            "slot_R": 0,
+            "slot_F1": 0,
+            "bleu-4": 0,
         }
-
         bleu_scores = []
         true_slot_count = 0
         pred_slot_count = 0
         correct_slot_count = 0
-        
-        for pred, label in zip(decoded_preds, decoded_labels):
-            pred = pred.strip()
-            label = label.strip()
 
-              
-            if pred.startswith("assistant:") and label.startswith("assistant:"):
-                # 评估两个回复句子的BLEU SCORE  
-                start = len("assistant:")
-                bleu_score = self._bleu4(pred[start:],label[start:])
-                bleu_scores.append(bleu_score)
-            elif label.startswith("assistant:"):
-                # 本次BLEU SCORE为0
-                bleu_scores.append(0)
-            else:
-                # 尝试计算NLU的槽识别率
-                correct, pred_slots, true_slots = self._slot_accuracy(pred,label)
-                true_slot_count += true_slots
-                pred_slot_count += pred_slots
-                correct_slot_count += correct
-        
+        preds, labels = eval_preds
+        if isinstance(preds, tuple):
+            preds = preds[0]
+        # import pdb; pdb.set_trace()
+        preds = np.argmax(preds, axis=-1)
+        labels = remove_minus100(labels,self.tokenizer.pad_token_id)
+
+        for i in range(preds.shape[0]):
+            _preds, _labels = [], []
+            label_turns = split_tokens(labels[i])
+            for turn in label_turns:
+                response = self.tokenizer.decode(turn[0], skip_special_tokens=True)
+                response = post_process(response)
+                _labels.append((response,turn[1]))
+            tokens = preds[i]
+            tokens = tokens[np.where(tokens==64796)[0][0]+1:]
+            pred_turns = split_tokens(tokens)
+            for turn in pred_turns[:len(label_turns)]:
+                response = self.tokenizer.decode(turn[0], skip_special_tokens=True)
+                response = post_process(response)
+                _preds.append((response,turn[1]))
+            for _pred_turn, _label_turn in zip(_preds, _labels):
+                # next role is 'observation' mean current role is 'tool'
+                if _label_turn[1] == '<|observation|>':
+                    if _pred_turn[1] == '<|observation|>' and isinstance(_pred_turn[0], dict):
+                        correct, pred_slots, true_slots = self._slot_accuracy(_pred_turn[0], _label_turn[0])
+                    else:
+                        correct, pred_slots, true_slots = self._slot_accuracy({}, _label_turn[0])
+                    true_slot_count += true_slots
+                    pred_slot_count += pred_slots
+                    correct_slot_count += correct
+                if _label_turn[1] == '<|user|>':
+                    if _pred_turn[1] == '<|user|>' and isinstance(_pred_turn[0], str):
+                        score = self._bleu4(_pred_turn[0], _label_turn[0])
+                    else:
+                        score = self._bleu4("", _label_turn[0])
+                    bleu_scores.append(score)
         score_dict["slot_P"] = float(correct_slot_count/pred_slot_count) if pred_slot_count > 0 else 0
         score_dict["slot_R"] = float(correct_slot_count/true_slot_count) if true_slot_count > 0 else 0
         score_dict["slot_F1"] = 2*score_dict["slot_P"]*score_dict["slot_R"]/(score_dict["slot_P"]+score_dict["slot_R"]) if (score_dict["slot_P"]+score_dict["slot_R"]) > 0 else 0
-        score_dict["bleu-4"] = float(np.mean(bleu_scores))
+        score_dict["bleu-4"] = sum(bleu_scores)/len(bleu_scores)
         for k, v in score_dict.items():
             score_dict[k] = round(v * 100, 4)
         return score_dict
-
-def replace_all(input_str,src,tgt):
-        while src != '' and src in input_str:
-            input_str = input_str.replace(src,tgt)
-        return input_str
+        
 
 def save_predictions(predict_results, tokenizer, output_dir):
     predictions = tokenizer.batch_decode(

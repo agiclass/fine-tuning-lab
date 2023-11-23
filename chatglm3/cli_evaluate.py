@@ -54,8 +54,6 @@ class Evaluator:
         response = self.tokenizer.decode(outputs)
         history.append({"role": role, "content": query})
         for response in response.split("<|assistant|>"):
-            #metadata, response = response.split("\n", maxsplit=1)
-
             splited = response.split("\n", maxsplit=1)
             if len(splited) == 2:
                 metadata, response = splited

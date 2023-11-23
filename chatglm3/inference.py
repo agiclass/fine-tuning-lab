@@ -32,7 +32,12 @@ def chat(query, history, role):
     response = tokenizer.decode(outputs)
     history.append({"role": role, "content": query})
     for response in response.split("<|assistant|>"):
-        metadata, response = response.split("\n", maxsplit=1)
+        splited = response.split("\n", maxsplit=1)
+        if len(splited) == 2:
+            metadata, response = splited
+        else:
+            metadata = ""
+            response = splited[0]
         if not metadata.strip():
             response = response.strip()
             history.append({"role": "assistant", "metadata": metadata, "content": response})
@@ -41,7 +46,10 @@ def chat(query, history, role):
             response = "\n".join(response.split("\n")[1:-1])
             def tool_call(**kwargs):
                 return kwargs
-            parameters = eval(response)
+            try:
+                parameters = eval(response)
+            except:
+                parameters = {}
             response = {"name": metadata.strip(), "parameters": parameters}
     return response, history
 
