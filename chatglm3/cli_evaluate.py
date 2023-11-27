@@ -171,8 +171,8 @@ if __name__ == "__main__":
     parser.add_argument("--ckpt_path", type=str, default=None, required=True, help="The checkpoint path")
     args = parser.parse_args()
 
-    # tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
-    tokenizer, model = load_lora(args.model_path, args.ckpt_path)
+    tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
+    # tokenizer, model = load_lora(args.model_path, args.ckpt_path)
 
-    evaluator = Evaluator(tokenizer, model, '../data/tmp.jsonl')
+    evaluator = Evaluator(tokenizer, model, '../data/test.jsonl')
     evaluator.evaluate()
