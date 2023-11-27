@@ -2,7 +2,7 @@
 
 set -ex
 
-LR=2e-3
+LR=2e-4
 NUM_GPUS=1
 MAX_SEQ_LEN=2048
 MAX_STEP=1000
@@ -12,7 +12,7 @@ RUN_NAME=hotel_lora
 OUTPUT_DIR=output/${RUN_NAME}-${DATESTR}
 mkdir -p $OUTPUT_DIR
 
-BASE_MODEL_PATH=/home/tong.liu/chatglm3-6b
+BASE_MODEL_PATH=/root/autodl-tmp/chatglm3-6b
 
 CUDA_VISIBLE_DEVICES=0 python main_lora.py \
     --do_train \
@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES=0 python main_lora.py \
     --preprocessing_num_workers 1 \
     --model_name_or_path $BASE_MODEL_PATH \
     --output_dir $OUTPUT_DIR \
-    --per_device_train_batch_size 16 \
+    --per_device_train_batch_size 2 \
     --per_device_eval_batch_size 1 \
     --max_steps $MAX_STEP \
     --predict_with_generate \
@@ -33,7 +33,7 @@ CUDA_VISIBLE_DEVICES=0 python main_lora.py \
     --eval_steps 1200 \
     --logging_steps 1 \
     --logging_dir $OUTPUT_DIR/logs \
-    --save_steps 200 \
+    --save_steps 100 \
     --learning_rate $LR \
     --lora_rank 8 \
     --lora_alpha 32 \
