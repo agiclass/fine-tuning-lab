@@ -10,7 +10,7 @@ from transformers import (
     Seq2SeqTrainingArguments,
     set_seed,
 )
-from trainer import PrefixTrainer
+from trainer import LoRATrainer
 from evaluator import Evaluator
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from preprocess_utils import sanity_check, MultiTurnDataset
@@ -52,7 +52,12 @@ def load_lora_model(model_args, peft_args):
         lora_dropout=peft_args.lora_dropout,
         target_modules=["query_key_value"],
     )
-    model = get_peft_model(model, peft_config)
+    model = get_peft_model(model, peft_config).to("cuda")
+    model.enable_input_require_grads()
+    model.is_parallelizable = True
+    model.model_parallel = True
+    # model.lm_head = CastOutputToFloat(model.transformer.output_layer)
+    model.config.use_cache = False
     return tokenizer, model
 
 def main():
@@ -102,7 +107,7 @@ def main():
     evaluator = Evaluator(tokenizer)
 
     # Initialize our Trainer
-    trainer = PrefixTrainer(
+    trainer = LoRATrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,
@@ -110,7 +115,6 @@ def main():
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=evaluator.compute_metrics if training_args.predict_with_generate else None,
-        save_changed=True
     )
 
     if training_args.do_train:

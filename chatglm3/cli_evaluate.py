@@ -159,14 +159,9 @@ def load_lora(model_path, ckpt_path):
         target_modules=["query_key_value"],
     )
     model = get_peft_model(model, peft_config)
-    adapter_path = os.path.join(ckpt_path, "adapter_model.bin")
-    if os.path.exists(adapter_path):
-        model = PeftModel.from_pretrained(model, ckpt_path)
-    else:
-        sd_path = os.path.join(ckpt_path, "pytorch_model.bin")
-        if os.path.exists(sd_path):
-            model.load_state_dict(torch.load(sd_path), strict=False)
-    model = model.merge_and_unload()
+    if os.path.exists(os.path.join(ckpt_path, "pytorch_model.bin")):
+        model.load_state_dict(torch.load(os.path.join(ckpt_path, "pytorch_model.bin")), strict=False)
+    # model = model.merge_and_unload()
     model = model.to('cuda')
     return tokenizer, model
 
@@ -179,5 +174,5 @@ if __name__ == "__main__":
     # tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
     tokenizer, model = load_lora(args.model_path, args.ckpt_path)
 
-    evaluator = Evaluator(tokenizer, model, '../data/test.jsonl')
+    evaluator = Evaluator(tokenizer, model, '../data/tmp.jsonl')
     evaluator.evaluate()
