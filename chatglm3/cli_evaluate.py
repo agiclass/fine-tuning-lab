@@ -2,6 +2,7 @@ import os
 import json
 import torch
 import argparse
+from tqdm import tqdm
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 from transformers import AutoConfig, AutoModel, AutoTokenizer
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
@@ -93,7 +94,7 @@ class Evaluator:
 
         system_prompt = 'Answer the following questions as best as you can. You have access to the following tools:\n'
 
-        for data in test_data[:10]:
+        for data in tqdm(test_data):
             dialog = data['conversations']
             tools_prompt = json.dumps(data['tools'],ensure_ascii=False)
             system_message = {'role': 'system', 'content': system_prompt+tools_prompt}
@@ -148,16 +149,15 @@ def load_pt2(model_path, ckpt_path):
 def load_lora(model_path, ckpt_path):
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
     model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
-
+    model = model.half()
     peft_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
-        inference_mode=False,
+        inference_mode=True,
         r=8,
         lora_alpha=32,
         lora_dropout=0.1,
         target_modules=["query_key_value"],
     )
-
     model = get_peft_model(model, peft_config)
     adapter_path = os.path.join(ckpt_path, "adapter_model.bin")
     if os.path.exists(adapter_path):
@@ -166,6 +166,7 @@ def load_lora(model_path, ckpt_path):
         sd_path = os.path.join(ckpt_path, "pytorch_model.bin")
         if os.path.exists(sd_path):
             model.load_state_dict(torch.load(sd_path), strict=False)
+    model = model.merge_and_unload()
     model = model.to('cuda')
     return tokenizer, model
 
@@ -175,7 +176,8 @@ if __name__ == "__main__":
     parser.add_argument("--ckpt_path", type=str, default=None, required=True, help="The checkpoint path")
     args = parser.parse_args()
 
-    tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
+    # tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
+    tokenizer, model = load_lora(args.model_path, args.ckpt_path)
 
     evaluator = Evaluator(tokenizer, model, '../data/test.jsonl')
     evaluator.evaluate()

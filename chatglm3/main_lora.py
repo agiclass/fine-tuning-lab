@@ -1,11 +1,8 @@
 import logging
-import os
 import sys
-import torch
 import json
 import transformers
 from transformers import (
-    AutoConfig,
     AutoModel,
     AutoTokenizer,
     DataCollatorForSeq2Seq,
@@ -43,21 +40,10 @@ def setup_logger(training_args):
     )
     logger.info(f"Training/evaluation parameters {training_args}")
 
-def load_model(model_args):
+def load_lora_model(model_args, peft_args):
     tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
     model = AutoModel.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
     model = model.half()
-    
-    return tokenizer, model
-
-def main():
-    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, Seq2SeqTrainingArguments))
-    model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
-
-    setup_logger(training_args)
-    set_seed(training_args.seed)
-    tokenizer, model = load_model(model_args)
-
     peft_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
         inference_mode=False,
@@ -66,8 +52,17 @@ def main():
         lora_dropout=peft_args.lora_dropout,
         target_modules=["query_key_value"],
     )
-
     model = get_peft_model(model, peft_config)
+    return tokenizer, model
+
+def main():
+    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, Seq2SeqTrainingArguments))
+    model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
+
+    setup_logger(training_args)
+    set_seed(training_args.seed)
+    tokenizer, model = load_lora_model(model_args, peft_args)
+    model.print_trainable_parameters()
 
     if training_args.do_train:
         with open(data_args.train_file, "r", encoding="utf-8") as f:
@@ -115,7 +110,7 @@ def main():
         tokenizer=tokenizer,
         data_collator=data_collator,
         compute_metrics=evaluator.compute_metrics if training_args.predict_with_generate else None,
-        save_changed=model_args.pre_seq_len is not None
+        save_changed=True
     )
 
     if training_args.do_train:
