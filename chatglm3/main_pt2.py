@@ -92,23 +92,9 @@ def main():
             data_args.max_seq_length,
         )
 
-        # if training_args.local_rank < 1:
-        #     sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
+        if training_args.local_rank < 1:
+            sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
 
-    if training_args.do_eval:
-        with open(data_args.validation_file, "r", encoding="utf-8") as f:
-            eval_data = [json.loads(line) for line in f]
-
-        eval_dataset = MultiTurnDataset(
-            eval_data,
-            tokenizer,
-            data_args.max_seq_length,
-        )
-
-        # if training_args.local_rank < 1:
-        #     sanity_check(eval_dataset[0]['input_ids'], eval_dataset[0]['labels'], tokenizer)
-
-    # Data collator
     data_collator = DataCollatorForSeq2Seq(
         tokenizer,
         model=model,
@@ -119,15 +105,12 @@ def main():
 
     evaluator = Evaluator(tokenizer)
 
-    # Initialize our Trainer
     trainer = PrefixTrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,
-        eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
-        compute_metrics=evaluator.compute_metrics if training_args.predict_with_generate else None,
         save_changed=model_args.pre_seq_len is not None
     )
 
@@ -140,13 +123,6 @@ def main():
         trainer.train(resume_from_checkpoint=checkpoint)
         trainer.save_model()  # Saves the tokenizer too for easy upload
         trainer.save_state()
-
-    if training_args.do_eval:
-        logger.info("*** Evaluate ***")
-        metrics = trainer.evaluate(metric_key_prefix="eval", do_sample=False, max_length=2048)
-        metrics["eval_samples"] = len(eval_dataset)
-        trainer.log_metrics("eval", metrics)
-        trainer.save_metrics("eval", metrics)
 
 if __name__ == "__main__":
     main()

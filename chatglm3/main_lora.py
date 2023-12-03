@@ -56,7 +56,6 @@ def load_lora_model(model_args, peft_args):
     model.enable_input_require_grads()
     model.is_parallelizable = True
     model.model_parallel = True
-    # model.lm_head = CastOutputToFloat(model.transformer.output_layer)
     model.config.use_cache = False
     return tokenizer, model
 
@@ -79,23 +78,9 @@ def main():
             data_args.max_seq_length,
         )
 
-        # if training_args.local_rank < 1:
-        #     sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
+        if training_args.local_rank < 1:
+            sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
 
-    if training_args.do_eval:
-        with open(data_args.validation_file, "r", encoding="utf-8") as f:
-            eval_data = [json.loads(line) for line in f]
-
-        eval_dataset = MultiTurnDataset(
-            eval_data,
-            tokenizer,
-            data_args.max_seq_length,
-        )
-
-        # if training_args.local_rank < 1:
-        #     sanity_check(eval_dataset[0]['input_ids'], eval_dataset[0]['labels'], tokenizer)
-
-    # Data collator
     data_collator = DataCollatorForSeq2Seq(
         tokenizer,
         model=model,
@@ -106,15 +91,12 @@ def main():
 
     evaluator = Evaluator(tokenizer)
 
-    # Initialize our Trainer
     trainer = LoRATrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,
-        eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
-        compute_metrics=evaluator.compute_metrics if training_args.predict_with_generate else None,
     )
 
     if training_args.do_train:
@@ -123,13 +105,6 @@ def main():
         trainer.train()
         trainer.save_model()  # Saves the tokenizer too for easy upload
         trainer.save_state()
-
-    if training_args.do_eval:
-        logger.info("*** Evaluate ***")
-        metrics = trainer.evaluate(metric_key_prefix="eval", do_sample=False, max_length=training_args.generation_max_length)
-        metrics["eval_samples"] = len(eval_dataset)
-        trainer.log_metrics("eval", metrics)
-        trainer.save_metrics("eval", metrics)
 
 if __name__ == "__main__":
     main()

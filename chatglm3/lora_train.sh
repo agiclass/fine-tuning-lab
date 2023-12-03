@@ -3,7 +3,6 @@
 set -ex
 
 LR=2e-4
-NUM_GPUS=1
 MAX_SEQ_LEN=2048
 MAX_STEP=1000
 
@@ -16,11 +15,7 @@ BASE_MODEL_PATH=/root/autodl-tmp/chatglm3-6b
 
 CUDA_VISIBLE_DEVICES=0 python main_lora.py \
     --do_train \
-    --do_eval \
-    --do_predict \
     --train_file ../data/train.jsonl \
-    --validation_file ../data/dev.jsonl \
-    --test_file ../data/test.jsonl \
     --max_seq_length $MAX_SEQ_LEN \
     --preprocessing_num_workers 1 \
     --model_name_or_path $BASE_MODEL_PATH \
@@ -28,12 +23,9 @@ CUDA_VISIBLE_DEVICES=0 python main_lora.py \
     --per_device_train_batch_size 2 \
     --per_device_eval_batch_size 1 \
     --max_steps $MAX_STEP \
-    --predict_with_generate \
-    --evaluation_strategy steps \
-    --eval_steps 1200 \
     --logging_steps 1 \
     --logging_dir $OUTPUT_DIR/logs \
-    --save_steps 100 \
+    --save_steps 200 \
     --learning_rate $LR \
     --lora_rank 8 \
     --lora_alpha 32 \
