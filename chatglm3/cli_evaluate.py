@@ -169,10 +169,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, default=None, required=True, help="main model weights")
     parser.add_argument("--ckpt_path", type=str, default=None, required=True, help="The checkpoint path")
+    parser.add_argument("--data_path", type=str, default=None, required=True, help="The dataset file path")
     args = parser.parse_args()
 
     tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
     # tokenizer, model = load_lora(args.model_path, args.ckpt_path)
 
-    evaluator = Evaluator(tokenizer, model, '../data/test.jsonl')
+    evaluator = Evaluator(tokenizer, model, args.data_path)
     evaluator.evaluate()

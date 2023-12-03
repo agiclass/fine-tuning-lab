@@ -12,7 +12,7 @@ RUN_NAME=hotel_pt
 OUTPUT_DIR=output/${RUN_NAME}-${DATESTR}
 mkdir -p $OUTPUT_DIR
 
-BASE_MODEL_PATH=/autodl-tmp/chatglm3-6b
+BASE_MODEL_PATH=/root/autodl-tmp/chatglm3-6b
 
 CUDA_VISIBLE_DEVICES=0 python main_pt2.py \
     --do_train \
@@ -21,9 +21,8 @@ CUDA_VISIBLE_DEVICES=0 python main_pt2.py \
     --preprocessing_num_workers 1 \
     --model_name_or_path $BASE_MODEL_PATH \
     --output_dir $OUTPUT_DIR \
-    --per_device_train_batch_size 2 \
-    --per_device_eval_batch_size 2 \
-    --gradient_accumulation_steps 8 \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 4 \
     --max_steps $MAX_STEP \
     --logging_steps 1 \
     --logging_dir $OUTPUT_DIR/logs \
