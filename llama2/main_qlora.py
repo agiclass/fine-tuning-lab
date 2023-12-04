@@ -17,10 +17,9 @@ from transformers import (
 
 import logging
 
-from trainer_seq2seq import Seq2SeqTrainer
+from trainer import QLoRATrainer
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from data_helper import load_raw_datasets, print_dataset_example
-from evaluator import Evaluator, save_predictions
 from checkpoint_helper import load_lora_checkpoint
 from data_preprocess import Preprocessor
 
@@ -165,8 +164,6 @@ def main():
         column_names = raw_datasets["train"].column_names
     elif training_args.do_eval:
         column_names = raw_datasets["validation"].column_names
-    elif training_args.do_predict:
-        column_names = raw_datasets["test"].column_names
     else:
         logger.info("There is nothing to do. Please pass `do_train`, `do_eval` and/or `do_predict`.")
         return
@@ -195,7 +192,7 @@ def main():
         
         with training_args.main_process_first(desc="validation dataset map pre-processing"):
             eval_dataset = eval_dataset.map(
-                data_processor.preprocess_function_eval,
+                data_processor.preprocess_function_train,
                 batched=True,
                 num_proc=data_args.preprocessing_num_workers,
                 remove_columns=column_names,
@@ -204,22 +201,6 @@ def main():
             )
         print_dataset_example(eval_dataset[0],tokenizer)
 
-    if training_args.do_predict:
-        if "test" not in raw_datasets:
-            raise ValueError("--do_predict requires a test dataset")
-        predict_dataset = raw_datasets["test"]
-        with training_args.main_process_first(desc="prediction dataset map pre-processing"):
-            predict_dataset = predict_dataset.map(
-                data_processor.preprocess_function_eval,
-                batched=True,
-                num_proc=data_args.preprocessing_num_workers,
-                remove_columns=column_names,
-                load_from_cache_file=not data_args.overwrite_cache,
-                desc="Running tokenizer on prediction dataset",
-            )
-        print_dataset_example(predict_dataset[0],tokenizer)
-
-    # Data collator
     label_pad_token_id = -100 if data_args.ignore_pad_token_for_loss else tokenizer.pad_token_id
     data_collator = DataCollatorForSeq2Seq(
         tokenizer,
@@ -229,21 +210,16 @@ def main():
         padding=False
     )
 
-    # Metric
-    evaluator = Evaluator(tokenizer)
-
-    # Override the decoding parameters of Seq2SeqTrainer
     training_args.generation_max_length = data_args.max_source_length + data_args.max_target_length + 1
     training_args.generation_num_beams = 1
     
-    trainer = Seq2SeqTrainer(
+    trainer = QLoRATrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,
         eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
-        compute_metrics=evaluator.compute_metrics, # 训练过程中是否阶段性跑测试（否则直接计算loss）
         save_lora=True #是否只保存训练的参数
     )
     
@@ -276,27 +252,6 @@ def main():
 
         trainer.log_metrics("eval", metrics)
         trainer.save_metrics("eval", metrics)
-        
-
-    # Testing
-    results = {}
-    if training_args.do_predict:
-        logger.info("*** Predict ***")
-        predict_results = trainer.predict(predict_dataset, metric_key_prefix="predict", max_new_tokens=data_args.max_target_length, num_beams=training_args.generation_num_beams, do_sample=False)
-        metrics = predict_results.metrics
-        metrics["predict_samples"] = len(predict_dataset)
-
-        trainer.log_metrics("predict", metrics)
-        trainer.save_metrics("predict", metrics)
-
-        save_predictions(predict_results,tokenizer,training_args.output_dir)
-
-
-    return results
-
 
 if __name__ == "__main__":
     main()
-
-
-

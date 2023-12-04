@@ -16,7 +16,7 @@ BASE_MODEL_PATH=/root/autodl-tmp/chatglm3-6b
 
 CUDA_VISIBLE_DEVICES=0 python main_pt2.py \
     --do_train \
-    --train_file ../data/train.multi.jsonl \
+    --train_file ../data/train.chatglm3.jsonl \
     --max_seq_length $MAX_SEQ_LEN \
     --preprocessing_num_workers 1 \
     --model_name_or_path $BASE_MODEL_PATH \

@@ -1,6 +1,15 @@
 from datasets import load_dataset
 import numpy as np
-from evaluator import remove_minus100
+
+def remove_minus100(ids,val):
+    """
+        -100是HF预留的id（不参与loss计算）
+        有的tokenizer在decode -100时会报错
+        因此在decode之前去除（替换为pad_id）
+    """
+    ids = np.array(ids)
+    ids = np.where(ids == -100, val, ids)
+    return ids
 
 def print_dataset_example(example,tokenizer):
     print("input_ids",example["input_ids"])

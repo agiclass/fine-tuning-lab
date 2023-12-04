@@ -30,7 +30,7 @@ WEIGHTS_NAME = "pytorch_model.bin"
 TRAINING_ARGS_NAME = "training_args.bin"
 
 
-class PrefixTrainer(Trainer):
+class QLoRATrainer(Trainer):
     def __init__(self, *args, save_changed=False, save_lora=False, **kwargs):
         self.save_changed = save_changed
         self.save_lora = save_lora
