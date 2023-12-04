@@ -20,12 +20,35 @@ import logging
 from trainer import QLoRATrainer
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from data_helper import load_raw_datasets, print_dataset_example
-from checkpoint_helper import load_lora_checkpoint
 from data_preprocess import Preprocessor
 
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, AutoPeftModelForCausalLM
+from peft import PeftModel, LoraConfig, get_peft_model, prepare_model_for_kbit_training, AutoPeftModelForCausalLM
 
 logger = logging.getLogger(__name__)
+
+def load_lora_checkpoint(model,checkpoint_path, logger=None, merge=False):
+    adapter_path = os.path.join(checkpoint_path, "adapter_model.bin")
+    if os.path.exists(adapter_path):
+        model = PeftModel.from_pretrained(model, checkpoint_path)
+        if logger:
+            logger.info(f"load checkpoint (adapter) from: {checkpoint_path}")
+    else:
+        sd_path = os.path.join(checkpoint_path, "pytorch_model.bin")
+        if os.path.exists(sd_path):
+            model.load_state_dict(
+                torch.load(sd_path), 
+                strict=False
+            )
+            if logger:
+                logger.info(f"load checkpoint (state_dict) from: {checkpoint_path}")
+        else:
+            if logger:
+                logger.error(f"no checkpoint found at: {checkpoint_path}")
+    
+    if merge:
+        model = model.merge_and_unload()
+        
+    return model
 
 def load_model(model_name, bnb_config):
     n_gpus = torch.cuda.device_count()

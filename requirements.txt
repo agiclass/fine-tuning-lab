@@ -6,8 +6,6 @@ torch>=2.0
 gradio~=3.39
 sentencepiece
 accelerate
-streamlit>=1.24.0
-loguru~=0.7.2
 nltk
 astunparse
 tensorboard

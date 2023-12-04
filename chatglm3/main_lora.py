@@ -11,21 +11,20 @@ from transformers import (
     set_seed,
 )
 from trainer import LoRATrainer
-from evaluator import Evaluator
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from preprocess_utils import sanity_check, MultiTurnDataset
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 
+# 初始化日志记录
 logger = logging.getLogger(__name__)
 
 def setup_logger(training_args):
-    ###### Setup logging ######
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%m/%d/%Y %H:%M:%S",
         handlers=[logging.StreamHandler(sys.stdout)],
     )
-
+    # 配置huggingface的日志记录
     if training_args.should_log:
         transformers.utils.logging.set_verbosity_info()
     log_level = training_args.get_process_log_level()
@@ -41,9 +40,11 @@ def setup_logger(training_args):
     logger.info(f"Training/evaluation parameters {training_args}")
 
 def load_lora_model(model_args, peft_args):
+    # 加载预训练的chatglm3-6b的tokenizer和model
     tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
     model = AutoModel.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
     model = model.half()
+    # 使用peft库配置lora参数
     peft_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
         inference_mode=False,
@@ -60,14 +61,15 @@ def load_lora_model(model_args, peft_args):
     return tokenizer, model
 
 def main():
+    # 解析传入的命令行参数
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, Seq2SeqTrainingArguments))
     model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
-
+    # 初始化工作
     setup_logger(training_args)
     set_seed(training_args.seed)
     tokenizer, model = load_lora_model(model_args, peft_args)
     model.print_trainable_parameters()
-
+    # 准备训练数据集并处理成所需格式
     if training_args.do_train:
         with open(data_args.train_file, "r", encoding="utf-8") as f:
             train_data = [json.loads(line) for line in f]
@@ -80,7 +82,7 @@ def main():
 
         if training_args.local_rank < 1:
             sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
-
+    # 将数据集中样本批处理成张量
     data_collator = DataCollatorForSeq2Seq(
         tokenizer,
         model=model,
@@ -88,9 +90,7 @@ def main():
         pad_to_multiple_of=None,
         padding=False
     )
-
-    evaluator = Evaluator(tokenizer)
-
+    # 配置trainer，LoRATrainer中实现仅保存LoRA参数的功能
     trainer = LoRATrainer(
         model=model,
         args=training_args,
@@ -98,7 +98,7 @@ def main():
         tokenizer=tokenizer,
         data_collator=data_collator,
     )
-
+    # 开始训练
     if training_args.do_train:
         model.gradient_checkpointing_enable()
         model.enable_input_require_grads()

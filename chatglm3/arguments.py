@@ -1,3 +1,6 @@
+"""
+文件中定义了模型定义和训练过程中的命令行参数
+"""
 from dataclasses import dataclass, field
 from typing import Optional
 

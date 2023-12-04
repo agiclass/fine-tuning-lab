@@ -8,6 +8,9 @@ from transformers import AutoConfig, AutoModel, AutoTokenizer
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
 class Evaluator:
+    """
+    计算slot和reply业务指标
+    """
     def __init__(self, tokenizer, model, data_path):
         self.tokenizer = tokenizer
         self.model = model
@@ -45,29 +48,37 @@ class Evaluator:
         return correct, pred_slots, true_slots
 
     def _chat(self, query, history, role):
+        # 表示对话结束的token, eos为生成结束; user为等待用户再输入; observation为等待工具调用结果
         eos_token_id = [self.tokenizer.eos_token_id, 
                         self.tokenizer.get_command("<|user|>"), 
                         self.tokenizer.get_command("<|observation|>")]
+        # 调用tokenizer将文本对话转为tokens序列以输入给模型
         inputs = self.tokenizer.build_chat_input(query, history=history, role=role)
         inputs = inputs.to('cuda')
+        # 生成输出tokens序列
         outputs = self.model.generate(**inputs, max_length=4096, eos_token_id=eos_token_id)
         outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):-1]
+        # 使用tokenizer再解码回文本
         response = self.tokenizer.decode(outputs)
         history.append({"role": role, "content": query})
+        # 根据assistant token分隔对话
         for response in response.split("<|assistant|>"):
+            # 根据换行符分隔metadata和response
             splited = response.split("\n", maxsplit=1)
             if len(splited) == 2:
                 metadata, response = splited
             else:
                 metadata = ""
                 response = splited[0]
-
+            # 如果metadata为空则response里是回复文本
             if not metadata.strip():
                 response = response.strip()
                 history.append({"role": "assistant", "metadata": metadata, "content": response})
+            # 如果metadata不空则response里是工具调用，是以python语法写的tool_call的函数形式
             else:
                 history.append({"role": "assistant", "metadata": metadata, "content": response})
                 response = "\n".join(response.split("\n")[1:-1])
+                # 用以取出模型填的参数dict
                 def tool_call(**kwargs):
                     return kwargs
                 try:
@@ -89,6 +100,7 @@ class Evaluator:
         pred_slot_count = 0
         correct_slot_count = 0
 
+        # 读取测试集
         with open(self.data_path,'r') as f:
             test_data = [json.loads(line) for line in f]
 
@@ -96,6 +108,7 @@ class Evaluator:
 
         for data in tqdm(test_data):
             dialog = data['conversations']
+            # 拼合出system message
             tools_prompt = json.dumps(data['tools'],ensure_ascii=False)
             system_message = {'role': 'system', 'content': system_prompt+tools_prompt}
             history = [system_message]
@@ -103,19 +116,23 @@ class Evaluator:
             pred_reply, label_reply = "", ""
             for turn in dialog:
                 if turn['role'] == 'user':
+                    # 当前轮为user，下一轮两种可能: 文本回复; 工具调用
                     response, history = self._chat(turn['content'], history, 'user')
+                    # response是dict类型即为工具调用轮次，取出用于计算slot的accuracy和recall
                     if isinstance(response, dict):
                         pred_slot = response['parameters']
                 if turn['role'] == 'assistant':
-                    if 'search_hotels' in turn['content']:
-                        continue # skip assistant thought
-                    else:
+                    # 当前轮为assistant有两种可能: 文本回复; 模型思考工具调用
+                    if 'search_hotels' in turn['content']: # 跳过模型思考工具调用
+                        continue 
+                    else: # 是文本回复那么计算它跟label中文本回复的bleu分数
                         pred_reply = turn['content'].strip()
                         if pred_reply and label_reply:
                             score = self._bleu4(pred_reply, label_reply)
                             bleu_scores.append(score)
                             pred_reply, label_reply = "", ""
                 if turn['role'] == 'tool':
+                    # 当前轮为tool，那么计算模型预测slot的accuracy和recall
                     label_slot = turn['parameters']
                     correct, pred_slots, true_slots = self._slot_accuracy(pred_slot, label_slot)
                     true_slot_count += true_slots
@@ -123,9 +140,12 @@ class Evaluator:
                     correct_slot_count += correct
                     pred_slot, label_slot = {}, {}
                     if 'observation' in turn:
+                        # 当前轮是observation，下一轮两种可能: 文本回复; 工具调用
                         response, history = self._chat(json.dumps(turn['observation'], ensure_ascii=False), history, 'observation')
                         if isinstance(response, str):
                             label_reply = response.strip()
+                        if isinstance(response, dict):
+                            pred_slot = response['parameters']
         
         score_dict["slot_P"] = float(correct_slot_count/pred_slot_count) if pred_slot_count > 0 else 0
         score_dict["slot_R"] = float(correct_slot_count/true_slot_count) if true_slot_count > 0 else 0
@@ -161,7 +181,6 @@ def load_lora(model_path, ckpt_path):
     model = get_peft_model(model, peft_config)
     if os.path.exists(os.path.join(ckpt_path, "pytorch_model.bin")):
         model.load_state_dict(torch.load(os.path.join(ckpt_path, "pytorch_model.bin")), strict=False)
-    # model = model.merge_and_unload()
     model = model.to('cuda')
     return tokenizer, model
 
@@ -172,8 +191,12 @@ if __name__ == "__main__":
     parser.add_argument("--data_path", type=str, default=None, required=True, help="The dataset file path")
     args = parser.parse_args()
 
-    tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
-    # tokenizer, model = load_lora(args.model_path, args.ckpt_path)
+    if 'hotel_pt' in args.ckpt_path:
+        tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
+    elif 'hotel_lora' in args.ckpt_path:
+        tokenizer, model = load_lora(args.model_path, args.ckpt_path)
+    else:
+        print("checkpoint path error")
 
     evaluator = Evaluator(tokenizer, model, args.data_path)
     evaluator.evaluate()
