@@ -29,7 +29,7 @@ def rrf(rankings, k=60):
 
 
 class HotelDB():
-    def __init__(self, url="http://118.193.33.124:8080", api_key=None):
+    def __init__(self, url="http://localhost:8080"):
         self.client = weaviate.Client(url=url,
           additional_headers={"X-OpenAI-Api-Key":os.getenv("OPENAI_API_KEY")}
         )
@@ -175,7 +175,11 @@ class HotelDB():
         candidates = []
         output_fields = ["hotel_id","name","type","address","phone","subway","facilities","price","rating"]
         # ===================== assemble filters ========================= #
-        filters = []
+        filters = [{
+            "path": ["price"],
+            "operator": "GreaterThan",
+            "valueNumber": 0,
+        }]
         keys = [
             "type",
             "price_range_lower",

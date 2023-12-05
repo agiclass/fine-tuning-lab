@@ -1,56 +1,23 @@
-#!/usr/bin/env python
-# coding=utf-8
-import dotenv
-dotenv.load_dotenv('api_keys.env')
 import sys
-sys.path.append('..')
-sys.path.append('../chatglm2')
 sys.path.append('../llama2')
-import os
-import re
 import json
 import torch
-import numpy as np
 import gradio as gr
 import pandas as pd
-from transformers import AutoModel, AutoTokenizer, HfArgumentParser
-from peft import get_peft_model, LoraConfig, TaskType, PeftModel
-
 from db_client import HotelDB
-from common.checkpoint_helper import load_lora_checkpoint, load_pt2_checkpoint
-from common.prompt_helper import build_prompt, build_response
-from common.arguments import ModelArguments, DataTrainingArguments, PeftArguments
-from common.evaluator import parse_json
-
+from transformers import HfArgumentParser
+from cli_evaluate import parse_json
+from prompt_helper import build_prompt
+from main_qlora import load_model, load_lora_checkpoint, create_bnb_config
+from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 
 def init_model():
     # 解析命令行参数
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments))
     model_args, data_args, peft_args = parser.parse_args_into_dataclasses()
-
-    model, tokenizer = None, None
-    name = model_args.model_name_or_path
-
-    if "glm" in name.lower():
-        if peft_args.lora_checkpoint is not None:
-            from chatglm2.main_lora import load_model
-            model, tokenizer = load_model(name)
-            model = load_lora_checkpoint(model, peft_args.lora_checkpoint,merge=True).cuda()
-        elif peft_args.ptuning_checkpoint:
-            from chatglm2.main_pt2 import load_model, quantize_model
-            model, tokenizer = load_model(name, peft_args)
-            model = load_pt2_checkpoint(model,peft_args)
-            model = quantize_model(model,model_args,peft_args)
-            model = model.cuda()
-
-    elif "llama" in name.lower():
-        from llama2.main_qlora import load_model, create_bnb_config
-        bnb_config = create_bnb_config()
-        model, tokenizer = load_model(name, bnb_config)
-        model = load_lora_checkpoint(model, peft_args.lora_checkpoint)
-    else:
-        raise f"Unknown model {name}"
-
+    bnb_config = create_bnb_config()
+    model, tokenizer = load_model(model_args.model_name_or_path, bnb_config)
+    model = load_lora_checkpoint(model, peft_args.lora_checkpoint)
     return model, tokenizer, data_args.max_source_length, data_args.max_target_length
 
 def get_completion(prompt):
@@ -96,11 +63,9 @@ def chat(user_input, chatbot, context, search_field, return_field):
             data = {key: [item[key] for item in return_field] for key in keys}
             data = data or {"hotel": []}
             return_field = pd.DataFrame(data)
-
             # 将查询结果发给LLM，再次那么让LLM生成回复
             response = get_completion(build_prompt(context))
             #print(response)
-
 
     start = response.rfind(":")+1
     reply = response[start:].strip()
@@ -138,7 +103,6 @@ def main():
         emptyBtn.click(reset_state, outputs=[chatbot, context, user_input, search_field, return_field])
 
     demo.queue().launch(share=False, server_name='0.0.0.0', server_port=6006, inbrowser=True)
-
 
 if __name__ == "__main__":
     main()
