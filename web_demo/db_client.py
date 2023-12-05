@@ -1,5 +1,5 @@
-from dotenv import load_dotenv
-load_dotenv("api_keys.env")
+# from dotenv import load_dotenv
+# load_dotenv("api_keys.env")
 import os
 import re
 import json

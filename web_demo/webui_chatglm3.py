@@ -8,29 +8,50 @@ from transformers import AutoConfig, AutoModel, AutoTokenizer
 
 import sys
 sys.path.append('../chatglm3')
-from cli_evaluate import load_lora, load_pt2
+from cli_evaluate import load_model, load_lora, load_pt2
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_path", type=str, default=None, required=True, help="main model weights")
-parser.add_argument("--ckpt_path", type=str, default=None, required=True, help="The checkpoint path")
+parser.add_argument("--model", type=str, default=None, required=True, help="main model weights")
+parser.add_argument("--ckpt", type=str, default=None, required=False, help="The checkpoint path")
 args = parser.parse_args()
 
-tool_description = """
+db = HotelDB()
+tokenizer, model = None, None
+
+if args.ckpt is not None:
+    tool_description = """
 search_hotels: 根据筛选条件查询酒店的函数
 parameters: {"name":"酒店名称","price_range_lower":"价格下限","price_range_upper":"价格上限","rating_range_lower":"评分下限","rating_range_upper":"评分上限","facilities": "酒店提供的设施"}
 output: 酒店信息dict组成的list
 """
+    if 'hotel_pt2' in args.ckpt:
+        tokenizer, model = load_pt2(args.model, args.ckpt)
+    elif 'hotel_lora' in args.ckpt:
+        tokenizer, model = load_lora(args.model, args.ckpt)
+    else:
+        print("checkpoint path error")
+        exit()
+else:
+    tools = [{
+        "name": "search_hotels",
+        "description": "根据用户的需求生成查询条件来查酒店",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string", "description": "酒店名称" },
+                "type": { "type": "string", "enum": ["豪华型", "经济型", "舒适型", "高档型"], "description": "酒店类型" },
+                "facilities": { "type": "array", "items": { "type": "string" }, "description": "酒店能提供的设施列表" },
+                "price_range_lower": { "type": "number", "minimum": 0, "description": "价格下限" },
+                "price_range_upper": { "type": "number", "minimum": 0, "description": "价格上限" },
+                "rating_range_lower": { "type": "number", "minimum": 0, "maximum": 5, "description": "评分下限" },
+                "rating_range_upper": { "type": "number", "minimum": 0, "maximum": 5, "description": "评分上限" }
+        }, "required": [] }
+    }]
+    tool_description = json.dumps(tools, ensure_ascii=False)
+    tokenizer, model = load_model(args.model, args.ckpt)
+
 system_prompt = 'Answer the following questions as best as you can. You have access to the following tools'
 system_message = f'{system_prompt}:\n[{tool_description}]'
-
-db = HotelDB()
-tokenizer, model = None, None
-if 'hotel_pt' in args.ckpt_path:
-    tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
-elif 'hotel_lora' in args.ckpt_path:
-    tokenizer, model = load_lora(args.model_path, args.ckpt_path)
-else:
-    print("checkpoint path error")
 
 def chat(query, history, role):
     eos_token_id = [tokenizer.eos_token_id, 
@@ -85,7 +106,7 @@ def handler(user_input, chatbot, history, search_field, return_field):
     return "", chatbot, history, search_field, return_field
 
 def reset_state():
-    return [], [], "", "", None
+    return [], [{'role':'system','content':system_message}], "", "", None
 
 def main():
     with gr.Blocks() as demo:
