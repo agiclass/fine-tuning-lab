@@ -8,7 +8,7 @@ MAX_SEQ_LEN=2048
 MAX_STEP=1000
 
 DATESTR=`date +%Y%m%d-%H%M%S`
-RUN_NAME=hotel_pt
+RUN_NAME=hotel_pt2
 OUTPUT_DIR=output/${RUN_NAME}-${DATESTR}
 mkdir -p $OUTPUT_DIR
 

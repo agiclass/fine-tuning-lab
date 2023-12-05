@@ -7,6 +7,82 @@ from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 from transformers import AutoConfig, AutoModel, AutoTokenizer
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
+def load_model(model_path, ckpt_path):
+    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+    config = AutoConfig.from_pretrained(model_path, trust_remote_code=True, pre_seq_len=128)
+    model = AutoModel.from_pretrained(model_path, config=config, trust_remote_code=True)
+    model = model.to('cuda')
+    return tokenizer, model
+
+def load_pt2(model_path, ckpt_path):
+    tokenizer, model = load_model(model_path, ckpt_path)
+    prefix_state_dict = torch.load(os.path.join(ckpt_path, "pytorch_model.bin"))
+    new_prefix_state_dict = {}
+    for k, v in prefix_state_dict.items():
+        if k.startswith("transformer.prefix_encoder."):
+            new_prefix_state_dict[k[len("transformer.prefix_encoder."):]] = v
+    model.transformer.prefix_encoder.load_state_dict(new_prefix_state_dict)
+    model = model.to('cuda')
+    return tokenizer, model
+
+def load_lora(model_path, ckpt_path):
+    tokenizer, model = load_model(model_path, ckpt_path)
+    model = model.half()
+    peft_config = LoraConfig(
+        task_type=TaskType.CAUSAL_LM,
+        inference_mode=True,
+        r=8,
+        lora_alpha=32,
+        lora_dropout=0.1,
+        target_modules=["query_key_value"],
+    )
+    model = get_peft_model(model, peft_config)
+    if os.path.exists(os.path.join(ckpt_path, "pytorch_model.bin")):
+        model.load_state_dict(torch.load(os.path.join(ckpt_path, "pytorch_model.bin")), strict=False)
+    model = model.to('cuda')
+    return tokenizer, model
+
+def chat(tokenizer, model, query, history, role):
+    # 表示对话结束的token, eos为生成结束; user为等待用户再输入; observation为等待工具调用结果
+    eos_token_id = [tokenizer.eos_token_id, 
+                    tokenizer.get_command("<|user|>"), 
+                    tokenizer.get_command("<|observation|>")]
+    # 调用tokenizer将文本对话转为tokens序列以输入给模型
+    inputs = tokenizer.build_chat_input(query, history=history, role=role)
+    inputs = inputs.to('cuda')
+    # 生成输出tokens序列
+    outputs = model.generate(**inputs, max_length=4096, eos_token_id=eos_token_id)
+    outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):-1]
+    # 使用tokenizer再解码回文本
+    response = tokenizer.decode(outputs)
+    history.append({"role": role, "content": query})
+    # 根据assistant token分隔对话
+    for response in response.split("<|assistant|>"):
+        # 根据换行符分隔metadata和response
+        splited = response.split("\n", maxsplit=1)
+        if len(splited) == 2:
+            metadata, response = splited
+        else:
+            metadata = ""
+            response = splited[0]
+        # 如果metadata为空则response里是回复文本
+        if not metadata.strip():
+            response = response.strip()
+            history.append({"role": "assistant", "metadata": metadata, "content": response})
+        # 如果metadata不空则response里是工具调用，是以python语法写的tool_call的函数形式
+        else:
+            history.append({"role": "assistant", "metadata": metadata, "content": response})
+            response = "\n".join(response.split("\n")[1:-1])
+            # 用以取出模型填的参数dict
+            def tool_call(**kwargs):
+                return kwargs
+            try:
+                parameters = eval(response)
+            except:
+                parameters = {}
+            response = {"name": metadata.strip(), "parameters": parameters}
+    return response, history
+
 class Evaluator:
     """
     计算slot和reply业务指标
@@ -47,47 +123,6 @@ class Evaluator:
 
         return correct, pred_slots, true_slots
 
-    def _chat(self, query, history, role):
-        # 表示对话结束的token, eos为生成结束; user为等待用户再输入; observation为等待工具调用结果
-        eos_token_id = [self.tokenizer.eos_token_id, 
-                        self.tokenizer.get_command("<|user|>"), 
-                        self.tokenizer.get_command("<|observation|>")]
-        # 调用tokenizer将文本对话转为tokens序列以输入给模型
-        inputs = self.tokenizer.build_chat_input(query, history=history, role=role)
-        inputs = inputs.to('cuda')
-        # 生成输出tokens序列
-        outputs = self.model.generate(**inputs, max_length=4096, eos_token_id=eos_token_id)
-        outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):-1]
-        # 使用tokenizer再解码回文本
-        response = self.tokenizer.decode(outputs)
-        history.append({"role": role, "content": query})
-        # 根据assistant token分隔对话
-        for response in response.split("<|assistant|>"):
-            # 根据换行符分隔metadata和response
-            splited = response.split("\n", maxsplit=1)
-            if len(splited) == 2:
-                metadata, response = splited
-            else:
-                metadata = ""
-                response = splited[0]
-            # 如果metadata为空则response里是回复文本
-            if not metadata.strip():
-                response = response.strip()
-                history.append({"role": "assistant", "metadata": metadata, "content": response})
-            # 如果metadata不空则response里是工具调用，是以python语法写的tool_call的函数形式
-            else:
-                history.append({"role": "assistant", "metadata": metadata, "content": response})
-                response = "\n".join(response.split("\n")[1:-1])
-                # 用以取出模型填的参数dict
-                def tool_call(**kwargs):
-                    return kwargs
-                try:
-                    parameters = eval(response)
-                except:
-                    parameters = {}
-                response = {"name": metadata.strip(), "parameters": parameters}
-        return response, history
-
     def evaluate(self):
         score_dict = {
             "slot_P": None,
@@ -117,7 +152,7 @@ class Evaluator:
             for turn in dialog:
                 if turn['role'] == 'user':
                     # 当前轮为user，下一轮两种可能: 文本回复; 工具调用
-                    response, history = self._chat(turn['content'], history, 'user')
+                    response, history = chat(self.tokenizer, self.model, turn['content'], history, 'user')
                     # response是dict类型即为工具调用轮次，取出用于计算slot的accuracy和recall
                     if isinstance(response, dict):
                         pred_slot = response['parameters']
@@ -141,7 +176,7 @@ class Evaluator:
                     pred_slot, label_slot = {}, {}
                     if 'observation' in turn:
                         # 当前轮是observation，下一轮两种可能: 文本回复; 工具调用
-                        response, history = self._chat(json.dumps(turn['observation'], ensure_ascii=False), history, 'observation')
+                        response, history = chat(self.tokenizer, self.model, json.dumps(turn['observation'], ensure_ascii=False), history, 'observation')
                         if isinstance(response, str):
                             label_reply = response.strip()
                         if isinstance(response, dict):
@@ -155,50 +190,19 @@ class Evaluator:
             score_dict[k] = round(v * 100, 4)
         print(f"score dict: {score_dict}")
 
-def load_pt2(model_path, ckpt_path):
-    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-    config = AutoConfig.from_pretrained(model_path, trust_remote_code=True, pre_seq_len=128)
-    model = AutoModel.from_pretrained(model_path, config=config, trust_remote_code=True)
-    prefix_state_dict = torch.load(os.path.join(ckpt_path, "pytorch_model.bin"))
-    new_prefix_state_dict = {}
-    for k, v in prefix_state_dict.items():
-        if k.startswith("transformer.prefix_encoder."):
-            new_prefix_state_dict[k[len("transformer.prefix_encoder."):]] = v
-    model.transformer.prefix_encoder.load_state_dict(new_prefix_state_dict)
-    model = model.to('cuda')
-    return tokenizer, model
-
-def load_lora(model_path, ckpt_path):
-    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-    model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
-    model = model.half()
-    peft_config = LoraConfig(
-        task_type=TaskType.CAUSAL_LM,
-        inference_mode=True,
-        r=8,
-        lora_alpha=32,
-        lora_dropout=0.1,
-        target_modules=["query_key_value"],
-    )
-    model = get_peft_model(model, peft_config)
-    if os.path.exists(os.path.join(ckpt_path, "pytorch_model.bin")):
-        model.load_state_dict(torch.load(os.path.join(ckpt_path, "pytorch_model.bin")), strict=False)
-    model = model.to('cuda')
-    return tokenizer, model
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_path", type=str, default=None, required=True, help="main model weights")
-    parser.add_argument("--ckpt_path", type=str, default=None, required=True, help="The checkpoint path")
-    parser.add_argument("--data_path", type=str, default=None, required=True, help="The dataset file path")
+    parser.add_argument("--model", type=str, default=None, required=True, help="main model weights")
+    parser.add_argument("--ckpt", type=str, default=None, required=True, help="The checkpoint path")
+    parser.add_argument("--data", type=str, default=None, required=True, help="The dataset file path")
     args = parser.parse_args()
 
-    if 'hotel_pt' in args.ckpt_path:
-        tokenizer, model = load_pt2(args.model_path, args.ckpt_path)
-    elif 'hotel_lora' in args.ckpt_path:
-        tokenizer, model = load_lora(args.model_path, args.ckpt_path)
+    if 'hotel_pt2' in args.ckpt:
+        tokenizer, model = load_pt2(args.model, args.ckpt)
+    elif 'hotel_lora' in args.ckpt:
+        tokenizer, model = load_lora(args.model, args.ckpt)
     else:
         print("checkpoint path error")
 
-    evaluator = Evaluator(tokenizer, model, args.data_path)
+    evaluator = Evaluator(tokenizer, model, args.data)
     evaluator.evaluate()

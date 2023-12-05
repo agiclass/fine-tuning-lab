@@ -12,7 +12,7 @@ from transformers import (
 )
 from trainer import LoRATrainer
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
-from preprocess_utils import sanity_check, MultiTurnDataset
+from data_preprocess import sanity_check, MultiTurnDataset
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
 
 # 初始化日志记录

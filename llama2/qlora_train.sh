@@ -4,7 +4,10 @@ set -ex
 
 LR=2e-4
 LORA_RANK=8
-OUTPUT_DIR=output/llama2-7b-qlora
+
+DATESTR=`date +%Y%m%d-%H%M%S`
+RUN_NAME=hotel_qlora
+OUTPUT_DIR=output/${RUN_NAME}-${DATESTR}
 mkdir -p $OUTPUT_DIR
 
 DATA_FS="/root/autodl-tmp"

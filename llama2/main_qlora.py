@@ -1,9 +1,10 @@
+import os
 import sys
+import torch
+import logging
 import argparse
 import bitsandbytes as bnb
 from functools import partial
-import os
-import torch
 
 from transformers import (
     AutoModelForCausalLM,
@@ -15,8 +16,6 @@ from transformers import (
     set_seed,
 )
 
-import logging
-
 from trainer import QLoRATrainer
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from data_helper import load_raw_datasets, print_dataset_example
@@ -26,7 +25,7 @@ from peft import PeftModel, LoraConfig, get_peft_model, prepare_model_for_kbit_t
 
 logger = logging.getLogger(__name__)
 
-def load_lora_checkpoint(model,checkpoint_path, logger=None, merge=False):
+def load_qlora(model,checkpoint_path, logger=None, merge=False):
     adapter_path = os.path.join(checkpoint_path, "adapter_model.bin")
     if os.path.exists(adapter_path):
         model = PeftModel.from_pretrained(model, checkpoint_path)
@@ -164,7 +163,7 @@ def main():
 
     # Load checkpoint if given
     if peft_args.lora_checkpoint is not None:
-        model = load_lora_checkpoint(
+        model = load_qlora(
             raw_model,
             peft_args.lora_checkpoint,
             logger=logger,

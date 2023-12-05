@@ -6,7 +6,7 @@ import numpy as np
 from tqdm import tqdm
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
-from main_qlora import load_model, load_lora_checkpoint, create_bnb_config
+from main_qlora import load_model, load_qlora, create_bnb_config
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from transformers import AutoModel, AutoTokenizer, HfArgumentParser
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel

@@ -15,7 +15,7 @@ from transformers import (
 )
 from trainer import PrefixTrainer
 from arguments import ModelArguments, DataTrainingArguments
-from preprocess_utils import sanity_check, MultiTurnDataset
+from data_preprocess import sanity_check, MultiTurnDataset
 
 # 初始化日志记录
 logger = logging.getLogger(__name__)
