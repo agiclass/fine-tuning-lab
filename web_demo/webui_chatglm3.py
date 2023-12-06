@@ -17,12 +17,11 @@ args = parser.parse_args()
 db = HotelDB()
 tokenizer, model = None, None
 
+system_prompt = 'Answer the following questions as best as you can. You have access to the following tools'
 if args.ckpt is not None:
-    tool_description = """
-search_hotels: 根据筛选条件查询酒店的函数
+    tool_description = """search_hotels: 根据筛选条件查询酒店的函数
 parameters: {"name":"酒店名称","price_range_lower":"价格下限","price_range_upper":"价格上限","rating_range_lower":"评分下限","rating_range_upper":"评分上限","facilities": "酒店提供的设施"}
-output: 酒店信息dict组成的list
-"""
+output: 酒店信息dict组成的list"""
     if 'hotel_pt2' in args.ckpt:
         tokenizer, model = load_pt2(args.model, args.ckpt)
     elif 'hotel_lora' in args.ckpt:
@@ -48,9 +47,6 @@ else:
     }]
     tool_description = json.dumps(tools, ensure_ascii=False)
     tokenizer, model = load_model(args.model, args.ckpt)
-
-system_prompt = 'Answer the following questions as best as you can. You have access to the following tools'
-system_message = f'{system_prompt}:\n[{tool_description}]'
 
 def chat(query, history, role):
     eos_token_id = [tokenizer.eos_token_id, 
@@ -85,7 +81,8 @@ def chat(query, history, role):
             response = {"name": metadata.strip(), "parameters": parameters}
     return response, history
 
-def handler(user_input, chatbot, history, search_field, return_field):
+def handler(user_input, chatbot, history, prompt_field, tools_field, search_field, return_field):
+    history[0] = build_history(prompt_field, tools_field)[0]
     response, history = chat(user_input, history, 'user')
     if isinstance(response, dict):
         parameters = response['parameters']
@@ -105,8 +102,12 @@ def handler(user_input, chatbot, history, search_field, return_field):
     chatbot.append((user_input, reply))
     return "", chatbot, history, search_field, return_field
 
+def build_history(system_prompt, tool_description):
+    default_history = [{'role':'system','content':f'{system_prompt}:\n[\n{tool_description}\n]'}]
+    return default_history
+
 def reset_state():
-    return [], [{'role':'system','content':system_message}], "", "", None
+    return "", [], build_history(system_prompt, tool_description), system_prompt, tool_description, "", None
 
 def main():
     with gr.Blocks() as demo:
@@ -114,25 +115,28 @@ def main():
 
         with gr.Row():
             with gr.Column(scale=2):
-                chatbot = gr.Chatbot(height=500)
-            with gr.Column(scale=2):
-                prompt_field = gr.Textbox(show_label=False, placeholder=system_prompt, lines=1)
-                tools_field = gr.Textbox(show_label=False, placeholder=tool_description.strip(), lines=4)
-                search_field = gr.Textbox(show_label=False, placeholder="搜索条件...", lines=6)
+                chatbot = gr.Chatbot()
                 user_input = gr.Textbox(show_label=False, placeholder="输入框...", lines=1)
                 with gr.Row():
                     submitBtn = gr.Button("提交", variant="primary")
-                    emptyBtn = gr.Button("清空")
+                    resetBtn = gr.Button("清空")
+            with gr.Column(scale=2):
+                gr.HTML("""<h4>system prompt</h4>""")
+                prompt_field = gr.Textbox(show_label=False, interactive=True, value=system_prompt, lines=1)
+                gr.HTML("""<h4>tool description</h4>""")
+                tools_field = gr.Textbox(show_label=False, interactive=True, value=tool_description, lines=4)
+                gr.HTML("""<h4>function parameter</h4>""")
+                search_field = gr.Textbox(show_label=False, placeholder="搜索条件...", lines=6)
 
         with gr.Row():
             with gr.Column():
                 return_field = gr.Dataframe()
 
-        history = gr.State([{'role':'system','content':system_message}])
+        history = gr.State(build_history(system_prompt, tool_description))
 
-        submitBtn.click(handler, [user_input, chatbot, history, search_field, return_field],
+        submitBtn.click(handler, [user_input, chatbot, history, prompt_field, tools_field, search_field, return_field],
                         [user_input, chatbot, history, search_field, return_field])
-        emptyBtn.click(reset_state, outputs=[chatbot, history, user_input, search_field, return_field])
+        resetBtn.click(reset_state, outputs=[user_input, chatbot, history, prompt_field, tools_field, search_field, return_field])
 
     demo.queue().launch(share=False, server_name='0.0.0.0', server_port=6006, inbrowser=True)
 
