@@ -10,7 +10,7 @@ from transformers import (
     AutoTokenizer,
     DataCollatorForSeq2Seq,
     HfArgumentParser,
-    Seq2SeqTrainingArguments,
+    TrainingArguments,
     set_seed,
 )
 from trainer import PrefixTrainer
@@ -75,7 +75,7 @@ def load_model(model_args):
 
 def main():
     # 解析传入的命令行参数
-    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, Seq2SeqTrainingArguments))
+    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, TrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
     # 初始化工作
     setup_logger(training_args)

@@ -7,7 +7,7 @@ from transformers import (
     AutoTokenizer,
     DataCollatorForSeq2Seq,
     HfArgumentParser,
-    Seq2SeqTrainingArguments,
+    TrainingArguments,
     set_seed,
 )
 from trainer import LoRATrainer
@@ -62,7 +62,7 @@ def load_lora_model(model_args, peft_args):
 
 def main():
     # 解析传入的命令行参数
-    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, Seq2SeqTrainingArguments))
+    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, TrainingArguments))
     model_args, data_args, peft_args, training_args = parser.parse_args_into_dataclasses()
     # 初始化工作
     setup_logger(training_args)

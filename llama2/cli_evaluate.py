@@ -1,4 +1,3 @@
-import os
 import json
 import torch
 import argparse
@@ -6,11 +5,9 @@ import numpy as np
 from tqdm import tqdm
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
+from prompt_helper import build_prompt
 from main_qlora import load_model, load_qlora, create_bnb_config
-from arguments import ModelArguments, DataTrainingArguments, PeftArguments
-from transformers import AutoModel, AutoTokenizer, HfArgumentParser
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
-from prompt_helper import build_prompt, build_response
 
 def remove_minus100(ids,val):
     """
@@ -131,12 +128,12 @@ class Evaluator:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_path", type=str, default=None, required=True, help="main model weights")
-    parser.add_argument("--ckpt_path", type=str, default=None, required=True, help="The checkpoint path")
-    parser.add_argument("--data_path", type=str, default=None, required=True, help="The dataset file path")
+    parser.add_argument("--model", type=str, default=None, required=True, help="main model weights")
+    parser.add_argument("--ckpt", type=str, default=None, required=True, help="The checkpoint path")
+    parser.add_argument("--data", type=str, default=None, required=True, help="The dataset file path")
     args = parser.parse_args()
 
-    model, tokenizer = load_model(args.model_path, create_bnb_config())
-    model = load_lora_checkpoint(model, args.ckpt_path)
-    evaluator = Evaluator(tokenizer, model, args.data_path)
+    model, tokenizer = load_model(args.model, create_bnb_config())
+    model = load_qlora(model, args.ckpt)
+    evaluator = Evaluator(tokenizer, model, args.data)
     evaluator.compute_metrics()

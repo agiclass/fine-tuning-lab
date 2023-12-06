@@ -11,7 +11,7 @@ from transformers import (
     AutoTokenizer,
     DataCollatorForSeq2Seq,
     HfArgumentParser,
-    Seq2SeqTrainingArguments,
+    TrainingArguments,
     BitsAndBytesConfig,
     set_seed,
 )
@@ -132,7 +132,7 @@ def print_trainable_parameters(model, use_4bit=False):
 def main():
 
     # 解析命令行参数
-    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, Seq2SeqTrainingArguments))
+    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, PeftArguments, TrainingArguments))
     
     '''
     参数归类:

@@ -1,10 +1,9 @@
-import os
 import json
 import argparse
 import gradio as gr
 import pandas as pd
+from copy import deepcopy
 from db_client import HotelDB
-from transformers import AutoConfig, AutoModel, AutoTokenizer
 
 import sys
 sys.path.append('../chatglm3')
@@ -63,6 +62,7 @@ def chat(query, history, role):
     outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):-1]
     response = tokenizer.decode(outputs)
     history.append({"role": role, "content": query})
+    history = deepcopy(history)
     for response in response.split("<|assistant|>"):
         splited = response.split("\n", maxsplit=1)
         if len(splited) == 2:
