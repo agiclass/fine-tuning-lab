@@ -14,6 +14,9 @@ class ModelArguments:
     model_name_or_path: str = field(
         metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"}
     )
+    checkpoint_path: Optional[str] = field(
+        metadata={"help": "Path to pt2 or lora finetuned checkpoint dir"}
+    )
     ptuning_checkpoint: str = field(
         default=None, metadata={"help": "Path to p-tuning v2 checkpoints"}
     )
@@ -148,10 +151,6 @@ class DataTrainingArguments:
         },
     )
     
-    def __post_init__(self):
-        extension = self.train_file.split(".")[-1]
-        assert extension in {"jsonl", "json"}, "`train_file` should be a jsonl or a json file."
-
 @dataclass
 class PeftArguments:
     lora_rank: int = field(

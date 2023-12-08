@@ -4,19 +4,21 @@ import torch
 import argparse
 from tqdm import tqdm
 from peft import get_peft_model, LoraConfig, TaskType, PeftModel
-from transformers import AutoConfig, AutoModel, AutoTokenizer
+from transformers import AutoConfig, AutoModel, AutoTokenizer, HfArgumentParser
+from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
-def load_model(model_path, ckpt_path):
-    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-    config = AutoConfig.from_pretrained(model_path, trust_remote_code=True, pre_seq_len=128)
-    model = AutoModel.from_pretrained(model_path, config=config, trust_remote_code=True)
+def load_model(model_args):
+    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
+    model = AutoModel.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
     model = model.to('cuda')
     return tokenizer, model
 
-def load_pt2(model_path, ckpt_path):
-    tokenizer, model = load_model(model_path, ckpt_path)
-    prefix_state_dict = torch.load(os.path.join(ckpt_path, "pytorch_model.bin"))
+def load_pt2(model_args):
+    tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
+    config = AutoConfig.from_pretrained(model_args.model_name_or_path, trust_remote_code=True, pre_seq_len=model_args.pre_seq_len)
+    model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, trust_remote_code=True)
+    prefix_state_dict = torch.load(os.path.join(model_args.checkpoint_path, "pytorch_model.bin"))
     new_prefix_state_dict = {}
     for k, v in prefix_state_dict.items():
         if k.startswith("transformer.prefix_encoder."):
@@ -25,20 +27,20 @@ def load_pt2(model_path, ckpt_path):
     model = model.to('cuda')
     return tokenizer, model
 
-def load_lora(model_path, ckpt_path):
-    tokenizer, model = load_model(model_path, ckpt_path)
+def load_lora(model_args, peft_args):
+    tokenizer, model = load_model(model_args)
     model = model.half()
     peft_config = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
         inference_mode=True,
-        r=8,
-        lora_alpha=32,
-        lora_dropout=0.1,
+        r=peft_args.lora_rank,
+        lora_alpha=peft_args.lora_alpha,
+        lora_dropout=peft_args.lora_dropout,
         target_modules=["query_key_value"],
     )
     model = get_peft_model(model, peft_config)
-    if os.path.exists(os.path.join(ckpt_path, "pytorch_model.bin")):
-        model.load_state_dict(torch.load(os.path.join(ckpt_path, "pytorch_model.bin")), strict=False)
+    if os.path.exists(os.path.join(model_args.checkpoint_path, "pytorch_model.bin")):
+        model.load_state_dict(torch.load(os.path.join(model_args.checkpoint_path, "pytorch_model.bin")), strict=False)
     model = model.to('cuda')
     return tokenizer, model
 
@@ -191,18 +193,15 @@ class Evaluator:
         print(f"score dict: {score_dict}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str, default=None, required=True, help="main model weights")
-    parser.add_argument("--ckpt", type=str, default=None, required=True, help="The checkpoint path")
-    parser.add_argument("--data", type=str, default=None, required=True, help="The dataset file path")
-    args = parser.parse_args()
+    parser = HfArgumentParser((ModelArguments, PeftArguments, DataTrainingArguments))
+    model_args, peft_args, data_args = parser.parse_args_into_dataclasses()
 
-    if 'hotel_pt2' in args.ckpt:
-        tokenizer, model = load_pt2(args.model, args.ckpt)
-    elif 'hotel_lora' in args.ckpt:
-        tokenizer, model = load_lora(args.model, args.ckpt)
+    if 'hotel_pt2' in model_args.checkpoint_path:
+        tokenizer, model = load_pt2(model_args)
+    elif 'hotel_lora' in model_args.checkpoint_path:
+        tokenizer, model = load_lora(model_args, peft_args)
     else:
-        print("checkpoint path error")
+        tokenizer, model = load_model(model_args)
 
-    evaluator = Evaluator(tokenizer, model, args.data)
+    evaluator = Evaluator(tokenizer, model, data_args.test_file)
     evaluator.evaluate()
