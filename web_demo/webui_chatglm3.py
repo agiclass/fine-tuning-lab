@@ -1,5 +1,4 @@
 import json
-import argparse
 import gradio as gr
 import pandas as pd
 from copy import deepcopy
@@ -8,24 +7,24 @@ from db_client import HotelDB
 import sys
 sys.path.append('../chatglm3')
 from cli_evaluate import load_model, load_lora, load_pt2
+from arguments import ModelArguments, PeftArguments
+from transformers import AutoConfig, AutoModel, AutoTokenizer, HfArgumentParser
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--model", type=str, default=None, required=True, help="main model weights")
-parser.add_argument("--ckpt", type=str, default=None, required=False, help="The checkpoint path")
-args = parser.parse_args()
+parser = HfArgumentParser((ModelArguments, PeftArguments))
+model_args, peft_args = parser.parse_args_into_dataclasses()
 
 db = HotelDB()
 tokenizer, model = None, None
 
 system_prompt = 'Answer the following questions as best as you can. You have access to the following tools'
-if args.ckpt is not None:
+if model_args.checkpoint_path:
     tool_description = """search_hotels: 根据筛选条件查询酒店的函数
 parameters: {"name":"酒店名称","price_range_lower":"价格下限","price_range_upper":"价格上限","rating_range_lower":"评分下限","rating_range_upper":"评分上限","facilities": "酒店提供的设施"}
 output: 酒店信息dict组成的list"""
-    if 'hotel_pt2' in args.ckpt:
-        tokenizer, model = load_pt2(args.model, args.ckpt)
-    elif 'hotel_lora' in args.ckpt:
-        tokenizer, model = load_lora(args.model, args.ckpt)
+    if 'hotel_pt2' in model_args.checkpoint_path:
+        tokenizer, model = load_pt2(model_args)
+    elif 'hotel_lora' in model_args.checkpoint_path:
+        tokenizer, model = load_lora(model_args, peft_args)
     else:
         print("checkpoint path error")
         exit()
@@ -46,7 +45,7 @@ else:
         }, "required": [] }
     }]
     tool_description = json.dumps(tools, ensure_ascii=False)
-    tokenizer, model = load_model(args.model, args.ckpt)
+    tokenizer, model = load_model(model_args)
 
 def chat(query, history, role):
     eos_token_id = [tokenizer.eos_token_id, 

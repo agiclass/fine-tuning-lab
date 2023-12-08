@@ -196,10 +196,14 @@ if __name__ == "__main__":
     parser = HfArgumentParser((ModelArguments, PeftArguments, DataTrainingArguments))
     model_args, peft_args, data_args = parser.parse_args_into_dataclasses()
 
-    if 'hotel_pt2' in model_args.checkpoint_path:
-        tokenizer, model = load_pt2(model_args)
-    elif 'hotel_lora' in model_args.checkpoint_path:
-        tokenizer, model = load_lora(model_args, peft_args)
+    if model_args.checkpoint_path:
+        if 'hotel_pt2' in model_args.checkpoint:
+            tokenizer, model = load_pt2(model_args)
+        elif 'hotel_lora' in model_args.checkpoint:
+            tokenizer, model = load_lora(model_args, peft_args)
+        else:
+            print("checkpoint path error")
+            exit()
     else:
         tokenizer, model = load_model(model_args)
 

@@ -116,7 +116,7 @@ def main():
         trainer.save_model()  # Saves the tokenizer too for easy upload
         trainer.save_state()
     if training_args.do_eval:
-        trainer.evaluate(resume_from_checkpoint=checkpoint)
+        trainer.evaluate()
 
 if __name__ == "__main__":
     main()

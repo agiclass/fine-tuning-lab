@@ -15,7 +15,7 @@ class ModelArguments:
         metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"}
     )
     checkpoint_path: Optional[str] = field(
-        metadata={"help": "Path to pt2 or lora finetuned checkpoint dir"}
+        default=None, metadata={"help": "Path to pt2 or lora finetuned checkpoint dir"}
     )
     ptuning_checkpoint: str = field(
         default=None, metadata={"help": "Path to p-tuning v2 checkpoints"}
