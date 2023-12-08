@@ -82,6 +82,15 @@ def main():
 
         if training_args.local_rank < 1:
             sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
+    if training_args.do_eval:
+        with open(data_args.validation_file, "r", encoding="utf-8") as f:
+            eval_data = [json.loads(line) for line in f]
+
+        eval_dataset = MultiTurnDataset(
+            eval_data,
+            tokenizer,
+            data_args.max_seq_length,
+        )
     # 将数据集中样本批处理成张量
     data_collator = DataCollatorForSeq2Seq(
         tokenizer,
@@ -95,6 +104,7 @@ def main():
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,
+        eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
     )
@@ -105,6 +115,8 @@ def main():
         trainer.train()
         trainer.save_model()  # Saves the tokenizer too for easy upload
         trainer.save_state()
+    if training_args.do_eval:
+        trainer.evaluate(resume_from_checkpoint=checkpoint)
 
 if __name__ == "__main__":
     main()
