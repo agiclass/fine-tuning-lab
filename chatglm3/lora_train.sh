@@ -3,8 +3,7 @@
 set -ex
 
 LR=2e-4
-MAX_SEQ_LEN=2048
-MAX_STEP=1000
+MAX_SEQ_LEN=3072
 
 DATESTR=`date +%Y%m%d-%H%M%S`
 RUN_NAME=hotel_lora
@@ -24,12 +23,12 @@ CUDA_VISIBLE_DEVICES=0 python main_lora.py \
     --output_dir $OUTPUT_DIR \
     --per_device_train_batch_size 2 \
     --per_device_eval_batch_size 2 \
-    --max_steps $MAX_STEP \
+    --num_train_epochs 4 \
     --evaluation_strategy steps \
-    --eval_steps 200 \
+    --eval_steps 500 \
     --logging_steps 1 \
     --logging_dir $OUTPUT_DIR/logs \
-    --save_steps 200 \
+    --save_steps 500 \
     --learning_rate $LR \
     --lora_rank 8 \
     --lora_alpha 32 \
