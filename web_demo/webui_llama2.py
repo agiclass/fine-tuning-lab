@@ -8,7 +8,7 @@ from db_client import HotelDB
 from transformers import HfArgumentParser
 from cli_evaluate import parse_json
 from prompt_helper import build_prompt
-from main_qlora import load_model, load_lora_checkpoint, create_bnb_config
+from main_qlora import load_model, load_qlora, create_bnb_config
 from arguments import ModelArguments, DataTrainingArguments, PeftArguments
 
 def init_model():
@@ -17,7 +17,7 @@ def init_model():
     model_args, data_args, peft_args = parser.parse_args_into_dataclasses()
     bnb_config = create_bnb_config()
     model, tokenizer = load_model(model_args.model_name_or_path, bnb_config)
-    model = load_lora_checkpoint(model, peft_args.lora_checkpoint)
+    model = load_qlora(model, peft_args.lora_checkpoint)
     return model, tokenizer, data_args.max_source_length, data_args.max_target_length
 
 def get_completion(prompt):

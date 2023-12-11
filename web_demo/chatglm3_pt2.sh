@@ -5,4 +5,4 @@ CHECKPOINT_DIR="/root/autodl-tmp/checkpoints/hotel_pt2-chatglm3"
 CUDA_VISIBLE_DEVICES=0 python webui_chatglm3.py \
   --model_name_or_path $MODEL_DIR \
   --checkpoint_path $CHECKPOINT_DIR \
-  --pre_seq_len 128
+  --pre_seq_len 256
