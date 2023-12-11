@@ -7,17 +7,6 @@ from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
 from prompt_helper import build_prompt
 from main_qlora import load_model, load_qlora, create_bnb_config
-from peft import get_peft_model, LoraConfig, TaskType, PeftModel
-
-def remove_minus100(ids,val):
-    """
-    -100是HF预留的id（不参与loss计算）
-    有的tokenizer在decode -100时会报错
-    因此在decode之前去除（替换为pad_id）
-    """
-    ids = np.array(ids)
-    ids = np.where(ids == -100, val, ids)
-    return ids
 
 def parse_json(string):
     search_pos = 0
