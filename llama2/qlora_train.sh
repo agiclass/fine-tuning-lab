@@ -29,7 +29,7 @@ LOCAL_RANK=-1 CUDA_VISIBLE_DEVICES=0 python main_qlora.py \
     --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 4 \
     --evaluation_strategy steps \
-    --eval_steps 160 \
+    --eval_steps 300 \
     --num_train_epochs 1 \
     --logging_steps 1 \
     --logging_dir $OUTPUT_DIR/logs \

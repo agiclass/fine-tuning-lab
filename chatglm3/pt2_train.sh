@@ -24,10 +24,12 @@ CUDA_VISIBLE_DEVICES=0 python main_pt2.py \
     --output_dir $OUTPUT_DIR \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 2 \
+    --evaluation_strategy steps \
+    --eval_steps 300 \
     --num_train_epochs 6 \
     --logging_steps 1 \
     --logging_dir $OUTPUT_DIR/logs \
-    --save_steps 400 \
+    --save_steps 300 \
     --learning_rate $LR \
     --quantization_bit 4 \
     --pre_seq_len $PRE_SEQ_LEN 2>&1 | tee ${OUTPUT_DIR}/train.log

@@ -25,10 +25,10 @@ CUDA_VISIBLE_DEVICES=0 python main_lora.py \
     --per_device_eval_batch_size 2 \
     --num_train_epochs 4 \
     --evaluation_strategy steps \
-    --eval_steps 500 \
+    --eval_steps 300 \
     --logging_steps 1 \
     --logging_dir $OUTPUT_DIR/logs \
-    --save_steps 500 \
+    --save_steps 300 \
     --learning_rate $LR \
     --lora_rank 8 \
     --lora_alpha 32 \
