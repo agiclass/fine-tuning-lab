@@ -57,7 +57,7 @@ def load_model(model_args):
             if k.startswith("transformer.prefix_encoder."):
                 new_prefix_state_dict[k[len("transformer.prefix_encoder."):]] = v
         model.transformer.prefix_encoder.load_state_dict(new_prefix_state_dict)
-    else: # 不加载pt2 checkpoint则直接加载modelk
+    else: # 不加载pt2 checkpoint则直接加载model
         model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, trust_remote_code=True)
     # 如果有设置quantization则以int数值加载不参与更新的参数，用以节省显存
     if model_args.quantization_bit is not None:
@@ -92,8 +92,8 @@ def main():
             data_args.max_seq_length,
         )
 
-        if training_args.local_rank < 1:
-            sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
+        #if training_args.local_rank < 1:
+        #    sanity_check(train_dataset[0]['input_ids'], train_dataset[0]['labels'], tokenizer)
     if training_args.do_eval:
         with open(data_args.validation_file, "r", encoding="utf-8") as f:
             eval_data = [json.loads(line) for line in f]
