@@ -16,36 +16,31 @@ model_args, peft_args = parser.parse_args_into_dataclasses()
 db = HotelDB()
 tokenizer, model = None, None
 
-system_prompt = 'Answer the following questions as best as you can. You have access to the following tools'
 if model_args.checkpoint_path:
-    tool_description = """search_hotels: 根据筛选条件查询酒店的函数
-parameters: {"name":"酒店名称","price_range_lower":"价格下限","price_range_upper":"价格上限","rating_range_lower":"评分下限","rating_range_upper":"评分上限","facilities": "酒店提供的设施"}
-output: 酒店信息dict组成的list"""
     if 'hotel_pt2' in model_args.checkpoint_path:
         tokenizer, model = load_pt2(model_args)
     elif 'hotel_lora' in model_args.checkpoint_path:
         tokenizer, model = load_lora(model_args, peft_args)
-    else:
-        print("checkpoint path error")
-        exit()
 else:
-    tools = [{
-        "name": "search_hotels",
-        "description": "根据用户的需求生成查询条件来查酒店",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "name": { "type": "string", "description": "酒店名称" },
-                "type": { "type": "string", "enum": ["豪华型", "经济型", "舒适型", "高档型"], "description": "酒店类型" },
-                "facilities": { "type": "array", "items": { "type": "string" }, "description": "酒店能提供的设施列表" },
-                "price_range_lower": { "type": "number", "minimum": 0, "description": "价格下限" },
-                "price_range_upper": { "type": "number", "minimum": 0, "description": "价格上限" },
-                "rating_range_lower": { "type": "number", "minimum": 0, "maximum": 5, "description": "评分下限" },
-                "rating_range_upper": { "type": "number", "minimum": 0, "maximum": 5, "description": "评分上限" }
-        }, "required": [] }
-    }]
-    tool_description = json.dumps(tools, ensure_ascii=False)
     tokenizer, model = load_model(model_args)
+
+system_prompt = 'Answer the following questions as best as you can. You have access to the following tools'
+tools = [{
+    "name": "search_hotels",
+    "description": "根据用户的需求生成查询条件来查酒店",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "name": { "type": "string", "description": "酒店名称" },
+            "type": { "type": "string", "enum": ["豪华型", "经济型", "舒适型", "高档型"], "description": "酒店类型" },
+            "facilities": { "type": "array", "items": { "type": "string" }, "description": "酒店能提供的设施列表" },
+            "price_range_lower": { "type": "number", "minimum": 0, "description": "价格下限" },
+            "price_range_upper": { "type": "number", "minimum": 0, "description": "价格上限" },
+            "rating_range_lower": { "type": "number", "minimum": 0, "maximum": 5, "description": "评分下限" },
+            "rating_range_upper": { "type": "number", "minimum": 0, "maximum": 5, "description": "评分上限" }
+    }, "required": [] }
+}]
+tool_description = json.dumps(tools, ensure_ascii=False)
 
 def chat(query, history, role):
     eos_token_id = [tokenizer.eos_token_id, 

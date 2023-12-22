@@ -27,7 +27,7 @@ CUDA_VISIBLE_DEVICES=0 python main_pt2.py \
     --evaluation_strategy steps \
     --eval_steps 300 \
     --num_train_epochs 6 \
-    --logging_steps 1 \
+    --logging_steps 300 \
     --logging_dir $OUTPUT_DIR/logs \
     --save_steps 300 \
     --learning_rate $LR \
