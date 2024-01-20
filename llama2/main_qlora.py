@@ -152,8 +152,8 @@ def main():
     # Using the prepare_model_for_kbit_training method from PEFT
     model = prepare_model_for_kbit_training(model)
 
-    # Get lora module names
-    modules = find_all_linear_names(model)
+    # apply to Q K V matrix
+    modules = ['q_proj', 'k_proj', 'v_proj']
 
     # Create PEFT config for these modules and wrap the model to PEFT
     peft_config = create_peft_config(modules,peft_args)

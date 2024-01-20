@@ -158,12 +158,14 @@ class Evaluator:
                     # response是dict类型即为工具调用轮次，取出用于计算slot的accuracy和recall
                     if isinstance(response, dict):
                         pred_slot = response['parameters']
+                    if isinstance(response, str):
+                        pred_reply = response.strip()
                 if turn['role'] == 'assistant':
                     # 当前轮为assistant有两种可能: 文本回复; 模型思考工具调用
                     if 'search_hotels' in turn['content']: # 跳过模型思考工具调用
                         continue 
                     else: # 是文本回复那么计算它跟label中文本回复的bleu分数
-                        pred_reply = turn['content'].strip()
+                        label_reply = turn['content'].strip()
                         if pred_reply and label_reply:
                             score = self._bleu4(pred_reply, label_reply)
                             bleu_scores.append(score)
@@ -180,7 +182,7 @@ class Evaluator:
                         # 当前轮是observation，下一轮两种可能: 文本回复; 工具调用
                         response, history = chat(self.tokenizer, self.model, json.dumps(turn['observation'], ensure_ascii=False), history, 'observation')
                         if isinstance(response, str):
-                            label_reply = response.strip()
+                            pred_reply = response.strip()
                         if isinstance(response, dict):
                             pred_slot = response['parameters']
         
