@@ -171,6 +171,8 @@ class HotelDB():
         self.client.batch.flush()
 
     def search(self, dsl, name="Hotel", limit=1):
+        # dsl中过滤掉None值
+        dsl = {k: v for k, v in dsl.items() if v is not None}
         _limit = limit + 10 # 多搜10条，让取top `limit`条
         candidates = []
         output_fields = ["hotel_id","name","type","address","phone","subway","facilities","price","rating"]
