@@ -24,7 +24,7 @@ if model_args.checkpoint_path:
 else:
     tokenizer, model = load_model(model_args)
 
-system_prompt = 'Answer the following questions as best as you can. You have access to the following tools'
+system_prompt = 'Answer the following questions as best as you can. You have access to the following tools. Carefully check the return result of the function before answering user\'s question'
 tools = [{
     "name": "search_hotels",
     "description": "根据用户的需求生成查询条件来查酒店",
