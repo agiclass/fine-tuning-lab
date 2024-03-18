@@ -1,0 +1,31 @@
+model_path: /root/autodl-tmp/chatglm3-6b
+train_file: ../data/train.chatglm3.json
+val_file: ../data/dev.chatglm3.json
+max_seq_length: 3072
+training_args:
+  # see `transformers.Seq2SeqTrainingArguments`
+  output_dir: ./lora_output
+  # settings for training
+  do_train: true
+  learning_rate: 2e-4
+  num_train_epochs: 4
+  dataloader_num_workers: 2
+  per_device_train_batch_size: 2
+  # settings for evaluation
+  do_eval: true
+  per_device_eval_batch_size: 2
+  evaluation_strategy: steps
+  eval_steps: 300
+  # settings for saving checkpoints
+  save_strategy: steps
+  save_steps: 300
+  # settings for logging
+  log_level: info
+  logging_strategy: steps
+  logging_steps: 10
+peft_config:
+  peft_type: LORA
+  task_type: CAUSAL_LM
+  r: 8
+  lora_alpha: 32
+  lora_dropout: 0.1
