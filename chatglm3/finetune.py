@@ -27,14 +27,11 @@ from transformers import (
     Seq2SeqTrainingArguments, 
 )
 
-from trainer import PrefixTrainer, LoRATrainer
+from transformers import Trainer as _Trainer
+from transformers.modeling_utils import unwrap_model
 from preprocess import MultiTurnDataset
 
 app = typer.Typer(pretty_exceptions_show_locals=False)
-
-def _resolve_path(path: Union[str, Path]) -> Path:
-    return Path(path).expanduser().resolve()
-
 
 @functools.cache
 def _get_yaml_parser() -> yaml.YAML:
@@ -42,6 +39,27 @@ def _get_yaml_parser() -> yaml.YAML:
     parser.indent(mapping=2, offset=2, sequence=4)
     parser.default_flow_style = False
     return parser
+
+
+class Trainer(_Trainer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def save_model(self, output_dir=None, _internal_call=False):
+        output_dir = output_dir if output_dir is not None else self.args.output_dir
+        os.makedirs(output_dir, exist_ok=True)
+        logger.info(f"Saving model checkpoint to {output_dir}")
+
+        model_to_save = unwrap_model(self.model)
+        saved_params = {
+            k: v.to("cuda") for k, v in model_to_save.named_parameters() if v.requires_grad
+        }
+        torch.save(saved_params, os.path.join(output_dir, "pytorch_model.bin"))
+
+        if self.tokenizer is not None:
+            self.tokenizer.save_pretrained(output_dir)
+
+        torch.save(self.args, os.path.join(output_dir, "training_args.bin"))
 
 
 @dc.dataclass
@@ -84,7 +102,7 @@ class FinetuningConfig(object):
 
     @classmethod
     def from_file(cls, path: Union[str, Path]) -> 'FinetuningConfig':
-        path = _resolve_path(path)
+        path = Path(path).expanduser().resolve()
         kwargs = _get_yaml_parser().load(path)
         return cls.from_dict(**kwargs)
 
@@ -95,11 +113,9 @@ def print_model_size(model: PreTrainedModel):
     print(f"\n--> model has {total_params / 1e6}M params\n")
 
 
-# TODO: Not sure if this is necessary, can set it to half
 def _prepare_model_for_training(model: torch.nn.Module):
     for param in model.parameters():
         if param.requires_grad:
-	    # if train with cpu, cast all params to fp32 instead of trainable ones.
             param.data = param.data.to(torch.float32)
 
 
@@ -173,24 +189,14 @@ def main(config_file: Annotated[str, typer.Argument(help='')]):
         padding=False
     )
 
-    if ft_config.peft_config.peft_type.name == "PREFIX_TUNING":
-        trainer = PrefixTrainer(
-            model=model,
-            args=ft_config.training_args,
-            train_dataset=train_dataset if ft_config.training_args.do_train else None,
-            eval_dataset=eval_dataset if ft_config.training_args.do_eval else None,
-            tokenizer=tokenizer,
-            data_collator=data_collator,
-        )
-    elif ft_config.peft_config.peft_type.name == "LORA":
-        trainer = LoRATrainer(
-            model=model,
-            args=ft_config.training_args,
-            train_dataset=train_dataset if ft_config.training_args.do_train else None,
-            eval_dataset=eval_dataset if ft_config.training_args.do_eval else None,
-            tokenizer=tokenizer,
-            data_collator=data_collator,
-        )
+    trainer = Trainer(
+        model=model,
+        args=ft_config.training_args,
+        train_dataset=train_dataset if ft_config.training_args.do_train else None,
+        eval_dataset=eval_dataset if ft_config.training_args.do_eval else None,
+        tokenizer=tokenizer,
+        data_collator=data_collator,
+    )
 
     if ft_config.training_args.do_train:
         checkpoint = None

@@ -1,6 +1,6 @@
 model_path: /root/autodl-tmp/chatglm3-6b
-train_file: ../data/train.chatglm3.json
-val_file: ../data/dev.chatglm3.json
+train_file: ../data/train.chatglm3.jsonl
+val_file: ../data/dev.chatglm3.jsonl
 max_seq_length: 3072
 training_args:
   # see `transformers.Seq2SeqTrainingArguments`
@@ -22,7 +22,7 @@ training_args:
   # settings for logging
   log_level: info
   logging_strategy: steps
-  logging_steps: 10
+  logging_steps: 100
 peft_config:
   peft_type: LORA
   task_type: CAUSAL_LM

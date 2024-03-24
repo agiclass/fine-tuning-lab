@@ -6,7 +6,7 @@ from db_client import HotelDB
 
 import sys
 sys.path.append('../chatglm3')
-from cli_evaluate import load_model, load_lora, load_pt2
+from evaluate import load_model, load_lora, load_pt2
 from arguments import ModelArguments, PeftArguments
 from transformers import AutoConfig, AutoModel, AutoTokenizer, HfArgumentParser
 
@@ -17,9 +17,9 @@ db = HotelDB()
 tokenizer, model = None, None
 
 if model_args.checkpoint_path:
-    if 'hotel_pt2' in model_args.checkpoint_path:
+    if 'pt2' in model_args.checkpoint_path:
         tokenizer, model = load_pt2(model_args)
-    elif 'hotel_lora' in model_args.checkpoint_path:
+    elif 'lora' in model_args.checkpoint_path:
         tokenizer, model = load_lora(model_args, peft_args)
 else:
     tokenizer, model = load_model(model_args)
